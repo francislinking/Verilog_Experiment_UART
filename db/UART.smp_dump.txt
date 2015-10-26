@@ -1,0 +1,12 @@
+
+State Machine - |UART|UART_RX:U3|state
+Name state.read state.finish state.idle 
+state.idle 0 0 0 
+state.read 1 0 1 
+state.finish 0 1 1 
+
+State Machine - |UART|UART_TX:U2|state
+Name state.ready state.transmit state.idle 
+state.idle 0 0 0 
+state.ready 1 0 1 
+state.transmit 0 1 1 

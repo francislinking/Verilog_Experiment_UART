@@ -1,0 +1,21 @@
+module divider(Rst,Clk_in,Clk_out);
+input Rst,Clk_in;
+output reg Clk_out;
+
+reg[4:0] Q;
+
+always @(negedge Rst, posedge Clk_in)
+begin
+	if(~Rst)
+		begin Q<=5'b00000; Clk_out<=0;end
+	
+	else 
+		begin
+			if(Q==5'b01110)
+				begin Clk_out=1; Q<=Q+1;end
+			else  Q<=Q+1;
+			if(Q==5'b11011)
+				begin Clk_out<=0; Q<=5'b00000;end
+		end
+end
+endmodule 
