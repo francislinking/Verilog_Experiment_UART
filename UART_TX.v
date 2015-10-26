@@ -9,7 +9,7 @@ output Txd;
 
 
 wire clk_div;
-reg Txd;
+wire Txd;
 reg [7:0] data;
 reg [7:0] data_buf;
 reg [9:0] shift_reg;
@@ -19,9 +19,9 @@ reg [1:0] state;
 
 parameter idle=2'b00,ready=2'b01,transmit=2'b11;
 
-divider U1(.En(1),.Rst(rst),.Clk_in(clk),.Clk_out(clk_div));//12 frequency division
+divider U1(.En(dbf|wr),.Rst(rst),.Clk_in(clk),.Clk_out(clk_div));//12 frequency division
 
-//assign Txd=(state == transmit)?shift_reg[0]:1'b1;
+assign Txd=(state == transmit)?shift_reg[0]:1'b1;
 
 //state control
 always@(posedge clk_div)
@@ -69,7 +69,7 @@ end
 
 
 //load buffer and transmit
-always@(posedge clk)
+always@(posedge clk_div)
 case(state)
 idle:
 begin
@@ -85,7 +85,6 @@ end
 transmit:
 begin
 	shift_reg <= shift_reg>>1;
-	Txd<=shift_reg[0];
 end
 default:;
 endcase

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for UART
-Mon Oct 26 10:18:47 2015
+Mon Oct 26 14:06:39 2015
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -13,14 +13,18 @@ Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |UART|UART_TX:U2|state
-  9. General Register Statistics
- 10. Inverted Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: UART_TX:U2
- 13. Parameter Settings for User Entity Instance: UART_TX:U2|divider:U1
- 14. Port Connectivity Checks: "UART_TX:U2|divider:U1"
- 15. Analysis & Synthesis Messages
+  8. State Machine - |UART|UART_RX:U3|state
+  9. State Machine - |UART|UART_TX:U2|state
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: UART_TX:U2
+ 16. Parameter Settings for User Entity Instance: UART_TX:U2|divider:U1
+ 17. Parameter Settings for User Entity Instance: UART_RX:U3
+ 18. Parameter Settings for User Entity Instance: UART_RX:U3|divider:U1
+ 19. Analysis & Synthesis Messages
 
 
 
@@ -46,16 +50,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                             ;
 +-------------------------------+------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Mon Oct 26 10:18:47 2015    ;
+; Analysis & Synthesis Status   ; Successful - Mon Oct 26 14:06:39 2015    ;
 ; Quartus II Version            ; 9.1 Build 222 10/21/2009 SJ Full Version ;
 ; Revision Name                 ; UART                                     ;
 ; Top-level Entity Name         ; UART                                     ;
 ; Family                        ; Stratix II                               ;
 ; Logic utilization             ; N/A                                      ;
-;     Combinational ALUTs       ; 29                                       ;
-;     Dedicated logic registers ; 34                                       ;
-; Total registers               ; 34                                       ;
-; Total pins                    ; 21                                       ;
+;     Combinational ALUTs       ; 30                                       ;
+;     Dedicated logic registers ; 33                                       ;
+; Total registers               ; 33                                       ;
+; Total pins                    ; 22                                       ;
 ; Total virtual pins            ; 0                                        ;
 ; Total block memory bits       ; 0                                        ;
 ; DSP block 9-bit elements      ; 0                                        ;
@@ -169,6 +173,7 @@ applicable agreement for further details.
 ; UART.v                           ; yes             ; User Verilog HDL File  ; E:/Discipline/Verilog/Experiment/Verilog_Experiment_UART/UART.v    ;
 ; UART_TX.v                        ; yes             ; User Verilog HDL File  ; E:/Discipline/Verilog/Experiment/Verilog_Experiment_UART/UART_TX.v ;
 ; divider.v                        ; yes             ; User Verilog HDL File  ; E:/Discipline/Verilog/Experiment/Verilog_Experiment_UART/divider.v ;
+; UART_RX.v                        ; yes             ; User Verilog HDL File  ; E:/Discipline/Verilog/Experiment/Verilog_Experiment_UART/UART_RX.v ;
 +----------------------------------+-----------------+------------------------+--------------------------------------------------------------------+
 
 
@@ -177,38 +182,38 @@ applicable agreement for further details.
 +-----------------------------------------------+-------------------------------+
 ; Resource                                      ; Usage                         ;
 +-----------------------------------------------+-------------------------------+
-; Estimated ALUTs Used                          ; 29                            ;
-; Dedicated logic registers                     ; 34                            ;
+; Estimated ALUTs Used                          ; 30                            ;
+; Dedicated logic registers                     ; 33                            ;
 ;                                               ;                               ;
 ; Estimated ALUTs Unavailable                   ; 1                             ;
 ;                                               ;                               ;
-; Total combinational functions                 ; 29                            ;
+; Total combinational functions                 ; 30                            ;
 ; Combinational ALUT usage by number of inputs  ;                               ;
 ;     -- 7 input functions                      ; 1                             ;
 ;     -- 6 input functions                      ; 1                             ;
 ;     -- 5 input functions                      ; 3                             ;
-;     -- 4 input functions                      ; 7                             ;
+;     -- 4 input functions                      ; 8                             ;
 ;     -- <=3 input functions                    ; 17                            ;
 ;                                               ;                               ;
 ; Combinational ALUTs by mode                   ;                               ;
-;     -- normal mode                            ; 23                            ;
+;     -- normal mode                            ; 24                            ;
 ;     -- extended LUT mode                      ; 1                             ;
 ;     -- arithmetic mode                        ; 5                             ;
 ;     -- shared arithmetic mode                 ; 0                             ;
 ;                                               ;                               ;
-; Estimated ALUT/register pairs used            ; 42                            ;
+; Estimated ALUT/register pairs used            ; 43                            ;
 ;                                               ;                               ;
-; Total registers                               ; 34                            ;
-;     -- Dedicated logic registers              ; 34                            ;
+; Total registers                               ; 33                            ;
+;     -- Dedicated logic registers              ; 33                            ;
 ;     -- I/O registers                          ; 0                             ;
 ;                                               ;                               ;
-; Estimated ALMs:  partially or completely used ; 21                            ;
+; Estimated ALMs:  partially or completely used ; 22                            ;
 ;                                               ;                               ;
-; I/O pins                                      ; 21                            ;
+; I/O pins                                      ; 22                            ;
 ; Maximum fan-out node                          ; UART_TX:U2|divider:U1|Clk_out ;
-; Maximum fan-out                               ; 18                            ;
-; Total fan-out                                 ; 203                           ;
-; Average fan-out                               ; 2.42                          ;
+; Maximum fan-out                               ; 29                            ;
+; Total fan-out                                 ; 208                           ;
+; Average fan-out                               ; 2.45                          ;
 +-----------------------------------------------+-------------------------------+
 
 
@@ -217,11 +222,23 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name         ; Library Name ;
 +----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------+--------------+
-; |UART                      ; 29 (0)            ; 34 (0)       ; 0                 ; 0            ; 0       ; 0         ; 0         ; 21   ; 0            ; |UART                       ; work         ;
-;    |UART_TX:U2|            ; 29 (17)           ; 34 (28)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |UART|UART_TX:U2            ;              ;
+; |UART                      ; 30 (0)            ; 33 (0)       ; 0                 ; 0            ; 0       ; 0         ; 0         ; 22   ; 0            ; |UART                       ; work         ;
+;    |UART_TX:U2|            ; 30 (18)           ; 33 (27)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |UART|UART_TX:U2            ;              ;
 ;       |divider:U1|         ; 12 (12)           ; 6 (6)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |UART|UART_TX:U2|divider:U1 ; work         ;
 +----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------+
+; State Machine - |UART|UART_RX:U3|state                ;
++--------------+------------+--------------+------------+
+; Name         ; state.read ; state.finish ; state.idle ;
++--------------+------------+--------------+------------+
+; state.idle   ; 0          ; 0            ; 0          ;
+; state.read   ; 1          ; 0            ; 1          ;
+; state.finish ; 0          ; 1            ; 1          ;
++--------------+------------+--------------+------------+
 
 
 Encoding Type:  One-Hot
@@ -236,17 +253,54 @@ Encoding Type:  One-Hot
 +----------------+-------------+----------------+------------+
 
 
++--------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                   ;
++----------------------------------------+---------------------------------------------+
+; Register name                          ; Reason for Removal                          ;
++----------------------------------------+---------------------------------------------+
+; UART_RX:U3|error                       ; Stuck at VCC due to stuck port data_in      ;
+; UART_RX:U3|rdf                         ; Stuck at GND due to stuck port data_in      ;
+; UART_RX:U3|c[0..2]                     ; Lost fanout                                 ;
+; UART_RX:U3|state.idle                  ; Lost fanout                                 ;
+; UART_RX:U3|state.read                  ; Stuck at GND due to stuck port data_in      ;
+; UART_RX:U3|data_buf[0..7]              ; Stuck at GND due to stuck port clock_enable ;
+; UART_RX:U3|state.finish                ; Stuck at GND due to stuck port data_in      ;
+; UART_RX:U3|t[0..3]                     ; Stuck at GND due to stuck port clock_enable ;
+; UART_RX:U3|rdc                         ; Stuck at GND due to stuck port data_in      ;
+; UART_RX:U3|divider:U1|Q[0]             ; Stuck at VCC due to stuck port clock_enable ;
+; UART_RX:U3|divider:U1|Q[1]             ; Stuck at GND due to stuck port clock_enable ;
+; UART_RX:U3|divider:U1|Q[2]             ; Stuck at VCC due to stuck port clock_enable ;
+; UART_RX:U3|divider:U1|Q[3..4]          ; Stuck at GND due to stuck port clock_enable ;
+; UART_RX:U3|divider:U1|Clk_out          ; Stuck at GND due to stuck port sclear       ;
+; Total Number of Removed Registers = 27 ;                                             ;
++----------------------------------------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                             ;
++-----------------------+---------------------------+-------------------------------------------------------------------------------------+
+; Register name         ; Reason for Removal        ; Registers Removed due to This Register                                              ;
++-----------------------+---------------------------+-------------------------------------------------------------------------------------+
+; UART_RX:U3|state.read ; Stuck at GND              ; UART_RX:U3|data_buf[0], UART_RX:U3|data_buf[1], UART_RX:U3|data_buf[2],             ;
+;                       ; due to stuck port data_in ; UART_RX:U3|data_buf[3], UART_RX:U3|data_buf[4], UART_RX:U3|data_buf[5],             ;
+;                       ;                           ; UART_RX:U3|data_buf[6], UART_RX:U3|data_buf[7], UART_RX:U3|state.finish,            ;
+;                       ;                           ; UART_RX:U3|t[1], UART_RX:U3|t[2], UART_RX:U3|t[3], UART_RX:U3|rdc                   ;
+; UART_RX:U3|rdf        ; Stuck at GND              ; UART_RX:U3|divider:U1|Q[0], UART_RX:U3|divider:U1|Q[1], UART_RX:U3|divider:U1|Q[2], ;
+;                       ; due to stuck port data_in ; UART_RX:U3|divider:U1|Q[3], UART_RX:U3|divider:U1|Q[4]                              ;
++-----------------------+---------------------------+-------------------------------------------------------------------------------------+
+
+
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 34    ;
+; Total registers                              ; 33    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 8     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 19    ;
+; Number of registers using Clock Enable       ; 24    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -268,8 +322,10 @@ Encoding Type:  One-Hot
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
 ; 3:1                ; 3 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; Yes        ; |UART|UART_TX:U2|divider:U1|Q[1] ;
-; 3:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |UART|UART_TX:U2|shift_reg[1]    ;
+; 3:1                ; 3 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; Yes        ; |UART|UART_RX:U3|divider:U1|Q[4] ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |UART|UART_TX:U2|shift_reg[8]    ;
 ; 3:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; Yes        ; |UART|UART_TX:U2|divider:U1|Q[0] ;
+; 3:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; Yes        ; |UART|UART_RX:U3|divider:U1|Q[0] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
 
 
@@ -295,14 +351,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "UART_TX:U2|divider:U1"                                                                                                                                                              ;
-+--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
-+--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; En     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; En[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
-+--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART_RX:U3 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; idle           ; 00    ; Unsigned Binary                ;
+; read           ; 01    ; Unsigned Binary                ;
+; finish         ; 11    ; Unsigned Binary                ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART_RX:U3|divider:U1 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; N              ; 6     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------+
@@ -311,7 +379,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Mon Oct 26 10:18:46 2015
+    Info: Processing started: Mon Oct 26 14:06:38 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off UART -c UART
 Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info: Found 1 design units, including 1 entities, in source file uart.v
@@ -322,46 +390,43 @@ Info: Found 1 design units, including 1 entities, in source file divider.v
     Info: Found entity 1: divider
 Info: Found 1 design units, including 1 entities, in source file uart_rx.v
     Info: Found entity 1: UART_RX
-Warning (10227): Verilog HDL Port Declaration warning at UART.v(17): data type declaration for "data" declares packed dimensions but the port declaration declaration does not
+Warning (10227): Verilog HDL Port Declaration warning at UART.v(18): data type declaration for "data" declares packed dimensions but the port declaration declaration does not
 Info (10499): HDL info at UART.v(5): see declaration for object "data"
 Warning (10227): Verilog HDL Port Declaration warning at UART_TX.v(13): data type declaration for "data" declares packed dimensions but the port declaration declaration does not
 Info (10499): HDL info at UART_TX.v(3): see declaration for object "data"
 Warning (10227): Verilog HDL Port Declaration warning at UART_RX.v(11): data type declaration for "data" declares packed dimensions but the port declaration declaration does not
 Info (10499): HDL info at UART_RX.v(3): see declaration for object "data"
 Info: Elaborating entity "UART" for the top level hierarchy
-Warning (10034): Output port "error" at UART.v(9) has no driver
-Warning (10034): Output port "rdc" at UART.v(11) has no driver
-Warning (10034): Output port "rdf" at UART.v(13) has no driver
 Info: Elaborating entity "UART_TX" for hierarchy "UART_TX:U2"
 Warning (10230): Verilog HDL assignment warning at UART_TX.v(64): truncated value with size 32 to match size of target (4)
 Info: Elaborating entity "divider" for hierarchy "UART_TX:U2|divider:U1"
 Warning (10230): Verilog HDL assignment warning at divider.v(8): truncated value with size 32 to match size of target (5)
 Warning (10230): Verilog HDL assignment warning at divider.v(26): truncated value with size 32 to match size of target (5)
-Warning: 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning: The following bidir pins have no drivers
-    Warning: Bidir "data[0]" has no driver
-    Warning: Bidir "data[1]" has no driver
-    Warning: Bidir "data[2]" has no driver
-    Warning: Bidir "data[3]" has no driver
-    Warning: Bidir "data[4]" has no driver
-    Warning: Bidir "data[5]" has no driver
-    Warning: Bidir "data[6]" has no driver
-    Warning: Bidir "data[7]" has no driver
+Info: Elaborating entity "UART_RX" for hierarchy "UART_RX:U3"
+Warning (10036): Verilog HDL or VHDL warning at UART_RX.v(16): object "rss" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at UART_RX.v(32): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at UART_RX.v(78): truncated value with size 32 to match size of target (4)
 Warning: Output pins are stuck at VCC or GND
-    Warning (13410): Pin "error" is stuck at GND
+    Warning (13410): Pin "clk_rx" is stuck at GND
+    Warning (13410): Pin "error" is stuck at VCC
     Warning (13410): Pin "rdc" is stuck at GND
     Warning (13410): Pin "rdf" is stuck at GND
+Info: 4 registers lost all their fanouts during netlist optimizations. The first 4 are displayed below.
+    Info: Register "UART_RX:U3|c[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "UART_RX:U3|c[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "UART_RX:U3|c[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "UART_RX:U3|state.idle" lost all its fanouts during netlist optimizations.
 Warning: Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "rd"
     Warning (15610): No output dependent on input pin "Rxd"
-Info: Implemented 66 device resources after synthesis - the final resource count might be different
+Info: Implemented 68 device resources after synthesis - the final resource count might be different
     Info: Implemented 6 input pins
-    Info: Implemented 7 output pins
+    Info: Implemented 8 output pins
     Info: Implemented 8 bidirectional pins
-    Info: Implemented 45 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 26 warnings
+    Info: Implemented 46 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 17 warnings
     Info: Peak virtual memory: 218 megabytes
-    Info: Processing ended: Mon Oct 26 10:18:47 2015
+    Info: Processing ended: Mon Oct 26 14:06:39 2015
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

@@ -1,5 +1,5 @@
 Fitter report for UART
-Mon Oct 26 10:18:52 2015
+Mon Oct 26 14:06:44 2015
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -11,39 +11,38 @@ Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
   3. Fitter Settings
   4. Parallel Compilation
   5. I/O Assignment Warnings
-  6. Fitter Netlist Optimizations
-  7. Incremental Compilation Preservation Summary
-  8. Incremental Compilation Partition Settings
-  9. Incremental Compilation Placement Preservation
- 10. HardCopy Device Resource Guide
- 11. Pin-Out File
- 12. Fitter Resource Usage Summary
- 13. Input Pins
- 14. Output Pins
- 15. Bidir Pins
- 16. I/O Bank Usage
- 17. All Package Pins
- 18. Output Pin Default Load For Reported TCO
- 19. Fitter Resource Utilization by Entity
- 20. Delay Chain Summary
- 21. Pad To Core Delay Chain Fanout
- 22. Control Signals
- 23. Global & Other Fast Signals
- 24. Non-Global High Fan-Out Signals
- 25. Interconnect Usage Summary
- 26. LAB Logic Elements
- 27. LAB-wide Signals
- 28. LAB Signals Sourced
- 29. LAB Signals Sourced Out
- 30. LAB Distinct Inputs
- 31. I/O Rules Summary
- 32. I/O Rules Details
- 33. I/O Rules Matrix
- 34. Fitter Device Options
- 35. Operating Settings and Conditions
- 36. Estimated Delay Added for Hold Timing
- 37. Fitter Messages
- 38. Fitter Suppressed Messages
+  6. Incremental Compilation Preservation Summary
+  7. Incremental Compilation Partition Settings
+  8. Incremental Compilation Placement Preservation
+  9. HardCopy Device Resource Guide
+ 10. Pin-Out File
+ 11. Fitter Resource Usage Summary
+ 12. Input Pins
+ 13. Output Pins
+ 14. Bidir Pins
+ 15. I/O Bank Usage
+ 16. All Package Pins
+ 17. Output Pin Default Load For Reported TCO
+ 18. Fitter Resource Utilization by Entity
+ 19. Delay Chain Summary
+ 20. Pad To Core Delay Chain Fanout
+ 21. Control Signals
+ 22. Global & Other Fast Signals
+ 23. Non-Global High Fan-Out Signals
+ 24. Interconnect Usage Summary
+ 25. LAB Logic Elements
+ 26. LAB-wide Signals
+ 27. LAB Signals Sourced
+ 28. LAB Signals Sourced Out
+ 29. LAB Distinct Inputs
+ 30. I/O Rules Summary
+ 31. I/O Rules Details
+ 32. I/O Rules Matrix
+ 33. Fitter Device Options
+ 34. Operating Settings and Conditions
+ 35. Estimated Delay Added for Hold Timing
+ 36. Fitter Messages
+ 37. Fitter Suppressed Messages
 
 
 
@@ -69,7 +68,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------+
 ; Fitter Summary                                                           ;
 +-------------------------------+------------------------------------------+
-; Fitter Status                 ; Successful - Mon Oct 26 10:18:52 2015    ;
+; Fitter Status                 ; Successful - Mon Oct 26 14:06:44 2015    ;
 ; Quartus II Version            ; 9.1 Build 222 10/21/2009 SJ Full Version ;
 ; Revision Name                 ; UART                                     ;
 ; Top-level Entity Name         ; UART                                     ;
@@ -78,9 +77,9 @@ applicable agreement for further details.
 ; Timing Models                 ; Final                                    ;
 ; Logic utilization             ; < 1 %                                    ;
 ;     Combinational ALUTs       ; 30 / 12,480 ( < 1 % )                    ;
-;     Dedicated logic registers ; 35 / 12,480 ( < 1 % )                    ;
-; Total registers               ; 35                                       ;
-; Total pins                    ; 21 / 343 ( 6 % )                         ;
+;     Dedicated logic registers ; 33 / 12,480 ( < 1 % )                    ;
+; Total registers               ; 33                                       ;
+; Total pins                    ; 22 / 343 ( 6 % )                         ;
 ; Total virtual pins            ; 0                                        ;
 ; Total block memory bits       ; 0 / 419,328 ( 0 % )                      ;
 ; DSP block 9-bit elements      ; 0 / 96 ( 0 % )                           ;
@@ -149,12 +148,12 @@ applicable agreement for further details.
 ; Number detected on machine ; 2           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
+; Average used               ; 1.40        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     1 processor            ; 100.0%      ;
-;     2 processors           ; < 0.1%      ;
+;     2 processors           ;  25.0%      ;
 +----------------------------+-------------+
 
 
@@ -171,30 +170,21 @@ applicable agreement for further details.
 ; data[5]  ; Incomplete set of assignments ;
 ; data[6]  ; Incomplete set of assignments ;
 ; data[7]  ; Incomplete set of assignments ;
-; clk_div  ; Incomplete set of assignments ;
-; rd       ; Incomplete set of assignments ;
+; clk_tx   ; Incomplete set of assignments ;
+; clk_rx   ; Incomplete set of assignments ;
 ; error    ; Incomplete set of assignments ;
 ; dbf      ; Incomplete set of assignments ;
 ; rdc      ; Incomplete set of assignments ;
 ; tdf      ; Incomplete set of assignments ;
 ; rdf      ; Incomplete set of assignments ;
 ; Txd      ; Incomplete set of assignments ;
+; rd       ; Incomplete set of assignments ;
 ; Rxd      ; Incomplete set of assignments ;
 ; rst      ; Incomplete set of assignments ;
-; clk      ; Incomplete set of assignments ;
 ; wr       ; Incomplete set of assignments ;
+; clk      ; Incomplete set of assignments ;
 ; ce       ; Incomplete set of assignments ;
 +----------+-------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Netlist Optimizations                                                                                                                                                                                                          ;
-+----------------------------+------------+---------------------------------------------------+--------------------------+-----------+----------------+--------------------------------------+------------------+-----------------------+
-; Node                       ; Action     ; Operation                                         ; Reason                   ; Node Port ; Node Port Name ; Destination Node                     ; Destination Port ; Destination Port Name ;
-+----------------------------+------------+---------------------------------------------------+--------------------------+-----------+----------------+--------------------------------------+------------------+-----------------------+
-; UART_TX:U2|divider:U1|Q[2] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization ;           ;                ; UART_TX:U2|divider:U1|Q[2]~DUPLICATE ;                  ;                       ;
-; UART_TX:U2|divider:U1|Q~2  ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization ;           ;                ; UART_TX:U2|divider:U1|Q~2DUPLICATE   ;                  ;                       ;
-+----------------------------+------------+---------------------------------------------------+--------------------------+-----------+----------------+--------------------------------------+------------------+-----------------------+
 
 
 +----------------------------------------------+
@@ -203,8 +193,8 @@ applicable agreement for further details.
 ; Type                    ; Value              ;
 +-------------------------+--------------------+
 ; Placement               ;                    ;
-;     -- Requested        ; 0 / 88 ( 0.00 % )  ;
-;     -- Achieved         ; 0 / 88 ( 0.00 % )  ;
+;     -- Requested        ; 0 / 89 ( 0.00 % )  ;
+;     -- Achieved         ; 0 / 89 ( 0.00 % )  ;
 ;                         ;                    ;
 ; Routing (by Connection) ;                    ;
 ;     -- Requested        ; 0 / 0 ( 0.00 % )   ;
@@ -226,7 +216,7 @@ applicable agreement for further details.
 +----------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +----------------+---------+-------------------+-------------------------+-------------------+
-; Top            ; 88      ; 0                 ; N/A                     ; Source File       ;
+; Top            ; 89      ; 0                 ; N/A                     ; Source File       ;
 +----------------+---------+-------------------+-------------------------+-------------------+
 
 
@@ -259,7 +249,7 @@ Migrate your design from the selected FPGA device and compile for the HardCopy c
 ;   -- Logic cells                ; 46                   ; --           ; --           ; --           ; --           ; --            ; --            ; --            ;
 ;   -- DSP elements               ; 0                    ; --           ; --           ; --           ; --           ; --            ; --            ; --            ;
 ; Pins                            ;                      ;              ;              ;              ;              ;               ;               ;               ;
-;   -- Total                      ; 21                   ; 21 / 309     ; 21 / 335     ; 21 / 493     ; 21 / 495     ; 21 / 699      ; 21 / 743      ; 21 / 952      ;
+;   -- Total                      ; 22                   ; 22 / 309     ; 22 / 335     ; 22 / 493     ; 22 / 495     ; 22 / 699      ; 22 / 743      ; 22 / 952      ;
 ;   -- Differential Input         ; 0                    ; 0 / 66       ; 0 / 70       ; 0 / 90       ; 0 / 90       ; 0 / 128       ; 0 / 224       ; 0 / 272       ;
 ;   -- Differential Output        ; 0                    ; 0 / 44       ; 0 / 50       ; 0 / 70       ; 0 / 70       ; 0 / 112       ; 0 / 200       ; 0 / 256       ;
 ;   -- PCI / PCI-X                ; 0                    ; 0 / 159      ; 0 / 166      ; 0 / 244      ; 0 / 246      ; 0 / 358       ; 0 / 366       ; 0 / 471       ;
@@ -291,77 +281,77 @@ Migrate your design from the selected FPGA device and compile for the HardCopy c
 The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experiment_UART/UART.pin.
 
 
-+-----------------------------------------------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                                                             ;
-+-----------------------------------------------------------------------------------+-----------------------+
-; Resource                                                                          ; Usage                 ;
-+-----------------------------------------------------------------------------------+-----------------------+
-; Combinational ALUTs                                                               ; 30 / 12,480 ( < 1 % ) ;
-; Dedicated logic registers                                                         ; 35 / 12,480 ( < 1 % ) ;
-;                                                                                   ;                       ;
-; Combinational ALUT usage by number of inputs                                      ;                       ;
-;     -- 7 input functions                                                          ; 1                     ;
-;     -- 6 input functions                                                          ; 1                     ;
-;     -- 5 input functions                                                          ; 3                     ;
-;     -- 4 input functions                                                          ; 7                     ;
-;     -- <=3 input functions                                                        ; 18                    ;
-;                                                                                   ;                       ;
-; Combinational ALUTs by mode                                                       ;                       ;
-;     -- normal mode                                                                ; 24                    ;
-;     -- extended LUT mode                                                          ; 1                     ;
-;     -- arithmetic mode                                                            ; 5                     ;
-;     -- shared arithmetic mode                                                     ; 0                     ;
-;                                                                                   ;                       ;
-; Logic utilization                                                                 ; 53 / 12,480 ( < 1 % ) ;
-;     -- Difficulty Clustering Design                                               ; Low                   ;
-;     -- Combinational ALUT/register pairs used in final Placement                  ; 46                    ;
-;         -- Combinational with no register                                         ; 11                    ;
-;         -- Register only                                                          ; 16                    ;
-;         -- Combinational with a register                                          ; 19                    ;
-;     -- Estimated pairs recoverable by pairing ALUTs and registers as design grows ; 0                     ;
-;     -- Estimated Combinational ALUT/register pairs unavailable                    ; 7                     ;
-;         -- Unavailable due to unpartnered 7 LUTs                                  ; 1                     ;
-;         -- Unavailable due to unpartnered 6 LUTs                                  ; 1                     ;
-;         -- Unavailable due to unpartnered 5 LUTs                                  ; 0                     ;
-;         -- Unavailable due to LAB-wide signal conflicts                           ; 5                     ;
-;         -- Unavailable due to LAB input limits                                    ; 0                     ;
-;                                                                                   ;                       ;
-; Total registers*                                                                  ; 35 / 14,410 ( < 1 % ) ;
-;     -- Dedicated logic registers                                                  ; 35 / 12,480 ( < 1 % ) ;
-;     -- I/O registers                                                              ; 0 / 1,930 ( 0 % )     ;
-;                                                                                   ;                       ;
-; ALMs:  partially or completely used                                               ; 30 / 6,240 ( < 1 % )  ;
-;                                                                                   ;                       ;
-; Total LABs:  partially or completely used                                         ; 4 / 780 ( < 1 % )     ;
-;                                                                                   ;                       ;
-; User inserted logic elements                                                      ; 0                     ;
-; Virtual pins                                                                      ; 0                     ;
-; I/O pins                                                                          ; 21 / 343 ( 6 % )      ;
-;     -- Clock pins                                                                 ; 2 / 16 ( 13 % )       ;
-; Global signals                                                                    ; 2                     ;
-; M512s                                                                             ; 0 / 104 ( 0 % )       ;
-; M4Ks                                                                              ; 0 / 78 ( 0 % )        ;
-; Total block memory bits                                                           ; 0 / 419,328 ( 0 % )   ;
-; Total block memory implementation bits                                            ; 0 / 419,328 ( 0 % )   ;
-; DSP block 9-bit elements                                                          ; 0 / 96 ( 0 % )        ;
-; PLLs                                                                              ; 0 / 6 ( 0 % )         ;
-; Global clocks                                                                     ; 2 / 16 ( 13 % )       ;
-; Regional clocks                                                                   ; 0 / 32 ( 0 % )        ;
-; SERDES transmitters                                                               ; 0 / 38 ( 0 % )        ;
-; SERDES receivers                                                                  ; 0 / 42 ( 0 % )        ;
-; JTAGs                                                                             ; 0 / 1 ( 0 % )         ;
-; ASMI blocks                                                                       ; 0 / 1 ( 0 % )         ;
-; CRC blocks                                                                        ; 0 / 1 ( 0 % )         ;
-; Remote update blocks                                                              ; 0 / 1 ( 0 % )         ;
-; Average interconnect usage (total/H/V)                                            ; 0% / 0% / 0%          ;
-; Peak interconnect usage (total/H/V)                                               ; 0% / 0% / 0%          ;
-; Maximum fan-out node                                                              ; clk~clkctrl           ;
-; Maximum fan-out                                                                   ; 18                    ;
-; Highest non-global fan-out signal                                                 ; UART_TX:U2|state.idle ;
-; Highest non-global fan-out                                                        ; 16                    ;
-; Total fan-out                                                                     ; 224                   ;
-; Average fan-out                                                                   ; 2.17                  ;
-+-----------------------------------------------------------------------------------+-----------------------+
++---------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                                                                             ;
++-----------------------------------------------------------------------------------+---------------------------------------+
+; Resource                                                                          ; Usage                                 ;
++-----------------------------------------------------------------------------------+---------------------------------------+
+; Combinational ALUTs                                                               ; 30 / 12,480 ( < 1 % )                 ;
+; Dedicated logic registers                                                         ; 33 / 12,480 ( < 1 % )                 ;
+;                                                                                   ;                                       ;
+; Combinational ALUT usage by number of inputs                                      ;                                       ;
+;     -- 7 input functions                                                          ; 1                                     ;
+;     -- 6 input functions                                                          ; 1                                     ;
+;     -- 5 input functions                                                          ; 3                                     ;
+;     -- 4 input functions                                                          ; 8                                     ;
+;     -- <=3 input functions                                                        ; 17                                    ;
+;                                                                                   ;                                       ;
+; Combinational ALUTs by mode                                                       ;                                       ;
+;     -- normal mode                                                                ; 24                                    ;
+;     -- extended LUT mode                                                          ; 1                                     ;
+;     -- arithmetic mode                                                            ; 5                                     ;
+;     -- shared arithmetic mode                                                     ; 0                                     ;
+;                                                                                   ;                                       ;
+; Logic utilization                                                                 ; 48 / 12,480 ( < 1 % )                 ;
+;     -- Difficulty Clustering Design                                               ; Low                                   ;
+;     -- Combinational ALUT/register pairs used in final Placement                  ; 46                                    ;
+;         -- Combinational with no register                                         ; 13                                    ;
+;         -- Register only                                                          ; 16                                    ;
+;         -- Combinational with a register                                          ; 17                                    ;
+;     -- Estimated pairs recoverable by pairing ALUTs and registers as design grows ; 0                                     ;
+;     -- Estimated Combinational ALUT/register pairs unavailable                    ; 2                                     ;
+;         -- Unavailable due to unpartnered 7 LUTs                                  ; 1                                     ;
+;         -- Unavailable due to unpartnered 6 LUTs                                  ; 1                                     ;
+;         -- Unavailable due to unpartnered 5 LUTs                                  ; 0                                     ;
+;         -- Unavailable due to LAB-wide signal conflicts                           ; 0                                     ;
+;         -- Unavailable due to LAB input limits                                    ; 0                                     ;
+;                                                                                   ;                                       ;
+; Total registers*                                                                  ; 33 / 14,410 ( < 1 % )                 ;
+;     -- Dedicated logic registers                                                  ; 33 / 12,480 ( < 1 % )                 ;
+;     -- I/O registers                                                              ; 0 / 1,930 ( 0 % )                     ;
+;                                                                                   ;                                       ;
+; ALMs:  partially or completely used                                               ; 25 / 6,240 ( < 1 % )                  ;
+;                                                                                   ;                                       ;
+; Total LABs:  partially or completely used                                         ; 5 / 780 ( < 1 % )                     ;
+;                                                                                   ;                                       ;
+; User inserted logic elements                                                      ; 0                                     ;
+; Virtual pins                                                                      ; 0                                     ;
+; I/O pins                                                                          ; 22 / 343 ( 6 % )                      ;
+;     -- Clock pins                                                                 ; 3 / 16 ( 19 % )                       ;
+; Global signals                                                                    ; 2                                     ;
+; M512s                                                                             ; 0 / 104 ( 0 % )                       ;
+; M4Ks                                                                              ; 0 / 78 ( 0 % )                        ;
+; Total block memory bits                                                           ; 0 / 419,328 ( 0 % )                   ;
+; Total block memory implementation bits                                            ; 0 / 419,328 ( 0 % )                   ;
+; DSP block 9-bit elements                                                          ; 0 / 96 ( 0 % )                        ;
+; PLLs                                                                              ; 0 / 6 ( 0 % )                         ;
+; Global clocks                                                                     ; 2 / 16 ( 13 % )                       ;
+; Regional clocks                                                                   ; 0 / 32 ( 0 % )                        ;
+; SERDES transmitters                                                               ; 0 / 38 ( 0 % )                        ;
+; SERDES receivers                                                                  ; 0 / 42 ( 0 % )                        ;
+; JTAGs                                                                             ; 0 / 1 ( 0 % )                         ;
+; ASMI blocks                                                                       ; 0 / 1 ( 0 % )                         ;
+; CRC blocks                                                                        ; 0 / 1 ( 0 % )                         ;
+; Remote update blocks                                                              ; 0 / 1 ( 0 % )                         ;
+; Average interconnect usage (total/H/V)                                            ; 0% / 0% / 0%                          ;
+; Peak interconnect usage (total/H/V)                                               ; 0% / 0% / 0%                          ;
+; Maximum fan-out node                                                              ; UART_TX:U2|divider:U1|Clk_out~clkctrl ;
+; Maximum fan-out                                                                   ; 27                                    ;
+; Highest non-global fan-out signal                                                 ; UART_TX:U2|state.idle                 ;
+; Highest non-global fan-out                                                        ; 16                                    ;
+; Total fan-out                                                                     ; 225                                   ;
+; Average fan-out                                                                   ; 2.18                                  ;
++-----------------------------------------------------------------------------------+---------------------------------------+
 *  Register count does not include registers inside block RAM or DSP blocks.
 
 
@@ -371,28 +361,29 @@ The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experi
 +------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 ; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
 +------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
-; Rxd  ; V16   ; 8        ; 2            ; 0            ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; ce   ; H3    ; 5        ; 40           ; 22           ; 0           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Rxd  ; P20   ; 1        ; 0            ; 9            ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; ce   ; A8    ; 4        ; 26           ; 27           ; 3           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
 ; clk  ; N20   ; 1        ; 0            ; 10           ; 1           ; 2                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; rd   ; R3    ; 6        ; 40           ; 6            ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; rst  ; E14   ; 3        ; 7            ; 27           ; 0           ; 13                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; wr   ; U1    ; 6        ; 40           ; 5            ; 0           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; rd   ; F6    ; 4        ; 38           ; 27           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; rst  ; C18   ; 3        ; 10           ; 27           ; 3           ; 12                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; wr   ; C9    ; 9        ; 26           ; 27           ; 1           ; 5                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
 +------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Output Pins                                                                                                                                                                                                                                                                                                                           ;
-+---------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
-; Name    ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Output Enable Register ; Power Up High ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination ; Location assigned by ; Load ; Output Enable Source ; Output Enable Group ;
-+---------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
-; Txd     ; AA9   ; 10       ; 25           ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; clk_div ; J3    ; 5        ; 40           ; 19           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 12mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; dbf     ; T18   ; 1        ; 0            ; 5            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 12mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; error   ; P21   ; 1        ; 0            ; 9            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 12mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; rdc     ; B17   ; 3        ; 11           ; 27           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; rdf     ; G19   ; 2        ; 0            ; 22           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 12mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; tdf     ; AA4   ; 7        ; 38           ; 0            ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-+---------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                                                                                                                                                          ;
++--------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
+; Name   ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Output Enable Register ; Power Up High ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination ; Location assigned by ; Load ; Output Enable Source ; Output Enable Group ;
++--------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
+; Txd    ; A6    ; 4        ; 30           ; 27           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; clk_rx ; G16   ; 3        ; 3            ; 27           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; clk_tx ; N21   ; 1        ; 0            ; 10           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 12mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; dbf    ; B10   ; 9        ; 25           ; 27           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; error  ; AA8   ; 7        ; 26           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; rdc    ; P21   ; 1        ; 0            ; 9            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 12mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; rdf    ; Y5    ; 7        ; 31           ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; tdf    ; AA6   ; 7        ; 30           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
++--------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -400,14 +391,14 @@ The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experi
 +---------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------------+------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 ; Name    ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Output Register ; Output Enable Register ; Power Up High ; PCI I/O Enabled ; Open Drain ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination ; Location assigned by ; Load ; Output Enable Source ; Output Enable Group ;
 +---------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------------+------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
-; data[0] ; A5    ; 4        ; 31           ; 27           ; 3           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; data[1] ; D3    ; 4        ; 38           ; 27           ; 3           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; data[2] ; G8    ; 4        ; 37           ; 27           ; 3           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; data[3] ; D8    ; 4        ; 34           ; 27           ; 0           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; data[4] ; T5    ; 6        ; 40           ; 5            ; 1           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 12mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; data[5] ; R5    ; 6        ; 40           ; 6            ; 1           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 12mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; data[6] ; N1    ; 6        ; 40           ; 10           ; 0           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 12mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; data[7] ; T6    ; 6        ; 40           ; 5            ; 2           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 12mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[0] ; W11   ; 8        ; 17           ; 0            ; 3           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[1] ; W10   ; 7        ; 22           ; 0            ; 1           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[2] ; Y1    ; 6        ; 40           ; 1            ; 0           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 12mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[3] ; R18   ; 1        ; 0            ; 6            ; 2           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 12mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[4] ; T6    ; 6        ; 40           ; 5            ; 2           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 12mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[5] ; AB8   ; 7        ; 26           ; 0            ; 3           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[6] ; W3    ; 6        ; 40           ; 1            ; 1           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 12mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[7] ; T4    ; 6        ; 40           ; 4            ; 3           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 12mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
 +---------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------------+------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 
 
@@ -416,16 +407,16 @@ The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experi
 +----------+-----------------+---------------+--------------+
 ; I/O Bank ; Usage           ; VCCIO Voltage ; VREF Voltage ;
 +----------+-----------------+---------------+--------------+
-; 1        ; 3 / 40 ( 8 % )  ; 3.3V          ; --           ;
-; 2        ; 1 / 44 ( 2 % )  ; 3.3V          ; --           ;
+; 1        ; 5 / 40 ( 13 % ) ; 3.3V          ; --           ;
+; 2        ; 0 / 44 ( 0 % )  ; 3.3V          ; --           ;
 ; 3        ; 3 / 50 ( 6 % )  ; 3.3V          ; --           ;
-; 4        ; 4 / 35 ( 11 % ) ; 3.3V          ; --           ;
-; 5        ; 2 / 44 ( 5 % )  ; 3.3V          ; --           ;
-; 6        ; 6 / 40 ( 15 % ) ; 3.3V          ; --           ;
-; 7        ; 1 / 34 ( 3 % )  ; 3.3V          ; --           ;
+; 4        ; 3 / 35 ( 9 % )  ; 3.3V          ; --           ;
+; 5        ; 0 / 44 ( 0 % )  ; 3.3V          ; --           ;
+; 6        ; 4 / 40 ( 10 % ) ; 3.3V          ; --           ;
+; 7        ; 5 / 34 ( 15 % ) ; 3.3V          ; --           ;
 ; 8        ; 1 / 43 ( 2 % )  ; 3.3V          ; --           ;
-; 9        ; 0 / 6 ( 0 % )   ; 3.3V          ; --           ;
-; 10       ; 1 / 6 ( 17 % )  ; 3.3V          ; --           ;
+; 9        ; 2 / 6 ( 33 % )  ; 3.3V          ; --           ;
+; 10       ; 0 / 6 ( 0 % )   ; 3.3V          ; --           ;
 +----------+-----------------+---------------+--------------+
 
 
@@ -438,10 +429,10 @@ The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experi
 ; A2       ;            ;          ; TEMPDIODEp               ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; A3       ;            ; 4        ; VCCIO4                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; A4       ; 277        ; 4        ; ^MSEL3                   ;        ;              ;         ; --         ;                 ; --       ; --           ;
-; A5       ; 307        ; 4        ; data[0]                  ; bidir  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; A6       ; 311        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; A5       ; 307        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; A6       ; 311        ; 4        ; Txd                      ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; A7       ; 315        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; A8       ; 318        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; A8       ; 318        ; 4        ; ce                       ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; A9       ;            ;          ; GND                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; A10      ; 323        ; 9        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A11      ;            ; 4        ; VCCIO4                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
@@ -459,12 +450,12 @@ The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experi
 ; AA1      ;            ; 6        ; VCCIO6                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; AA2      ;            ;          ; GND                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AA3      ; 191        ; 7        ; ^nCEO                    ;        ;              ;         ; --         ;                 ; --       ; --           ;
-; AA4      ; 181        ; 7        ; tdf                      ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AA4      ; 181        ; 7        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA5      ; 163        ; 7        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AA6      ; 159        ; 7        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AA6      ; 159        ; 7        ; tdf                      ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AA7      ; 155        ; 7        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AA8      ; 151        ; 7        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AA9      ; 144        ; 10       ; Txd                      ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AA8      ; 151        ; 7        ; error                    ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AA9      ; 144        ; 10       ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA10     ; 147        ; 10       ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA11     ; 141        ; 7        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA12     ; 138        ; 8        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -485,7 +476,7 @@ The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experi
 ; AB5      ; 161        ; 7        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AB6      ; 157        ; 7        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AB7      ; 153        ; 7        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AB8      ; 150        ; 7        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AB8      ; 150        ; 7        ; data[5]                  ; bidir  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AB9      ;            ;          ; GND                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AB10     ; 145        ; 10       ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AB11     ;            ; 7        ; VCCIO7                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
@@ -509,14 +500,14 @@ The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experi
 ; B7       ; 313        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B8       ; 317        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B9       ; 320        ; 9        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B10      ; 321        ; 9        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; B10      ; 321        ; 9        ; dbf                      ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; B11      ; 327        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B12      ; 328        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B13      ; 331        ; 3        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B14      ;            ; 3        ; VREFB3                   ; power  ;              ;         ; --         ;                 ; --       ; --           ;
 ; B15      ; 341        ; 3        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B16      ; 345        ; 3        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B17      ; 349        ; 3        ; rdc                      ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B17      ; 349        ; 3        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B18      ; 353        ; 3        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B19      ; 377        ; 3        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B20      ; 381        ; 3        ; ^nSTATUS                 ;        ;              ;         ; --         ;                 ; --       ; --           ;
@@ -530,7 +521,7 @@ The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experi
 ; C6       ; 308        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C7       ; 316        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C8       ; 314        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; C9       ; 319        ; 9        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; C9       ; 319        ; 9        ; wr                       ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; C10      ; 324        ; 9        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C11      ; 325        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C12      ; 326        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -539,19 +530,19 @@ The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experi
 ; C15      ; 342        ; 3        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C16      ; 344        ; 3        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C17      ; 352        ; 3        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; C18      ; 355        ; 3        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; C18      ; 355        ; 3        ; rst                      ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; C19      ; 369        ; 3        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C20      ; 384        ; 3        ; ^CONF_DONE               ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; C21      ; 2          ; 2        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; C22      ; 0          ; 2        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; D1       ; 271        ; 5        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; D2       ; 269        ; 5        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; D3       ; 287        ; 4        ; data[1]                  ; bidir  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D3       ; 287        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D4       ; 278        ; 4        ; ^MSEL1                   ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; D5       ; 283        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D6       ; 293        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D7       ;            ; 4        ; VREFB4                   ; power  ;              ;         ; --         ;                 ; --       ; --           ;
-; D8       ; 297        ; 4        ; data[3]                  ; bidir  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D8       ; 297        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D9       ;            ; 4        ; VREFB4                   ; power  ;              ;         ; --         ;                 ; --       ; --           ;
 ; D10      ; 322        ; 9        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D11      ; 337        ; 3        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -579,7 +570,7 @@ The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experi
 ; E11      ; 335        ; 3        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; E12      ; 339        ; 3        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; E13      ; 338        ; 3        ; ~DATA0~ / RESERVED_INPUT ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; E14      ; 357        ; 3        ; rst                      ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; E14      ; 357        ; 3        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; E15      ; 365        ; 3        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; E16      ; 374        ; 3        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; E17      ; 376        ; 3        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -593,7 +584,7 @@ The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experi
 ; F3       ;            ; 5        ; VREFB5                   ; power  ;              ;         ; --         ;                 ; --       ; --           ;
 ; F4       ; 270        ; 5        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; F5       ; 268        ; 5        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; F6       ; 288        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; F6       ; 288        ; 4        ; rd                       ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; F7       ; 296        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F8       ; 294        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F9       ; 300        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -617,7 +608,7 @@ The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experi
 ; G5       ; 266        ; 5        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G6       ; 264        ; 5        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G7       ; 286        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; G8       ; 291        ; 4        ; data[2]                  ; bidir  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; G8       ; 291        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G9       ; 302        ; 4        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G10      ;            ; 9        ; VCC_PLL5_OUT             ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; G11      ;            ;          ; VCCD_PLL5                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
@@ -625,16 +616,16 @@ The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experi
 ; G13      ; 348        ; 3        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G14      ; 359        ; 3        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G15      ; 366        ; 3        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; G16      ; 370        ; 3        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; G16      ; 370        ; 3        ; clk_rx                   ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; G17      ; 7          ; 2        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G18      ; 5          ; 2        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; G19      ; 19         ; 2        ; rdf                      ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; G19      ; 19         ; 2        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G20      ; 17         ; 2        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G21      ; 22         ; 2        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G22      ; 20         ; 2        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H1       ; 251        ; 5        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H2       ; 249        ; 5        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; H3       ; 259        ; 5        ; ce                       ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; H3       ; 259        ; 5        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H4       ; 257        ; 5        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H5       ; 254        ; 5        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H6       ; 252        ; 5        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -656,7 +647,7 @@ The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experi
 ; H22      ; 24         ; 2        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J1       ;            ;          ; GND                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; J2       ; 247        ; 5        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; J3       ; 245        ; 5        ; clk_div                  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J3       ; 245        ; 5        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J4       ;            ; 5        ; VREFB5                   ; power  ;              ;         ; --         ;                 ; --       ; --           ;
 ; J5       ; 250        ; 5        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J6       ; 248        ; 5        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -742,7 +733,7 @@ The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experi
 ; M20      ; 41         ; 2        ; GND+                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; M21      ; 43         ; 2        ; GND+                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; M22      ;            ; 1        ; VCCIO1                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; N1       ; 231        ; 6        ; data[6]                  ; bidir  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; N1       ; 231        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; N2       ; 229        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; N3       ; 230        ; 6        ; GND+                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; N4       ; 228        ; 6        ; GND+                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
@@ -762,7 +753,7 @@ The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experi
 ; N18      ;            ;          ; GNDA_PLL2                ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; N19      ; 47         ; 1        ; GND+                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; N20      ; 45         ; 1        ; clk                      ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; N21      ; 46         ; 1        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; N21      ; 46         ; 1        ; clk_tx                   ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; N22      ; 44         ; 1        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; P1       ;            ;          ; GND                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; P2       ; 227        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -783,14 +774,14 @@ The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experi
 ; P17      ; 57         ; 1        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; P18      ; 55         ; 1        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; P19      ; 53         ; 1        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; P20      ; 50         ; 1        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; P21      ; 48         ; 1        ; error                    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; P20      ; 50         ; 1        ; Rxd                      ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; P21      ; 48         ; 1        ; rdc                      ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; P22      ;            ;          ; GND                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; R1       ; 223        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; R2       ; 221        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; R3       ; 215        ; 6        ; rd                       ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; R3       ; 215        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; R4       ; 213        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; R5       ; 214        ; 6        ; data[5]                  ; bidir  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; R5       ; 214        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; R6       ; 212        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; R7       ; 202        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; R8       ; 200        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -803,7 +794,7 @@ The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experi
 ; R15      ; 89         ; 8        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; R16      ; 83         ; 1        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; R17      ; 81         ; 1        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; R18      ; 63         ; 1        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; R18      ; 63         ; 1        ; data[3]                  ; bidir  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; R19      ; 61         ; 1        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; R20      ;            ; 1        ; VREFB1                   ; power  ;              ;         ; --         ;                 ; --       ; --           ;
 ; R21      ; 54         ; 1        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -811,9 +802,9 @@ The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experi
 ; T1       ; 219        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; T2       ; 217        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; T3       ; 207        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; T4       ; 205        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; T5       ; 210        ; 6        ; data[4]                  ; bidir  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; T6       ; 208        ; 6        ; data[7]                  ; bidir  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; T4       ; 205        ; 6        ; data[7]                  ; bidir  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; T5       ; 210        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; T6       ; 208        ; 6        ; data[4]                  ; bidir  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; T7       ; 186        ; 7        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; T8       ; 172        ; 7        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; T9       ; 170        ; 7        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -825,12 +816,12 @@ The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experi
 ; T15      ; 98         ; 8        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; T16      ; 92         ; 8        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; T17      ; 67         ; 1        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; T18      ; 65         ; 1        ; dbf                      ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; T18      ; 65         ; 1        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; T19      ; 66         ; 1        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; T20      ; 64         ; 1        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; T21      ; 58         ; 1        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; T22      ; 56         ; 1        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; U1       ; 211        ; 6        ; wr                       ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; U1       ; 211        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; U2       ; 209        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; U3       ;            ; 6        ; VREFB6                   ; power  ;              ;         ; --         ;                 ; --       ; --           ;
 ; U4       ; 206        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -867,7 +858,7 @@ The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experi
 ; V13      ; 114        ; 8        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; V14      ; 105        ; 8        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; V15      ; 97         ; 8        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; V16      ; 93         ; 8        ; Rxd                      ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; V16      ; 93         ; 8        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; V17      ; 90         ; 8        ; ^VCCSEL                  ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; V18      ; 75         ; 1        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; V19      ; 73         ; 1        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -876,15 +867,15 @@ The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experi
 ; V22      ; 72         ; 1        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; W1       ; 199        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; W2       ; 197        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; W3       ; 194        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; W3       ; 194        ; 6        ; data[6]                  ; bidir  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; W4       ; 192        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; W5       ; 182        ; 7        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; W6       ;            ; 7        ; VREFB7                   ; power  ;              ;         ; --         ;                 ; --       ; --           ;
 ; W7       ; 177        ; 7        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; W8       ;            ; 7        ; VREFB7                   ; power  ;              ;         ; --         ;                 ; --       ; --           ;
 ; W9       ; 148        ; 10       ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; W10      ; 142        ; 7        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; W11      ; 133        ; 8        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; W10      ; 142        ; 7        ; data[1]                  ; bidir  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; W11      ; 133        ; 8        ; data[0]                  ; bidir  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; W12      ; 135        ; 8        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; W13      ; 128        ; 8        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; W14      ; 109        ; 8        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -896,11 +887,11 @@ The pin-out file can be found in E:/Discipline/Verilog/Experiment/Verilog_Experi
 ; W20      ; 77         ; 1        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; W21      ; 78         ; 1        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; W22      ; 76         ; 1        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; Y1       ; 195        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; Y1       ; 195        ; 6        ; data[2]                  ; bidir  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; Y2       ; 193        ; 6        ; GND*                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; Y3       ; 184        ; 7        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y4       ; 189        ; 7        ; PLL_ENA                  ;        ;              ;         ; --         ;                 ; --       ; --           ;
-; Y5       ; 162        ; 7        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; Y5       ; 162        ; 7        ; rdf                      ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; Y6       ; 160        ; 7        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y7       ; 154        ; 7        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y8       ; 152        ; 7        ; GND*                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -965,9 +956,9 @@ Note: User assignments will override these defaults. The user specified values a
 ; Compilation Hierarchy Node ; Combinational ALUTs ; ALMs    ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M512s ; M4Ks ; M-RAMs ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Combinational with no register ; Register-Only      ; Combinational with a register ; Full Hierarchy Name         ; Library Name ;
 ;                            ;                     ;         ;                           ;               ;                   ;       ;      ;        ;              ;         ;           ;           ;      ;              ; ALUT/register pair             ; ALUT/register pair ; ALUT/register pair            ;                             ;              ;
 +----------------------------+---------------------+---------+---------------------------+---------------+-------------------+-------+------+--------+--------------+---------+-----------+-----------+------+--------------+--------------------------------+--------------------+-------------------------------+-----------------------------+--------------+
-; |UART                      ; 30 (0)              ; 30 (0)  ; 35 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 21   ; 0            ; 11 (0)                         ; 16 (0)             ; 19 (0)                        ; |UART                       ; work         ;
-;    |UART_TX:U2|            ; 30 (17)             ; 30 (22) ; 35 (28)                   ; 0 (0)         ; 0                 ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 11 (5)                         ; 16 (16)            ; 19 (12)                       ; |UART|UART_TX:U2            ;              ;
-;       |divider:U1|         ; 13 (13)             ; 8 (8)   ; 7 (7)                     ; 0 (0)         ; 0                 ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 6 (6)                          ; 0 (0)              ; 7 (7)                         ; |UART|UART_TX:U2|divider:U1 ; work         ;
+; |UART                      ; 30 (0)              ; 25 (0)  ; 33 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 22   ; 0            ; 13 (0)                         ; 16 (0)             ; 17 (0)                        ; |UART                       ; work         ;
+;    |UART_TX:U2|            ; 30 (18)             ; 25 (18) ; 33 (27)                   ; 0 (0)         ; 0                 ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 13 (7)                         ; 16 (16)            ; 17 (11)                       ; |UART|UART_TX:U2            ;              ;
+;       |divider:U1|         ; 12 (12)             ; 8 (8)   ; 6 (6)                     ; 0 (0)         ; 0                 ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 6 (6)                          ; 0 (0)              ; 6 (6)                         ; |UART|UART_TX:U2|divider:U1 ; work         ;
 +----------------------------+---------------------+---------+---------------------------+---------------+-------------------+-------+------+--------+--------------+---------+-----------+-----------+------+--------------+--------------------------------+--------------------+-------------------------------+-----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -979,93 +970,94 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------+----------+---------------+---------------+-----------------------+-----+-----------+---------+----------+------------+
 ; data[0] ; Bidir    ; (7) 2996 ps   ; (7) 2996 ps   ; --                    ; --  ; (0) 52 ps ; --      ; --       ; --         ;
 ; data[1] ; Bidir    ; (7) 2996 ps   ; (7) 2996 ps   ; --                    ; --  ; (0) 52 ps ; --      ; --       ; --         ;
-; data[2] ; Bidir    ; (7) 2996 ps   ; (7) 2996 ps   ; --                    ; --  ; (0) 52 ps ; --      ; --       ; --         ;
-; data[3] ; Bidir    ; (7) 2996 ps   ; (7) 2996 ps   ; --                    ; --  ; (0) 52 ps ; --      ; --       ; --         ;
+; data[2] ; Bidir    ; (7) 3082 ps   ; (7) 3082 ps   ; --                    ; --  ; (0) 52 ps ; --      ; --       ; --         ;
+; data[3] ; Bidir    ; (7) 3082 ps   ; (7) 3082 ps   ; --                    ; --  ; (0) 52 ps ; --      ; --       ; --         ;
 ; data[4] ; Bidir    ; (7) 3082 ps   ; (7) 3082 ps   ; --                    ; --  ; (0) 52 ps ; --      ; --       ; --         ;
-; data[5] ; Bidir    ; (7) 3082 ps   ; (7) 3082 ps   ; --                    ; --  ; (0) 52 ps ; --      ; --       ; --         ;
+; data[5] ; Bidir    ; (7) 2996 ps   ; (7) 2996 ps   ; --                    ; --  ; (0) 52 ps ; --      ; --       ; --         ;
 ; data[6] ; Bidir    ; (7) 3082 ps   ; (7) 3082 ps   ; --                    ; --  ; (0) 52 ps ; --      ; --       ; --         ;
 ; data[7] ; Bidir    ; (7) 3082 ps   ; (7) 3082 ps   ; --                    ; --  ; (0) 52 ps ; --      ; --       ; --         ;
-; clk_div ; Output   ; --            ; --            ; --                    ; --  ; (0) 52 ps ; --      ; --       ; --         ;
-; rd      ; Input    ; (0) 206 ps    ; (0) 206 ps    ; --                    ; --  ; --        ; --      ; --       ; --         ;
+; clk_tx  ; Output   ; --            ; --            ; --                    ; --  ; (0) 52 ps ; --      ; --       ; --         ;
+; clk_rx  ; Output   ; --            ; --            ; --                    ; --  ; (0) 52 ps ; --      ; --       ; --         ;
 ; error   ; Output   ; --            ; --            ; --                    ; --  ; (0) 52 ps ; --      ; --       ; --         ;
 ; dbf     ; Output   ; --            ; --            ; --                    ; --  ; (0) 52 ps ; --      ; --       ; --         ;
 ; rdc     ; Output   ; --            ; --            ; --                    ; --  ; (0) 52 ps ; --      ; --       ; --         ;
 ; tdf     ; Output   ; --            ; --            ; --                    ; --  ; (0) 52 ps ; --      ; --       ; --         ;
 ; rdf     ; Output   ; --            ; --            ; --                    ; --  ; (0) 52 ps ; --      ; --       ; --         ;
 ; Txd     ; Output   ; --            ; --            ; --                    ; --  ; (0) 52 ps ; --      ; --       ; --         ;
-; Rxd     ; Input    ; (0) 115 ps    ; (0) 115 ps    ; --                    ; --  ; --        ; --      ; --       ; --         ;
+; rd      ; Input    ; (0) 115 ps    ; (0) 115 ps    ; --                    ; --  ; --        ; --      ; --       ; --         ;
+; Rxd     ; Input    ; (0) 206 ps    ; (0) 206 ps    ; --                    ; --  ; --        ; --      ; --       ; --         ;
 ; rst     ; Input    ; (7) 2996 ps   ; (7) 2996 ps   ; --                    ; --  ; --        ; --      ; --       ; --         ;
+; wr      ; Input    ; (7) 2996 ps   ; (7) 2996 ps   ; --                    ; --  ; --        ; --      ; --       ; --         ;
 ; clk     ; Input    ; (0) 206 ps    ; (0) 206 ps    ; --                    ; --  ; --        ; --      ; --       ; --         ;
-; wr      ; Input    ; (7) 3082 ps   ; (7) 3082 ps   ; --                    ; --  ; --        ; --      ; --       ; --         ;
-; ce      ; Input    ; (7) 3082 ps   ; (7) 3082 ps   ; --                    ; --  ; --        ; --      ; --       ; --         ;
+; ce      ; Input    ; (7) 2996 ps   ; (7) 2996 ps   ; --                    ; --  ; --        ; --      ; --       ; --         ;
 +---------+----------+---------------+---------------+-----------------------+-----+-----------+---------+----------+------------+
 
 
-+-------------------------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                                          ;
-+-------------------------------------------+-------------------+---------+
-; Source Pin / Fanout                       ; Pad To Core Index ; Setting ;
-+-------------------------------------------+-------------------+---------+
-; data[0]                                   ;                   ;         ;
-;      - UART_TX:U2|data_buf[0]~feeder      ; 1                 ; 7       ;
-; data[1]                                   ;                   ;         ;
-;      - UART_TX:U2|data_buf[1]~feeder      ; 0                 ; 7       ;
-; data[2]                                   ;                   ;         ;
-;      - UART_TX:U2|data_buf[2]~feeder      ; 1                 ; 7       ;
-; data[3]                                   ;                   ;         ;
-;      - UART_TX:U2|data_buf[3]             ; 0                 ; 7       ;
-; data[4]                                   ;                   ;         ;
-;      - UART_TX:U2|data_buf[4]             ; 1                 ; 7       ;
-; data[5]                                   ;                   ;         ;
-;      - UART_TX:U2|data_buf[5]~feeder      ; 1                 ; 7       ;
-; data[6]                                   ;                   ;         ;
-;      - UART_TX:U2|data_buf[6]~feeder      ; 0                 ; 7       ;
-; data[7]                                   ;                   ;         ;
-;      - UART_TX:U2|data_buf[7]~feeder      ; 1                 ; 7       ;
-; rd                                        ;                   ;         ;
-; Rxd                                       ;                   ;         ;
-; rst                                       ;                   ;         ;
-;      - UART_TX:U2|state~11                ; 0                 ; 7       ;
-;      - UART_TX:U2|divider:U1|Clk_out~0    ; 1                 ; 7       ;
-;      - UART_TX:U2|state~8                 ; 0                 ; 7       ;
-;      - UART_TX:U2|tdf~0                   ; 0                 ; 7       ;
-;      - UART_TX:U2|divider:U1|Q~0          ; 1                 ; 7       ;
-;      - UART_TX:U2|divider:U1|Q~1          ; 1                 ; 7       ;
-;      - UART_TX:U2|divider:U1|Q~2          ; 1                 ; 7       ;
-;      - UART_TX:U2|divider:U1|Q~3          ; 1                 ; 7       ;
-;      - UART_TX:U2|divider:U1|Q~4          ; 1                 ; 7       ;
-;      - UART_TX:U2|t[0]~0                  ; 0                 ; 7       ;
-;      - UART_TX:U2|data_buf[0]~0           ; 0                 ; 7       ;
-;      - UART_TX:U2|state~10                ; 0                 ; 7       ;
-;      - UART_TX:U2|divider:U1|Q~2DUPLICATE ; 1                 ; 7       ;
-; clk                                       ;                   ;         ;
-;      - UART_TX:U2|divider:U1|Clk_out      ; 1                 ; 0       ;
-; wr                                        ;                   ;         ;
-;      - UART_TX:U2|state~11                ; 1                 ; 7       ;
-;      - UART_TX:U2|state~8                 ; 1                 ; 7       ;
-;      - UART_TX:U2|data_buf[0]~0           ; 1                 ; 7       ;
-;      - UART_TX:U2|state~10                ; 1                 ; 7       ;
-; ce                                        ;                   ;         ;
-;      - UART_TX:U2|state~11                ; 1                 ; 7       ;
-;      - UART_TX:U2|state~8                 ; 1                 ; 7       ;
-;      - UART_TX:U2|data_buf[0]~0           ; 1                 ; 7       ;
-;      - UART_TX:U2|state~10                ; 1                 ; 7       ;
-+-------------------------------------------+-------------------+---------+
++----------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                       ;
++----------------------------------------+-------------------+---------+
+; Source Pin / Fanout                    ; Pad To Core Index ; Setting ;
++----------------------------------------+-------------------+---------+
+; data[0]                                ;                   ;         ;
+;      - UART_TX:U2|data_buf[0]~feeder   ; 1                 ; 7       ;
+; data[1]                                ;                   ;         ;
+;      - UART_TX:U2|data_buf[1]~feeder   ; 0                 ; 7       ;
+; data[2]                                ;                   ;         ;
+;      - UART_TX:U2|data_buf[2]~feeder   ; 0                 ; 7       ;
+; data[3]                                ;                   ;         ;
+;      - UART_TX:U2|data_buf[3]~feeder   ; 0                 ; 7       ;
+; data[4]                                ;                   ;         ;
+;      - UART_TX:U2|data_buf[4]~feeder   ; 1                 ; 7       ;
+; data[5]                                ;                   ;         ;
+;      - UART_TX:U2|data_buf[5]~feeder   ; 0                 ; 7       ;
+; data[6]                                ;                   ;         ;
+;      - UART_TX:U2|data_buf[6]~feeder   ; 1                 ; 7       ;
+; data[7]                                ;                   ;         ;
+;      - UART_TX:U2|data_buf[7]          ; 0                 ; 7       ;
+; rd                                     ;                   ;         ;
+; Rxd                                    ;                   ;         ;
+; rst                                    ;                   ;         ;
+;      - UART_TX:U2|state~10             ; 1                 ; 7       ;
+;      - UART_TX:U2|divider:U1|Clk_out~0 ; 1                 ; 7       ;
+;      - UART_TX:U2|state~7              ; 1                 ; 7       ;
+;      - UART_TX:U2|tdf~0                ; 1                 ; 7       ;
+;      - UART_TX:U2|t[0]~0               ; 1                 ; 7       ;
+;      - UART_TX:U2|divider:U1|Q~0       ; 1                 ; 7       ;
+;      - UART_TX:U2|divider:U1|Q~1       ; 1                 ; 7       ;
+;      - UART_TX:U2|divider:U1|Q~2       ; 1                 ; 7       ;
+;      - UART_TX:U2|divider:U1|Q~3       ; 1                 ; 7       ;
+;      - UART_TX:U2|divider:U1|Q~4       ; 1                 ; 7       ;
+;      - UART_TX:U2|data_buf[0]~0        ; 1                 ; 7       ;
+;      - UART_TX:U2|state~9              ; 1                 ; 7       ;
+; wr                                     ;                   ;         ;
+;      - UART_TX:U2|state~10             ; 1                 ; 7       ;
+;      - UART_TX:U2|comb~0               ; 1                 ; 7       ;
+;      - UART_TX:U2|state~7              ; 1                 ; 7       ;
+;      - UART_TX:U2|data_buf[0]~0        ; 1                 ; 7       ;
+;      - UART_TX:U2|state~9              ; 1                 ; 7       ;
+; clk                                    ;                   ;         ;
+; ce                                     ;                   ;         ;
+;      - UART_TX:U2|state~10             ; 0                 ; 7       ;
+;      - UART_TX:U2|state~7              ; 0                 ; 7       ;
+;      - UART_TX:U2|data_buf[0]~0        ; 0                 ; 7       ;
+;      - UART_TX:U2|state~9              ; 0                 ; 7       ;
++----------------------------------------+-------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                           ;
-+-------------------------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name                          ; Location          ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-------------------------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; UART_TX:U2|data_buf[0]~0      ; LCCOMB_X37_Y5_N20 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; UART_TX:U2|divider:U1|Clk_out ; LCFF_X1_Y14_N19   ; 16      ; Clock        ; yes    ; Global Clock         ; GCLK0            ; --                        ;
-; UART_TX:U2|state.idle         ; LCFF_X38_Y5_N23   ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; UART_TX:U2|state.transmit     ; LCFF_X38_Y5_N17   ; 14      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; UART_TX:U2|t[0]~0             ; LCCOMB_X37_Y5_N24 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; clk                           ; PIN_N20           ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; clk                           ; PIN_N20           ; 18      ; Clock        ; yes    ; Global Clock         ; GCLK3            ; --                        ;
-+-------------------------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                            ;
++-------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Name                          ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; UART_TX:U2|comb~0             ; LCCOMB_X26_Y12_N8  ; 6       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; UART_TX:U2|data_buf[0]~0      ; LCCOMB_X26_Y12_N26 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; UART_TX:U2|divider:U1|Clk_out ; LCFF_X1_Y11_N17    ; 27      ; Clock        ; yes    ; Global Clock         ; GCLK0            ; --                        ;
+; UART_TX:U2|state.idle         ; LCFF_X27_Y9_N3     ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; UART_TX:U2|state.transmit     ; LCFF_X27_Y12_N9    ; 14      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; UART_TX:U2|t[0]~0             ; LCCOMB_X27_Y12_N20 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; clk                           ; PIN_N20            ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; clk                           ; PIN_N20            ; 5       ; Clock        ; yes    ; Global Clock         ; GCLK3            ; --                        ;
++-------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------+
@@ -1073,67 +1065,67 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------+-----------------+---------+----------------------+------------------+---------------------------+
 ; Name                          ; Location        ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-------------------------------+-----------------+---------+----------------------+------------------+---------------------------+
-; UART_TX:U2|divider:U1|Clk_out ; LCFF_X1_Y14_N19 ; 16      ; Global Clock         ; GCLK0            ; --                        ;
-; clk                           ; PIN_N20         ; 18      ; Global Clock         ; GCLK3            ; --                        ;
+; UART_TX:U2|divider:U1|Clk_out ; LCFF_X1_Y11_N17 ; 27      ; Global Clock         ; GCLK0            ; --                        ;
+; clk                           ; PIN_N20         ; 5       ; Global Clock         ; GCLK3            ; --                        ;
 +-------------------------------+-----------------+---------+----------------------+------------------+---------------------------+
 
 
-+------------------------------------------------+
-; Non-Global High Fan-Out Signals                ;
-+--------------------------------------+---------+
-; Name                                 ; Fan-Out ;
-+--------------------------------------+---------+
-; UART_TX:U2|state.idle                ; 16      ;
-; UART_TX:U2|state.transmit            ; 14      ;
-; rst                                  ; 13      ;
-; UART_TX:U2|data_buf[0]~0             ; 8       ;
-; UART_TX:U2|divider:U1|Equal0~0       ; 7       ;
-; UART_TX:U2|t[0]~0                    ; 5       ;
-; UART_TX:U2|t[0]                      ; 5       ;
-; UART_TX:U2|tdf                       ; 5       ;
-; ce                                   ; 4       ;
-; wr                                   ; 4       ;
-; UART_TX:U2|t[1]                      ; 4       ;
-; UART_TX:U2|t[2]                      ; 4       ;
-; UART_TX:U2|Equal0~0                  ; 3       ;
-; UART_TX:U2|t[3]                      ; 3       ;
-; UART_TX:U2|state.ready               ; 2       ;
-; UART_TX:U2|shift_reg[9]              ; 2       ;
-; UART_TX:U2|shift_reg[0]              ; 2       ;
-; UART_TX:U2|state~8                   ; 2       ;
-; UART_TX:U2|divider:U1|Q[1]           ; 2       ;
-; UART_TX:U2|divider:U1|Q[0]           ; 2       ;
-; UART_TX:U2|divider:U1|Q[3]           ; 2       ;
-; UART_TX:U2|divider:U1|Q[4]           ; 2       ;
-; UART_TX:U2|Txd                       ; 2       ;
-; UART_TX:U2|dbf                       ; 2       ;
-; UART_TX:U2|divider:U1|Clk_out        ; 2       ;
-; UART_TX:U2|divider:U1|Add0~9         ; 2       ;
-; UART_TX:U2|divider:U1|Q[2]~DUPLICATE ; 1       ;
-; UART_TX:U2|divider:U1|Q~2DUPLICATE   ; 1       ;
-; clk                                  ; 1       ;
-; data[7]~7                            ; 1       ;
-; data[6]~6                            ; 1       ;
-; data[5]~5                            ; 1       ;
-; data[4]~4                            ; 1       ;
-; data[3]~3                            ; 1       ;
-; data[2]~2                            ; 1       ;
-; data[1]~1                            ; 1       ;
-; data[0]~0                            ; 1       ;
-; UART_TX:U2|t[0]~4                    ; 1       ;
-; UART_TX:U2|state.idle~0              ; 1       ;
-; UART_TX:U2|state~10                  ; 1       ;
-; UART_TX:U2|Selector5~0               ; 1       ;
-; UART_TX:U2|data_buf[7]               ; 1       ;
-; UART_TX:U2|data_buf[6]               ; 1       ;
-; UART_TX:U2|data_buf[5]               ; 1       ;
-; UART_TX:U2|data_buf[4]               ; 1       ;
-; UART_TX:U2|data_buf[3]               ; 1       ;
-; UART_TX:U2|data_buf[2]               ; 1       ;
-; UART_TX:U2|data_buf[1]               ; 1       ;
-; UART_TX:U2|data_buf[0]               ; 1       ;
-; UART_TX:U2|Selector14~0              ; 1       ;
-+--------------------------------------+---------+
++------------------------------------------+
+; Non-Global High Fan-Out Signals          ;
++--------------------------------+---------+
+; Name                           ; Fan-Out ;
++--------------------------------+---------+
+; UART_TX:U2|state.idle          ; 16      ;
+; UART_TX:U2|state.transmit      ; 14      ;
+; rst                            ; 12      ;
+; UART_TX:U2|data_buf[0]~0       ; 8       ;
+; UART_TX:U2|comb~0              ; 6       ;
+; UART_TX:U2|divider:U1|Equal0~0 ; 6       ;
+; wr                             ; 5       ;
+; UART_TX:U2|t[0]~0              ; 5       ;
+; UART_TX:U2|t[0]                ; 5       ;
+; UART_TX:U2|tdf                 ; 5       ;
+; ce                             ; 4       ;
+; UART_TX:U2|t[1]                ; 4       ;
+; UART_TX:U2|t[2]                ; 4       ;
+; UART_TX:U2|Equal0~0            ; 3       ;
+; UART_TX:U2|t[3]                ; 3       ;
+; UART_TX:U2|dbf                 ; 3       ;
+; UART_TX:U2|state.ready         ; 2       ;
+; UART_TX:U2|shift_reg[9]        ; 2       ;
+; UART_TX:U2|state~7             ; 2       ;
+; UART_TX:U2|divider:U1|Q[1]     ; 2       ;
+; UART_TX:U2|divider:U1|Q[0]     ; 2       ;
+; UART_TX:U2|divider:U1|Q[2]     ; 2       ;
+; UART_TX:U2|divider:U1|Q[3]     ; 2       ;
+; UART_TX:U2|divider:U1|Q[4]     ; 2       ;
+; UART_TX:U2|shift_reg[0]        ; 2       ;
+; UART_TX:U2|divider:U1|Clk_out  ; 2       ;
+; clk                            ; 1       ;
+; data[7]~7                      ; 1       ;
+; data[6]~6                      ; 1       ;
+; data[5]~5                      ; 1       ;
+; data[4]~4                      ; 1       ;
+; data[3]~3                      ; 1       ;
+; data[2]~2                      ; 1       ;
+; data[1]~1                      ; 1       ;
+; data[0]~0                      ; 1       ;
+; UART_TX:U2|t[0]~4              ; 1       ;
+; UART_TX:U2|state.idle~0        ; 1       ;
+; UART_TX:U2|state~9             ; 1       ;
+; UART_TX:U2|Selector5~0         ; 1       ;
+; UART_TX:U2|data_buf[7]         ; 1       ;
+; UART_TX:U2|data_buf[6]         ; 1       ;
+; UART_TX:U2|data_buf[5]         ; 1       ;
+; UART_TX:U2|data_buf[4]         ; 1       ;
+; UART_TX:U2|data_buf[3]         ; 1       ;
+; UART_TX:U2|data_buf[2]         ; 1       ;
+; UART_TX:U2|data_buf[1]         ; 1       ;
+; UART_TX:U2|data_buf[0]         ; 1       ;
+; UART_TX:U2|t~3                 ; 1       ;
+; UART_TX:U2|t[2]~2              ; 1       ;
+; UART_TX:U2|t~1                 ; 1       ;
++--------------------------------+---------+
 
 
 +-------------------------------------------------------------------+
@@ -1141,27 +1133,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------+-----------------------+
 ; Interconnect Resource Type                ; Usage                 ;
 +-------------------------------------------+-----------------------+
-; Block interconnects                       ; 49 / 51,960 ( < 1 % ) ;
-; C16 interconnects                         ; 8 / 1,680 ( < 1 % )   ;
-; C4 interconnects                          ; 22 / 38,400 ( < 1 % ) ;
+; Block interconnects                       ; 43 / 51,960 ( < 1 % ) ;
+; C16 interconnects                         ; 7 / 1,680 ( < 1 % )   ;
+; C4 interconnects                          ; 36 / 38,400 ( < 1 % ) ;
 ; DPA clocks                                ; 0 / 4 ( 0 % )         ;
 ; DQS bus muxes                             ; 0 / 18 ( 0 % )        ;
 ; DQS-18 I/O buses                          ; 0 / 4 ( 0 % )         ;
 ; DQS-4 I/O buses                           ; 0 / 18 ( 0 % )        ;
 ; DQS-9 I/O buses                           ; 0 / 8 ( 0 % )         ;
 ; Differential I/O clocks                   ; 0 / 32 ( 0 % )        ;
-; Direct links                              ; 22 / 51,960 ( < 1 % ) ;
+; Direct links                              ; 8 / 51,960 ( < 1 % )  ;
 ; Global clocks                             ; 2 / 16 ( 13 % )       ;
-; Local interconnects                       ; 27 / 12,480 ( < 1 % ) ;
+; Local interconnects                       ; 35 / 12,480 ( < 1 % ) ;
 ; NDQS bus muxes                            ; 0 / 18 ( 0 % )        ;
 ; NDQS-18 I/O buses                         ; 0 / 4 ( 0 % )         ;
 ; NDQS-4 I/O buses                          ; 0 / 18 ( 0 % )        ;
 ; NDQS-9 I/O buses                          ; 0 / 8 ( 0 % )         ;
 ; PLL transmitter or receiver load enables  ; 0 / 8 ( 0 % )         ;
 ; PLL transmitter or receiver synch. clocks ; 0 / 8 ( 0 % )         ;
-; R24 interconnects                         ; 5 / 1,664 ( < 1 % )   ;
-; R24/C16 interconnect drivers              ; 6 / 4,160 ( < 1 % )   ;
-; R4 interconnects                          ; 30 / 59,488 ( < 1 % ) ;
+; R24 interconnects                         ; 8 / 1,664 ( < 1 % )   ;
+; R24/C16 interconnect drivers              ; 4 / 4,160 ( < 1 % )   ;
+; R4 interconnects                          ; 23 / 59,488 ( < 1 % ) ;
 ; Regional clocks                           ; 0 / 32 ( 0 % )        ;
 +-------------------------------------------+-----------------------+
 
@@ -1169,38 +1161,39 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------+
 ; LAB Logic Elements                                             ;
 +----------------------------------+-----------------------------+
-; Number of ALMs  (Average = 7.50) ; Number of LABs  (Total = 4) ;
+; Number of ALMs  (Average = 5.00) ; Number of LABs  (Total = 5) ;
 +----------------------------------+-----------------------------+
-; 1                                ; 0                           ;
+; 1                                ; 2                           ;
 ; 2                                ; 0                           ;
 ; 3                                ; 0                           ;
 ; 4                                ; 0                           ;
 ; 5                                ; 0                           ;
-; 6                                ; 1                           ;
-; 7                                ; 0                           ;
-; 8                                ; 3                           ;
+; 6                                ; 0                           ;
+; 7                                ; 1                           ;
+; 8                                ; 2                           ;
 +----------------------------------+-----------------------------+
 
 
 +------------------------------------------------------------------+
 ; LAB-wide Signals                                                 ;
 +------------------------------------+-----------------------------+
-; LAB-wide Signals  (Average = 1.25) ; Number of LABs  (Total = 4) ;
+; LAB-wide Signals  (Average = 1.60) ; Number of LABs  (Total = 5) ;
 +------------------------------------+-----------------------------+
-; 1 Clock                            ; 1                           ;
-; 1 Clock enable                     ; 1                           ;
-; 2 Clocks                           ; 3                           ;
+; 1 Clock                            ; 4                           ;
+; 1 Clock enable                     ; 2                           ;
+; 1 Sync. load                       ; 1                           ;
+; 2 Clocks                           ; 1                           ;
 +------------------------------------+-----------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                        ;
 +----------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 18.50) ; Number of LABs  (Total = 4) ;
+; Number of Signals Sourced  (Average = 14.60) ; Number of LABs  (Total = 5) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 0                           ;
-; 1                                            ; 0                           ;
-; 2                                            ; 0                           ;
+; 1                                            ; 1                           ;
+; 2                                            ; 1                           ;
 ; 3                                            ; 0                           ;
 ; 4                                            ; 0                           ;
 ; 5                                            ; 0                           ;
@@ -1212,15 +1205,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 11                                           ; 0                           ;
 ; 12                                           ; 0                           ;
 ; 13                                           ; 0                           ;
-; 14                                           ; 1                           ;
-; 15                                           ; 2                           ;
-; 16                                           ; 0                           ;
+; 14                                           ; 0                           ;
+; 15                                           ; 0                           ;
+; 16                                           ; 1                           ;
 ; 17                                           ; 0                           ;
 ; 18                                           ; 0                           ;
 ; 19                                           ; 0                           ;
 ; 20                                           ; 0                           ;
 ; 21                                           ; 0                           ;
-; 22                                           ; 0                           ;
+; 22                                           ; 1                           ;
 ; 23                                           ; 0                           ;
 ; 24                                           ; 0                           ;
 ; 25                                           ; 0                           ;
@@ -1228,50 +1221,45 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 27                                           ; 0                           ;
 ; 28                                           ; 0                           ;
 ; 29                                           ; 0                           ;
-; 30                                           ; 1                           ;
+; 30                                           ; 0                           ;
+; 31                                           ; 0                           ;
+; 32                                           ; 1                           ;
 +----------------------------------------------+-----------------------------+
 
 
 +-------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                       ;
 +-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 5.00) ; Number of LABs  (Total = 4) ;
+; Number of Signals Sourced Out  (Average = 2.80) ; Number of LABs  (Total = 5) ;
 +-------------------------------------------------+-----------------------------+
 ; 0                                               ; 0                           ;
-; 1                                               ; 1                           ;
-; 2                                               ; 0                           ;
+; 1                                               ; 2                           ;
+; 2                                               ; 1                           ;
 ; 3                                               ; 0                           ;
 ; 4                                               ; 0                           ;
-; 5                                               ; 1                           ;
-; 6                                               ; 1                           ;
-; 7                                               ; 0                           ;
-; 8                                               ; 1                           ;
+; 5                                               ; 2                           ;
 +-------------------------------------------------+-----------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 9.75) ; Number of LABs  (Total = 4) ;
+; Number of Distinct Inputs  (Average = 7.00) ; Number of LABs  (Total = 5) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
 ; 1                                           ; 0                           ;
 ; 2                                           ; 0                           ;
 ; 3                                           ; 1                           ;
-; 4                                           ; 0                           ;
+; 4                                           ; 1                           ;
 ; 5                                           ; 0                           ;
-; 6                                           ; 0                           ;
+; 6                                           ; 1                           ;
 ; 7                                           ; 0                           ;
 ; 8                                           ; 0                           ;
 ; 9                                           ; 1                           ;
-; 10                                          ; 1                           ;
+; 10                                          ; 0                           ;
 ; 11                                          ; 0                           ;
 ; 12                                          ; 0                           ;
-; 13                                          ; 0                           ;
-; 14                                          ; 0                           ;
-; 15                                          ; 0                           ;
-; 16                                          ; 0                           ;
-; 17                                          ; 1                           ;
+; 13                                          ; 1                           ;
 +---------------------------------------------+-----------------------------+
 
 
@@ -1332,9 +1320,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+--------------+--------------+--------------+
 ; Pin/Rules          ; IO_000001    ; IO_000002    ; IO_000003    ; IO_000004    ; IO_000005    ; IO_000006 ; IO_000007    ; IO_000008    ; IO_000009 ; IO_000010 ; IO_000011    ; IO_000012    ; IO_000013    ; IO_000014    ; IO_000015    ; IO_000018    ; IO_000019    ; IO_000020    ; IO_000021    ; IO_000022    ; IO_000023    ; IO_000024    ; IO_000026    ; IO_000027    ; IO_000032    ; IO_000033 ; IO_000034    ; IO_000037    ; IO_000038    ; IO_000042    ; IO_000040    ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+--------------+--------------+--------------+
-; Total Pass         ; 0            ; 0            ; 0            ; 0            ; 0            ; 21        ; 0            ; 0            ; 21        ; 21        ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 8            ; 0            ; 0            ; 0            ; 0            ; 21        ; 0            ; 0            ; 0            ; 0            ; 0            ;
+; Total Pass         ; 0            ; 0            ; 0            ; 0            ; 0            ; 22        ; 0            ; 0            ; 22        ; 22        ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 8            ; 0            ; 0            ; 0            ; 0            ; 22        ; 0            ; 0            ; 0            ; 0            ; 0            ;
 ; Total Unchecked    ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ;
-; Total Inapplicable ; 21           ; 21           ; 21           ; 21           ; 21           ; 0         ; 21           ; 21           ; 0         ; 0         ; 21           ; 21           ; 21           ; 21           ; 21           ; 21           ; 21           ; 21           ; 21           ; 21           ; 13           ; 21           ; 21           ; 21           ; 21           ; 0         ; 21           ; 21           ; 21           ; 21           ; 21           ;
+; Total Inapplicable ; 22           ; 22           ; 22           ; 22           ; 22           ; 0         ; 22           ; 22           ; 0         ; 0         ; 22           ; 22           ; 22           ; 22           ; 22           ; 22           ; 22           ; 22           ; 22           ; 22           ; 14           ; 22           ; 22           ; 22           ; 22           ; 0         ; 22           ; 22           ; 22           ; 22           ; 22           ;
 ; Total Fail         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ;
 ; data[0]            ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; data[1]            ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
@@ -1344,18 +1332,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; data[5]            ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; data[6]            ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; data[7]            ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
-; clk_div            ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
-; rd                 ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
+; clk_tx             ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
+; clk_rx             ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; error              ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; dbf                ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; rdc                ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; tdf                ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; rdf                ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; Txd                ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
+; rd                 ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; Rxd                ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; rst                ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
-; clk                ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; wr                 ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
+; clk                ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; ce                 ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+--------------+--------------+--------------+
 
@@ -1407,7 +1396,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Mon Oct 26 10:18:48 2015
+    Info: Processing started: Mon Oct 26 14:06:40 2015
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off UART -c UART
 Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info: Automatically selected device EP2S15F484C3 for design UART
@@ -1418,7 +1407,7 @@ Info: Device migration not selected. If you intend to use device migration later
     Info: Device EP2S60F484C3ES is compatible
 Info: Fitter converted 1 user pins into dedicated programming pins
     Info: Pin ~DATA0~ is reserved at location E13
-Critical Warning: No exact pin location assignment(s) for 21 pins of 21 total pins
+Critical Warning: No exact pin location assignment(s) for 22 pins of 22 total pins
     Info: Pin data[0] not assigned to an exact location on the device
     Info: Pin data[1] not assigned to an exact location on the device
     Info: Pin data[2] not assigned to an exact location on the device
@@ -1427,18 +1416,19 @@ Critical Warning: No exact pin location assignment(s) for 21 pins of 21 total pi
     Info: Pin data[5] not assigned to an exact location on the device
     Info: Pin data[6] not assigned to an exact location on the device
     Info: Pin data[7] not assigned to an exact location on the device
-    Info: Pin clk_div not assigned to an exact location on the device
-    Info: Pin rd not assigned to an exact location on the device
+    Info: Pin clk_tx not assigned to an exact location on the device
+    Info: Pin clk_rx not assigned to an exact location on the device
     Info: Pin error not assigned to an exact location on the device
     Info: Pin dbf not assigned to an exact location on the device
     Info: Pin rdc not assigned to an exact location on the device
     Info: Pin tdf not assigned to an exact location on the device
     Info: Pin rdf not assigned to an exact location on the device
     Info: Pin Txd not assigned to an exact location on the device
+    Info: Pin rd not assigned to an exact location on the device
     Info: Pin Rxd not assigned to an exact location on the device
     Info: Pin rst not assigned to an exact location on the device
-    Info: Pin clk not assigned to an exact location on the device
     Info: Pin wr not assigned to an exact location on the device
+    Info: Pin clk not assigned to an exact location on the device
     Info: Pin ce not assigned to an exact location on the device
 Warning: Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
 Info: Timing-driven compilation is using the Classic Timing Analyzer
@@ -1451,12 +1441,12 @@ Info: Automatically promoted node UART_TX:U2|divider:U1|Clk_out
     Info: Automatically promoted destinations to use location or clock signal Global Clock
     Info: Following destination nodes may be non-global or may not use global or regional clocks
         Info: Destination node UART_TX:U2|divider:U1|Clk_out~0
-        Info: Destination node clk_div
+        Info: Destination node clk_tx
 Info: Starting register packing
 Info: Finished register packing
     Extra Info: No registers were packed into other blocks
 Info: Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
-    Info: Number of I/O pins in group: 20 (unused VREF, 3.3V VCCIO, 5 input, 7 output, 8 bidirectional)
+    Info: Number of I/O pins in group: 21 (unused VREF, 3.3V VCCIO, 5 input, 8 output, 8 bidirectional)
         Info: I/O standards used: 3.3-V LVTTL.
 Info: I/O bank details before I/O pin placement
     Info: Statistics of I/O banks
@@ -1470,26 +1460,28 @@ Info: I/O bank details before I/O pin placement
         Info: I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  43 pins available
         Info: I/O bank number 9 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  6 pins available
         Info: I/O bank number 10 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  6 pins available
-Info: Fitter preparation operations ending: elapsed time is 00:00:01
+Info: Fitter preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement preparation operations beginning
 Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement operations beginning
 Info: Fitter placement was successful
 Info: Fitter placement operations ending: elapsed time is 00:00:00
-Info: Estimated most critical path is register to register delay of 0.950 ns
-    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LAB_X38_Y5; Fanout = 16; REG Node = 'UART_TX:U2|state.idle'
-    Info: 2: + IC(0.204 ns) + CELL(0.746 ns) = 0.950 ns; Loc. = LAB_X38_Y5; Fanout = 1; REG Node = 'UART_TX:U2|shift_reg[1]'
-    Info: Total cell delay = 0.746 ns ( 78.53 % )
-    Info: Total interconnect delay = 0.204 ns ( 21.47 % )
+Info: Estimated most critical path is register to register delay of 2.673 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LAB_X26_Y12; Fanout = 3; REG Node = 'UART_TX:U2|dbf'
+    Info: 2: + IC(0.025 ns) + CELL(0.378 ns) = 0.403 ns; Loc. = LAB_X26_Y12; Fanout = 6; COMB Node = 'UART_TX:U2|comb~0'
+    Info: 3: + IC(1.843 ns) + CELL(0.272 ns) = 2.518 ns; Loc. = LAB_X1_Y11; Fanout = 1; COMB Node = 'UART_TX:U2|divider:U1|Clk_out~0'
+    Info: 4: + IC(0.000 ns) + CELL(0.155 ns) = 2.673 ns; Loc. = LAB_X1_Y11; Fanout = 3; REG Node = 'UART_TX:U2|divider:U1|Clk_out'
+    Info: Total cell delay = 0.805 ns ( 30.12 % )
+    Info: Total interconnect delay = 1.868 ns ( 69.88 % )
 Info: Fitter routing operations beginning
 Info: Average interconnect usage is 0% of the available device resources
-    Info: Peak interconnect usage is 0% of the available device resources in the region that extends from location X27_Y0 to location X40_Y13
+    Info: Peak interconnect usage is 0% of the available device resources in the region that extends from location X13_Y0 to location X26_Y13
 Info: Fitter routing operations ending: elapsed time is 00:00:00
 Info: The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info: Optimizations that may affect the design's routability were skipped
     Info: Optimizations that may affect the design's timing were skipped
 Info: Started post-fitting delay annotation
-Warning: Found 15 output pins without output pin load capacitance assignment
+Warning: Found 16 output pins without output pin load capacitance assignment
     Info: Pin "data[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info: Pin "data[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info: Pin "data[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -1498,7 +1490,8 @@ Warning: Found 15 output pins without output pin load capacitance assignment
     Info: Pin "data[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info: Pin "data[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info: Pin "data[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "clk_div" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "clk_tx" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "clk_rx" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info: Pin "error" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info: Pin "dbf" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info: Pin "rdc" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -1518,8 +1511,8 @@ Warning: Following 8 pins have no output enable or a GND or VCC output enable - 
 Warning: The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info: Generated suppressed messages file E:/Discipline/Verilog/Experiment/Verilog_Experiment_UART/UART.fit.smsg
 Info: Quartus II Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 283 megabytes
-    Info: Processing ended: Mon Oct 26 10:18:52 2015
+    Info: Peak virtual memory: 284 megabytes
+    Info: Processing ended: Mon Oct 26 14:06:44 2015
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:06
 

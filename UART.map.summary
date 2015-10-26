@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Mon Oct 26 10:18:47 2015
+Analysis & Synthesis Status : Successful - Mon Oct 26 14:06:39 2015
 Quartus II Version : 9.1 Build 222 10/21/2009 SJ Full Version
 Revision Name : UART
 Top-level Entity Name : UART
 Family : Stratix II
 Logic utilization : N/A
-    Combinational ALUTs : 29
-    Dedicated logic registers : 34
-Total registers : 34
-Total pins : 21
+    Combinational ALUTs : 30
+    Dedicated logic registers : 33
+Total registers : 33
+Total pins : 22
 Total virtual pins : 0
 Total block memory bits : 0
 DSP block 9-bit elements : 0

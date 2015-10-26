@@ -57,42 +57,7 @@ DEF
 }
 # hierarchies {
 UART_TX:U2|divider:U1
-}
-# macro_sequence
-
-# end
-# entity
-UART
-# storage
-db|UART.(0).cnf
-db|UART.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-uart.v
-1dc1ba4f2fe45844844f6d7d5dbfd36a
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-|
+UART_RX:U3|divider:U1
 }
 # macro_sequence
 
@@ -109,7 +74,7 @@ ON
 # case_sensitive
 # source_file
 uart_tx.v
-77365c9a2e896693e19259bf7b6b6890
+9eafe033df5b85d47d3d231aa15bb2
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -143,6 +108,92 @@ DEF
 }
 # hierarchies {
 UART_TX:U2
+}
+# macro_sequence
+
+# end
+# entity
+UART
+# storage
+db|UART.(0).cnf
+db|UART.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+uart.v
+a5122b1ed5d1aa6c5dd3f08bcfc753
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+UART_RX
+# storage
+db|UART.(3).cnf
+db|UART.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+uart_rx.v
+bf15966246f7e535dc5928f6552810
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+idle
+00
+PARAMETER_UNSIGNED_BIN
+DEF
+read
+01
+PARAMETER_UNSIGNED_BIN
+DEF
+finish
+11
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+UART_RX:U3
 }
 # macro_sequence
 

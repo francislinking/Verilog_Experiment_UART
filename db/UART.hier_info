@@ -1,41 +1,98 @@
 |UART
-clk => clk~0.IN1
-clk_div <= UART_TX:U2.port1
-rst => rst~0.IN1
+clk => clk~0.IN2
+clk_tx <= UART_TX:U2.port1
+clk_rx <= UART_RX:U3.port1
+rst => rst~0.IN2
 data[0] <> UART_TX:U2.port3
+data[0] <> UART_RX:U3.port3
 data[1] <> UART_TX:U2.port3
+data[1] <> UART_RX:U3.port3
 data[2] <> UART_TX:U2.port3
+data[2] <> UART_RX:U3.port3
 data[3] <> UART_TX:U2.port3
+data[3] <> UART_RX:U3.port3
 data[4] <> UART_TX:U2.port3
+data[4] <> UART_RX:U3.port3
 data[5] <> UART_TX:U2.port3
+data[5] <> UART_RX:U3.port3
 data[6] <> UART_TX:U2.port3
+data[6] <> UART_RX:U3.port3
 data[7] <> UART_TX:U2.port3
+data[7] <> UART_RX:U3.port3
 wr => wr~0.IN1
-rd => ~NO_FANOUT~
-ce => ce~0.IN1
-error <= <GND>
+rd => rd~0.IN1
+ce => ce~0.IN2
+error <= UART_RX:U3.port6
 dbf <= UART_TX:U2.port6
-rdc <= <GND>
+rdc <= UART_RX:U3.port7
 tdf <= UART_TX:U2.port7
-rdf <= <GND>
+rdf <= UART_RX:U3.port8
 Txd <= UART_TX:U2.port8
-Rxd => ~NO_FANOUT~
+Rxd => Rxd~0.IN1
 
 
 |UART|UART_TX:U2
 clk => clk~0.IN1
 clk_div <= divider:U1.Clk_out
 rst => rst~0.IN1
+wr => comb~0.IN1
 wr => always0~0.IN0
 wr => always0~1.IN0
 ce => always0~0.IN1
 ce => always0~1.IN1
 dbf <= dbf~reg0.DB_MAX_OUTPUT_PORT_TYPE
 tdf <= tdf~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Txd <= Txd~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Txd <= Txd~0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |UART|UART_TX:U2|divider:U1
+En => Clk_out~2.OUTPUTSELECT
+En => Q[0].ENA
+En => Q[1].ENA
+En => Q[2].ENA
+En => Q[3].ENA
+En => Q[4].ENA
+Rst => Q~5.OUTPUTSELECT
+Rst => Q~6.OUTPUTSELECT
+Rst => Q~7.OUTPUTSELECT
+Rst => Q~8.OUTPUTSELECT
+Rst => Q~9.OUTPUTSELECT
+Rst => Clk_out~1.OUTPUTSELECT
+Clk_in => Q[0].CLK
+Clk_in => Q[1].CLK
+Clk_in => Q[2].CLK
+Clk_in => Q[3].CLK
+Clk_in => Q[4].CLK
+Clk_in => Clk_out~reg0.CLK
+Clk_out <= Clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UART|UART_RX:U3
+clk => clk~0.IN1
+clk_div <= divider:U1.Clk_out
+rst => rst~0.IN1
+data[0] <> data[0]~7
+data[1] <> data[1]~6
+data[2] <> data[2]~5
+data[3] <> data[3]~4
+data[4] <> data[4]~3
+data[5] <> data[5]~2
+data[6] <> data[6]~1
+data[7] <> data[7]~0
+rd => always0~2.IN1
+rd => always1~0.IN0
+ce => always0~1.IN1
+ce => always1~0.IN1
+error <= error~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rdc <= rdc~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rdf <= rdf~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Rxd => rdc~0.OUTPUTSELECT
+Rxd => error~0.OUTPUTSELECT
+Rxd => always0~0.IN1
+Rxd => data_buf[7].DATAIN
+
+
+|UART|UART_RX:U3|divider:U1
 En => Clk_out~2.OUTPUTSELECT
 En => Q[0].ENA
 En => Q[1].ENA

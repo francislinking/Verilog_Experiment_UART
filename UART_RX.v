@@ -22,7 +22,7 @@ reg [1:0] state ;
 
 parameter idle=2'b00,read=2'b01,finish=2'b11;
 
-divider U1(.En(rdf),.Rst(rst),.Clk_in(clk),.Clk_out(clk_div));//12 frequency division
+divider U1(.En(rdf|rdc),.Rst(rst),.Clk_in(clk),.Clk_out(clk_div));//12 frequency division
 
 //start dectection
 always@(posedge clk)
@@ -52,6 +52,7 @@ begin
 	case(state)
 		idle:
 		begin
+			rdc<=0;
 			if(ce == 1 && rd ==1)
 			begin
 				if(rdf == 1)
@@ -59,6 +60,7 @@ begin
 					rss<=1;
 					state<=read;
 				end
+				
 			end
 			else
 				state <= idle;
@@ -100,4 +102,5 @@ default:;
 endcase
 
 assign data=(rdc==1)?data_buf:8'hzz;
+
 endmodule 

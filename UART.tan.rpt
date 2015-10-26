@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for UART
-Mon Oct 26 10:18:56 2015
+Mon Oct 26 14:06:49 2015
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -38,17 +38,17 @@ applicable agreement for further details.
 
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Timing Analyzer Summary                                                                                                                                                                ;
-+------------------------------+-------+---------------+----------------------------------+-----------------------+-------------------------------+------------+----------+--------------+
-; Type                         ; Slack ; Required Time ; Actual Time                      ; From                  ; To                            ; From Clock ; To Clock ; Failed Paths ;
-+------------------------------+-------+---------------+----------------------------------+-----------------------+-------------------------------+------------+----------+--------------+
-; Worst-case tsu               ; N/A   ; None          ; 3.341 ns                         ; rst                   ; UART_TX:U2|divider:U1|Clk_out ; --         ; clk      ; 0            ;
-; Worst-case tco               ; N/A   ; None          ; 7.554 ns                         ; UART_TX:U2|tdf        ; tdf                           ; clk        ; --       ; 0            ;
-; Worst-case th                ; N/A   ; None          ; 0.365 ns                         ; data[7]               ; UART_TX:U2|data_buf[7]        ; --         ; clk      ; 0            ;
-; Clock Setup: 'clk'           ; N/A   ; None          ; 296.56 MHz ( period = 3.372 ns ) ; UART_TX:U2|state.idle ; UART_TX:U2|shift_reg[8]       ; clk        ; clk      ; 0            ;
-; Total number of failed paths ;       ;               ;                                  ;                       ;                               ;            ;          ; 0            ;
-+------------------------------+-------+---------------+----------------------------------+-----------------------+-------------------------------+------------+----------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                    ;
++------------------------------+-------+---------------+----------------------------------+---------------------------+-------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                      ; To                            ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+---------------------------+-------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 4.561 ns                         ; wr                        ; UART_TX:U2|divider:U1|Clk_out ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 9.116 ns                         ; UART_TX:U2|state.transmit ; Txd                           ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -0.319 ns                        ; data[7]                   ; UART_TX:U2|data_buf[7]        ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 230.47 MHz ( period = 4.339 ns ) ; UART_TX:U2|dbf            ; UART_TX:U2|divider:U1|Clk_out ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                           ;                               ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+---------------------------+-------------------------------+------------+----------+--------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -109,283 +109,288 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clock Setup: 'clk'                                                                                                                                                                                                                               ;
-+-------+------------------------------------------------+--------------------------------------+--------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
-; Slack ; Actual fmax (period)                           ; From                                 ; To                                   ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
-+-------+------------------------------------------------+--------------------------------------+--------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
-; N/A   ; 296.56 MHz ( period = 3.372 ns )               ; UART_TX:U2|state.idle                ; UART_TX:U2|shift_reg[1]              ; clk        ; clk      ; None                        ; None                      ; 0.993 ns                ;
-; N/A   ; 296.56 MHz ( period = 3.372 ns )               ; UART_TX:U2|state.idle                ; UART_TX:U2|shift_reg[2]              ; clk        ; clk      ; None                        ; None                      ; 0.993 ns                ;
-; N/A   ; 296.56 MHz ( period = 3.372 ns )               ; UART_TX:U2|state.idle                ; UART_TX:U2|shift_reg[3]              ; clk        ; clk      ; None                        ; None                      ; 0.993 ns                ;
-; N/A   ; 296.56 MHz ( period = 3.372 ns )               ; UART_TX:U2|state.idle                ; UART_TX:U2|shift_reg[4]              ; clk        ; clk      ; None                        ; None                      ; 0.993 ns                ;
-; N/A   ; 296.56 MHz ( period = 3.372 ns )               ; UART_TX:U2|state.idle                ; UART_TX:U2|shift_reg[5]              ; clk        ; clk      ; None                        ; None                      ; 0.993 ns                ;
-; N/A   ; 296.56 MHz ( period = 3.372 ns )               ; UART_TX:U2|state.idle                ; UART_TX:U2|shift_reg[6]              ; clk        ; clk      ; None                        ; None                      ; 0.993 ns                ;
-; N/A   ; 296.56 MHz ( period = 3.372 ns )               ; UART_TX:U2|state.idle                ; UART_TX:U2|shift_reg[7]              ; clk        ; clk      ; None                        ; None                      ; 0.993 ns                ;
-; N/A   ; 296.56 MHz ( period = 3.372 ns )               ; UART_TX:U2|state.idle                ; UART_TX:U2|shift_reg[8]              ; clk        ; clk      ; None                        ; None                      ; 0.993 ns                ;
-; N/A   ; 316.76 MHz ( period = 3.157 ns )               ; UART_TX:U2|state.idle                ; UART_TX:U2|dbf                       ; clk        ; clk      ; None                        ; None                      ; 0.778 ns                ;
-; N/A   ; 317.66 MHz ( period = 3.148 ns )               ; UART_TX:U2|state.transmit            ; UART_TX:U2|shift_reg[1]              ; clk        ; clk      ; None                        ; None                      ; 0.769 ns                ;
-; N/A   ; 317.66 MHz ( period = 3.148 ns )               ; UART_TX:U2|state.transmit            ; UART_TX:U2|shift_reg[2]              ; clk        ; clk      ; None                        ; None                      ; 0.769 ns                ;
-; N/A   ; 317.66 MHz ( period = 3.148 ns )               ; UART_TX:U2|state.transmit            ; UART_TX:U2|shift_reg[3]              ; clk        ; clk      ; None                        ; None                      ; 0.769 ns                ;
-; N/A   ; 317.66 MHz ( period = 3.148 ns )               ; UART_TX:U2|state.transmit            ; UART_TX:U2|shift_reg[4]              ; clk        ; clk      ; None                        ; None                      ; 0.769 ns                ;
-; N/A   ; 317.66 MHz ( period = 3.148 ns )               ; UART_TX:U2|state.transmit            ; UART_TX:U2|shift_reg[5]              ; clk        ; clk      ; None                        ; None                      ; 0.769 ns                ;
-; N/A   ; 317.66 MHz ( period = 3.148 ns )               ; UART_TX:U2|state.transmit            ; UART_TX:U2|shift_reg[6]              ; clk        ; clk      ; None                        ; None                      ; 0.769 ns                ;
-; N/A   ; 317.66 MHz ( period = 3.148 ns )               ; UART_TX:U2|state.transmit            ; UART_TX:U2|shift_reg[7]              ; clk        ; clk      ; None                        ; None                      ; 0.769 ns                ;
-; N/A   ; 317.66 MHz ( period = 3.148 ns )               ; UART_TX:U2|state.transmit            ; UART_TX:U2|shift_reg[8]              ; clk        ; clk      ; None                        ; None                      ; 0.769 ns                ;
-; N/A   ; 318.57 MHz ( period = 3.139 ns )               ; UART_TX:U2|state.idle                ; UART_TX:U2|shift_reg[9]              ; clk        ; clk      ; None                        ; None                      ; 0.760 ns                ;
-; N/A   ; 327.87 MHz ( period = 3.050 ns )               ; UART_TX:U2|state.transmit            ; UART_TX:U2|dbf                       ; clk        ; clk      ; None                        ; None                      ; 0.671 ns                ;
-; N/A   ; 329.60 MHz ( period = 3.034 ns )               ; UART_TX:U2|state.idle                ; UART_TX:U2|shift_reg[0]              ; clk        ; clk      ; None                        ; None                      ; 0.655 ns                ;
-; N/A   ; 334.56 MHz ( period = 2.989 ns )               ; UART_TX:U2|data_buf[3]               ; UART_TX:U2|shift_reg[4]              ; clk        ; clk      ; None                        ; None                      ; 0.610 ns                ;
-; N/A   ; 334.67 MHz ( period = 2.988 ns )               ; UART_TX:U2|data_buf[7]               ; UART_TX:U2|shift_reg[8]              ; clk        ; clk      ; None                        ; None                      ; 0.609 ns                ;
-; N/A   ; 335.12 MHz ( period = 2.984 ns )               ; UART_TX:U2|data_buf[1]               ; UART_TX:U2|shift_reg[2]              ; clk        ; clk      ; None                        ; None                      ; 0.605 ns                ;
-; N/A   ; 335.35 MHz ( period = 2.982 ns )               ; UART_TX:U2|data_buf[5]               ; UART_TX:U2|shift_reg[6]              ; clk        ; clk      ; None                        ; None                      ; 0.603 ns                ;
-; N/A   ; 335.57 MHz ( period = 2.980 ns )               ; UART_TX:U2|data_buf[4]               ; UART_TX:U2|shift_reg[5]              ; clk        ; clk      ; None                        ; None                      ; 0.601 ns                ;
-; N/A   ; 335.57 MHz ( period = 2.980 ns )               ; UART_TX:U2|data_buf[6]               ; UART_TX:U2|shift_reg[7]              ; clk        ; clk      ; None                        ; None                      ; 0.601 ns                ;
-; N/A   ; 335.68 MHz ( period = 2.979 ns )               ; UART_TX:U2|data_buf[0]               ; UART_TX:U2|shift_reg[1]              ; clk        ; clk      ; None                        ; None                      ; 0.600 ns                ;
-; N/A   ; 335.68 MHz ( period = 2.979 ns )               ; UART_TX:U2|data_buf[2]               ; UART_TX:U2|shift_reg[3]              ; clk        ; clk      ; None                        ; None                      ; 0.600 ns                ;
-; N/A   ; 343.88 MHz ( period = 2.908 ns )               ; UART_TX:U2|state.transmit            ; UART_TX:U2|Txd                       ; clk        ; clk      ; None                        ; None                      ; 0.529 ns                ;
-; N/A   ; 351.12 MHz ( period = 2.848 ns )               ; UART_TX:U2|state.transmit            ; UART_TX:U2|shift_reg[0]              ; clk        ; clk      ; None                        ; None                      ; 0.469 ns                ;
-; N/A   ; 354.86 MHz ( period = 2.818 ns )               ; UART_TX:U2|tdf                       ; UART_TX:U2|dbf                       ; clk        ; clk      ; None                        ; None                      ; 0.439 ns                ;
-; N/A   ; 357.91 MHz ( period = 2.794 ns )               ; UART_TX:U2|state.ready               ; UART_TX:U2|shift_reg[9]              ; clk        ; clk      ; None                        ; None                      ; 0.415 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[0]                      ; UART_TX:U2|state.idle                ; clk        ; clk      ; None                        ; None                      ; 1.729 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle                ; UART_TX:U2|data_buf[0]               ; clk        ; clk      ; None                        ; None                      ; 1.666 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle                ; UART_TX:U2|data_buf[1]               ; clk        ; clk      ; None                        ; None                      ; 1.666 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle                ; UART_TX:U2|data_buf[2]               ; clk        ; clk      ; None                        ; None                      ; 1.666 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle                ; UART_TX:U2|data_buf[3]               ; clk        ; clk      ; None                        ; None                      ; 1.666 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle                ; UART_TX:U2|data_buf[4]               ; clk        ; clk      ; None                        ; None                      ; 1.666 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle                ; UART_TX:U2|data_buf[5]               ; clk        ; clk      ; None                        ; None                      ; 1.666 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle                ; UART_TX:U2|data_buf[6]               ; clk        ; clk      ; None                        ; None                      ; 1.666 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle                ; UART_TX:U2|data_buf[7]               ; clk        ; clk      ; None                        ; None                      ; 1.666 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[2]                      ; UART_TX:U2|state.idle                ; clk        ; clk      ; None                        ; None                      ; 1.587 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[3]                      ; UART_TX:U2|state.idle                ; clk        ; clk      ; None                        ; None                      ; 1.550 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[1]           ; UART_TX:U2|divider:U1|Q[4]           ; clk        ; clk      ; None                        ; None                      ; 1.546 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[1]           ; UART_TX:U2|divider:U1|Q[3]           ; clk        ; clk      ; None                        ; None                      ; 1.546 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[0]                      ; UART_TX:U2|state.transmit            ; clk        ; clk      ; None                        ; None                      ; 1.487 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[1]           ; UART_TX:U2|divider:U1|Clk_out        ; clk        ; clk      ; None                        ; None                      ; 1.300 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[4]           ; UART_TX:U2|divider:U1|Q[4]           ; clk        ; clk      ; None                        ; None                      ; 1.425 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[4]           ; UART_TX:U2|divider:U1|Q[3]           ; clk        ; clk      ; None                        ; None                      ; 1.425 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[0]                      ; UART_TX:U2|tdf                       ; clk        ; clk      ; None                        ; None                      ; 1.398 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[1]                      ; UART_TX:U2|state.idle                ; clk        ; clk      ; None                        ; None                      ; 1.380 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[1]           ; UART_TX:U2|divider:U1|Q[1]           ; clk        ; clk      ; None                        ; None                      ; 1.350 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit            ; UART_TX:U2|t[0]                      ; clk        ; clk      ; None                        ; None                      ; 1.345 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit            ; UART_TX:U2|t[3]                      ; clk        ; clk      ; None                        ; None                      ; 1.345 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit            ; UART_TX:U2|t[1]                      ; clk        ; clk      ; None                        ; None                      ; 1.345 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[2]                      ; UART_TX:U2|state.transmit            ; clk        ; clk      ; None                        ; None                      ; 1.345 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[4]           ; UART_TX:U2|divider:U1|Clk_out        ; clk        ; clk      ; None                        ; None                      ; 1.179 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit            ; UART_TX:U2|state.idle                ; clk        ; clk      ; None                        ; None                      ; 1.324 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[0]           ; UART_TX:U2|divider:U1|Q[4]           ; clk        ; clk      ; None                        ; None                      ; 1.315 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[0]           ; UART_TX:U2|divider:U1|Q[3]           ; clk        ; clk      ; None                        ; None                      ; 1.308 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[3]                      ; UART_TX:U2|state.transmit            ; clk        ; clk      ; None                        ; None                      ; 1.308 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[1]           ; UART_TX:U2|divider:U1|Q[2]~DUPLICATE ; clk        ; clk      ; None                        ; None                      ; 1.285 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[1]           ; UART_TX:U2|divider:U1|Q[0]           ; clk        ; clk      ; None                        ; None                      ; 1.284 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[1]           ; UART_TX:U2|divider:U1|Q[2]           ; clk        ; clk      ; None                        ; None                      ; 1.284 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[0]           ; UART_TX:U2|divider:U1|Q[1]           ; clk        ; clk      ; None                        ; None                      ; 1.261 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[2]~DUPLICATE ; UART_TX:U2|divider:U1|Q[4]           ; clk        ; clk      ; None                        ; None                      ; 1.259 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[2]~DUPLICATE ; UART_TX:U2|divider:U1|Q[3]           ; clk        ; clk      ; None                        ; None                      ; 1.259 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[2]                      ; UART_TX:U2|tdf                       ; clk        ; clk      ; None                        ; None                      ; 1.256 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[2]           ; UART_TX:U2|divider:U1|Q[4]           ; clk        ; clk      ; None                        ; None                      ; 1.242 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[4]           ; UART_TX:U2|divider:U1|Q[1]           ; clk        ; clk      ; None                        ; None                      ; 1.229 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[0]           ; UART_TX:U2|divider:U1|Clk_out        ; clk        ; clk      ; None                        ; None                      ; 1.062 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[3]                      ; UART_TX:U2|tdf                       ; clk        ; clk      ; None                        ; None                      ; 1.219 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[3]           ; UART_TX:U2|divider:U1|Q[4]           ; clk        ; clk      ; None                        ; None                      ; 1.206 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|tdf                       ; UART_TX:U2|state.idle                ; clk        ; clk      ; None                        ; None                      ; 1.206 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[2]           ; UART_TX:U2|divider:U1|Q[3]           ; clk        ; clk      ; None                        ; None                      ; 1.195 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[0]           ; UART_TX:U2|divider:U1|Q[2]           ; clk        ; clk      ; None                        ; None                      ; 1.170 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[0]           ; UART_TX:U2|divider:U1|Q[2]~DUPLICATE ; clk        ; clk      ; None                        ; None                      ; 1.169 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[2]~DUPLICATE ; UART_TX:U2|divider:U1|Clk_out        ; clk        ; clk      ; None                        ; None                      ; 1.013 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[4]           ; UART_TX:U2|divider:U1|Q[2]~DUPLICATE ; clk        ; clk      ; None                        ; None                      ; 1.164 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[4]           ; UART_TX:U2|divider:U1|Q[0]           ; clk        ; clk      ; None                        ; None                      ; 1.163 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[4]           ; UART_TX:U2|divider:U1|Q[2]           ; clk        ; clk      ; None                        ; None                      ; 1.163 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[1]                      ; UART_TX:U2|state.transmit            ; clk        ; clk      ; None                        ; None                      ; 1.138 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[3]           ; UART_TX:U2|divider:U1|Q[3]           ; clk        ; clk      ; None                        ; None                      ; 1.131 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[2]           ; UART_TX:U2|divider:U1|Q[2]           ; clk        ; clk      ; None                        ; None                      ; 1.069 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[2]           ; UART_TX:U2|divider:U1|Q[2]~DUPLICATE ; clk        ; clk      ; None                        ; None                      ; 1.068 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit            ; UART_TX:U2|state.transmit            ; clk        ; clk      ; None                        ; None                      ; 1.064 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[2]~DUPLICATE ; UART_TX:U2|divider:U1|Q[1]           ; clk        ; clk      ; None                        ; None                      ; 1.063 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit            ; UART_TX:U2|tdf                       ; clk        ; clk      ; None                        ; None                      ; 1.058 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[0]           ; UART_TX:U2|divider:U1|Q[0]           ; clk        ; clk      ; None                        ; None                      ; 1.057 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[1]                      ; UART_TX:U2|tdf                       ; clk        ; clk      ; None                        ; None                      ; 1.049 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[3]           ; UART_TX:U2|divider:U1|Clk_out        ; clk        ; clk      ; None                        ; None                      ; 0.848 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[2]~DUPLICATE ; UART_TX:U2|divider:U1|Q[2]~DUPLICATE ; clk        ; clk      ; None                        ; None                      ; 0.998 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[2]~DUPLICATE ; UART_TX:U2|divider:U1|Q[0]           ; clk        ; clk      ; None                        ; None                      ; 0.997 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[2]~DUPLICATE ; UART_TX:U2|divider:U1|Q[2]           ; clk        ; clk      ; None                        ; None                      ; 0.997 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle                ; UART_TX:U2|state.idle                ; clk        ; clk      ; None                        ; None                      ; 0.969 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle                ; UART_TX:U2|state.ready               ; clk        ; clk      ; None                        ; None                      ; 0.922 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle                ; UART_TX:U2|state.transmit            ; clk        ; clk      ; None                        ; None                      ; 0.913 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|shift_reg[0]              ; UART_TX:U2|Txd                       ; clk        ; clk      ; None                        ; None                      ; 0.900 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[3]           ; UART_TX:U2|divider:U1|Q[1]           ; clk        ; clk      ; None                        ; None                      ; 0.898 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit            ; UART_TX:U2|t[2]                      ; clk        ; clk      ; None                        ; None                      ; 0.881 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[3]           ; UART_TX:U2|divider:U1|Q[2]~DUPLICATE ; clk        ; clk      ; None                        ; None                      ; 0.833 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[3]           ; UART_TX:U2|divider:U1|Q[0]           ; clk        ; clk      ; None                        ; None                      ; 0.832 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[3]           ; UART_TX:U2|divider:U1|Q[2]           ; clk        ; clk      ; None                        ; None                      ; 0.832 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle                ; UART_TX:U2|tdf                       ; clk        ; clk      ; None                        ; None                      ; 0.804 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[2]                      ; UART_TX:U2|t[3]                      ; clk        ; clk      ; None                        ; None                      ; 0.791 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[2]                      ; UART_TX:U2|t[1]                      ; clk        ; clk      ; None                        ; None                      ; 0.791 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[0]                      ; UART_TX:U2|t[3]                      ; clk        ; clk      ; None                        ; None                      ; 0.772 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[0]                      ; UART_TX:U2|t[1]                      ; clk        ; clk      ; None                        ; None                      ; 0.772 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[0]                      ; UART_TX:U2|t[2]                      ; clk        ; clk      ; None                        ; None                      ; 0.766 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|shift_reg[7]              ; UART_TX:U2|shift_reg[6]              ; clk        ; clk      ; None                        ; None                      ; 0.763 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|shift_reg[1]              ; UART_TX:U2|shift_reg[0]              ; clk        ; clk      ; None                        ; None                      ; 0.754 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|shift_reg[8]              ; UART_TX:U2|shift_reg[7]              ; clk        ; clk      ; None                        ; None                      ; 0.751 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|tdf                       ; UART_TX:U2|state.transmit            ; clk        ; clk      ; None                        ; None                      ; 0.740 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|shift_reg[9]              ; UART_TX:U2|shift_reg[8]              ; clk        ; clk      ; None                        ; None                      ; 0.642 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[1]                      ; UART_TX:U2|t[2]                      ; clk        ; clk      ; None                        ; None                      ; 0.636 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|shift_reg[6]              ; UART_TX:U2|shift_reg[5]              ; clk        ; clk      ; None                        ; None                      ; 0.632 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[3]                      ; UART_TX:U2|t[1]                      ; clk        ; clk      ; None                        ; None                      ; 0.628 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|shift_reg[3]              ; UART_TX:U2|shift_reg[2]              ; clk        ; clk      ; None                        ; None                      ; 0.621 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[0]                      ; UART_TX:U2|t[0]                      ; clk        ; clk      ; None                        ; None                      ; 0.488 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[2]                      ; UART_TX:U2|t[2]                      ; clk        ; clk      ; None                        ; None                      ; 0.488 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[3]                      ; UART_TX:U2|t[3]                      ; clk        ; clk      ; None                        ; None                      ; 0.488 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[1]                      ; UART_TX:U2|t[1]                      ; clk        ; clk      ; None                        ; None                      ; 0.488 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|shift_reg[9]              ; UART_TX:U2|shift_reg[9]              ; clk        ; clk      ; None                        ; None                      ; 0.488 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.ready               ; UART_TX:U2|state.ready               ; clk        ; clk      ; None                        ; None                      ; 0.488 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|dbf                       ; UART_TX:U2|dbf                       ; clk        ; clk      ; None                        ; None                      ; 0.488 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|Txd                       ; UART_TX:U2|Txd                       ; clk        ; clk      ; None                        ; None                      ; 0.488 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|shift_reg[0]              ; UART_TX:U2|shift_reg[0]              ; clk        ; clk      ; None                        ; None                      ; 0.488 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[1]                      ; UART_TX:U2|t[3]                      ; clk        ; clk      ; None                        ; None                      ; 0.424 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|shift_reg[2]              ; UART_TX:U2|shift_reg[1]              ; clk        ; clk      ; None                        ; None                      ; 0.415 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|shift_reg[4]              ; UART_TX:U2|shift_reg[3]              ; clk        ; clk      ; None                        ; None                      ; 0.412 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|shift_reg[5]              ; UART_TX:U2|shift_reg[4]              ; clk        ; clk      ; None                        ; None                      ; 0.409 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Clk_out        ; UART_TX:U2|divider:U1|Clk_out        ; clk        ; clk      ; None                        ; None                      ; 0.396 ns                ;
-; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|tdf                       ; UART_TX:U2|tdf                       ; clk        ; clk      ; None                        ; None                      ; 0.396 ns                ;
-+-------+------------------------------------------------+--------------------------------------+--------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                 ;
++-------+------------------------------------------------+-------------------------------+-------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                          ; To                            ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+-------------------------------+-------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 230.47 MHz ( period = 4.339 ns )               ; UART_TX:U2|dbf                ; UART_TX:U2|divider:U1|Clk_out ; clk        ; clk      ; None                        ; None                      ; 1.775 ns                ;
+; N/A   ; 274.80 MHz ( period = 3.639 ns )               ; UART_TX:U2|dbf                ; UART_TX:U2|divider:U1|Q[3]    ; clk        ; clk      ; None                        ; None                      ; 1.262 ns                ;
+; N/A   ; 274.80 MHz ( period = 3.639 ns )               ; UART_TX:U2|dbf                ; UART_TX:U2|divider:U1|Q[2]    ; clk        ; clk      ; None                        ; None                      ; 1.262 ns                ;
+; N/A   ; 274.80 MHz ( period = 3.639 ns )               ; UART_TX:U2|dbf                ; UART_TX:U2|divider:U1|Q[1]    ; clk        ; clk      ; None                        ; None                      ; 1.262 ns                ;
+; N/A   ; 274.80 MHz ( period = 3.639 ns )               ; UART_TX:U2|dbf                ; UART_TX:U2|divider:U1|Q[0]    ; clk        ; clk      ; None                        ; None                      ; 1.262 ns                ;
+; N/A   ; 274.80 MHz ( period = 3.639 ns )               ; UART_TX:U2|dbf                ; UART_TX:U2|divider:U1|Q[4]    ; clk        ; clk      ; None                        ; None                      ; 1.262 ns                ;
+; N/A   ; 317.26 MHz ( period = 3.152 ns )               ; UART_TX:U2|divider:U1|Q[3]    ; UART_TX:U2|divider:U1|Clk_out ; clk        ; clk      ; None                        ; None                      ; 2.781 ns                ;
+; N/A   ; 321.03 MHz ( period = 3.115 ns )               ; UART_TX:U2|divider:U1|Q[2]    ; UART_TX:U2|divider:U1|Clk_out ; clk        ; clk      ; None                        ; None                      ; 2.744 ns                ;
+; N/A   ; 336.13 MHz ( period = 2.975 ns )               ; UART_TX:U2|divider:U1|Q[1]    ; UART_TX:U2|divider:U1|Clk_out ; clk        ; clk      ; None                        ; None                      ; 2.604 ns                ;
+; N/A   ; 338.64 MHz ( period = 2.953 ns )               ; UART_TX:U2|divider:U1|Q[0]    ; UART_TX:U2|divider:U1|Clk_out ; clk        ; clk      ; None                        ; None                      ; 2.582 ns                ;
+; N/A   ; 359.45 MHz ( period = 2.782 ns )               ; UART_TX:U2|state.idle         ; UART_TX:U2|data_buf[7]        ; clk        ; clk      ; None                        ; None                      ; 2.593 ns                ;
+; N/A   ; 359.58 MHz ( period = 2.781 ns )               ; UART_TX:U2|state.idle         ; UART_TX:U2|data_buf[0]        ; clk        ; clk      ; None                        ; None                      ; 2.597 ns                ;
+; N/A   ; 359.58 MHz ( period = 2.781 ns )               ; UART_TX:U2|state.idle         ; UART_TX:U2|data_buf[1]        ; clk        ; clk      ; None                        ; None                      ; 2.597 ns                ;
+; N/A   ; 359.58 MHz ( period = 2.781 ns )               ; UART_TX:U2|state.idle         ; UART_TX:U2|data_buf[2]        ; clk        ; clk      ; None                        ; None                      ; 2.597 ns                ;
+; N/A   ; 359.58 MHz ( period = 2.781 ns )               ; UART_TX:U2|state.idle         ; UART_TX:U2|data_buf[3]        ; clk        ; clk      ; None                        ; None                      ; 2.597 ns                ;
+; N/A   ; 359.58 MHz ( period = 2.781 ns )               ; UART_TX:U2|state.idle         ; UART_TX:U2|data_buf[4]        ; clk        ; clk      ; None                        ; None                      ; 2.597 ns                ;
+; N/A   ; 359.58 MHz ( period = 2.781 ns )               ; UART_TX:U2|state.idle         ; UART_TX:U2|data_buf[5]        ; clk        ; clk      ; None                        ; None                      ; 2.597 ns                ;
+; N/A   ; 359.58 MHz ( period = 2.781 ns )               ; UART_TX:U2|state.idle         ; UART_TX:U2|data_buf[6]        ; clk        ; clk      ; None                        ; None                      ; 2.597 ns                ;
+; N/A   ; 360.10 MHz ( period = 2.777 ns )               ; UART_TX:U2|divider:U1|Q[4]    ; UART_TX:U2|divider:U1|Clk_out ; clk        ; clk      ; None                        ; None                      ; 2.406 ns                ;
+; N/A   ; 442.09 MHz ( period = 2.262 ns )               ; UART_TX:U2|t[2]               ; UART_TX:U2|state.idle         ; clk        ; clk      ; None                        ; None                      ; 2.072 ns                ;
+; N/A   ; 446.23 MHz ( period = 2.241 ns )               ; UART_TX:U2|t[0]               ; UART_TX:U2|state.idle         ; clk        ; clk      ; None                        ; None                      ; 2.051 ns                ;
+; N/A   ; 481.46 MHz ( period = 2.077 ns )               ; UART_TX:U2|t[1]               ; UART_TX:U2|state.idle         ; clk        ; clk      ; None                        ; None                      ; 1.887 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[3]               ; UART_TX:U2|state.idle         ; clk        ; clk      ; None                        ; None                      ; 1.702 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit     ; UART_TX:U2|t[0]               ; clk        ; clk      ; None                        ; None                      ; 1.638 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit     ; UART_TX:U2|t[1]               ; clk        ; clk      ; None                        ; None                      ; 1.638 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit     ; UART_TX:U2|t[3]               ; clk        ; clk      ; None                        ; None                      ; 1.638 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[3]    ; UART_TX:U2|divider:U1|Q[4]    ; clk        ; clk      ; None                        ; None                      ; 1.635 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[0]    ; UART_TX:U2|divider:U1|Q[4]    ; clk        ; clk      ; None                        ; None                      ; 1.605 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle         ; UART_TX:U2|state.idle         ; clk        ; clk      ; None                        ; None                      ; 1.600 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[3]    ; UART_TX:U2|divider:U1|Q[3]    ; clk        ; clk      ; None                        ; None                      ; 1.586 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[2]               ; UART_TX:U2|tdf                ; clk        ; clk      ; None                        ; None                      ; 1.573 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[0]    ; UART_TX:U2|divider:U1|Q[3]    ; clk        ; clk      ; None                        ; None                      ; 1.572 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[1]    ; UART_TX:U2|divider:U1|Q[4]    ; clk        ; clk      ; None                        ; None                      ; 1.557 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[0]               ; UART_TX:U2|tdf                ; clk        ; clk      ; None                        ; None                      ; 1.552 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[1]    ; UART_TX:U2|divider:U1|Q[3]    ; clk        ; clk      ; None                        ; None                      ; 1.524 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[2]    ; UART_TX:U2|divider:U1|Q[4]    ; clk        ; clk      ; None                        ; None                      ; 1.480 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[0]    ; UART_TX:U2|divider:U1|Q[1]    ; clk        ; clk      ; None                        ; None                      ; 1.459 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[3]    ; UART_TX:U2|divider:U1|Q[2]    ; clk        ; clk      ; None                        ; None                      ; 1.458 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[3]    ; UART_TX:U2|divider:U1|Q[0]    ; clk        ; clk      ; None                        ; None                      ; 1.458 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[2]    ; UART_TX:U2|divider:U1|Q[2]    ; clk        ; clk      ; None                        ; None                      ; 1.421 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[2]    ; UART_TX:U2|divider:U1|Q[0]    ; clk        ; clk      ; None                        ; None                      ; 1.421 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[1]               ; UART_TX:U2|tdf                ; clk        ; clk      ; None                        ; None                      ; 1.388 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[1]    ; UART_TX:U2|divider:U1|Q[1]    ; clk        ; clk      ; None                        ; None                      ; 1.376 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|tdf                ; UART_TX:U2|state.idle         ; clk        ; clk      ; None                        ; None                      ; 1.349 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[2]    ; UART_TX:U2|divider:U1|Q[3]    ; clk        ; clk      ; None                        ; None                      ; 1.338 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[0]    ; UART_TX:U2|divider:U1|Q[2]    ; clk        ; clk      ; None                        ; None                      ; 1.327 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|shift_reg[9]       ; UART_TX:U2|shift_reg[8]       ; clk        ; clk      ; None                        ; None                      ; 1.314 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit     ; UART_TX:U2|state.transmit     ; clk        ; clk      ; None                        ; None                      ; 1.299 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[3]    ; UART_TX:U2|divider:U1|Q[1]    ; clk        ; clk      ; None                        ; None                      ; 1.296 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[1]    ; UART_TX:U2|divider:U1|Q[2]    ; clk        ; clk      ; None                        ; None                      ; 1.281 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[1]    ; UART_TX:U2|divider:U1|Q[0]    ; clk        ; clk      ; None                        ; None                      ; 1.281 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[4]    ; UART_TX:U2|divider:U1|Q[4]    ; clk        ; clk      ; None                        ; None                      ; 1.274 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[2]    ; UART_TX:U2|divider:U1|Q[1]    ; clk        ; clk      ; None                        ; None                      ; 1.259 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[0]    ; UART_TX:U2|divider:U1|Q[0]    ; clk        ; clk      ; None                        ; None                      ; 1.259 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[2]               ; UART_TX:U2|state.transmit     ; clk        ; clk      ; None                        ; None                      ; 1.254 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[0]               ; UART_TX:U2|state.transmit     ; clk        ; clk      ; None                        ; None                      ; 1.233 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[3]               ; UART_TX:U2|tdf                ; clk        ; clk      ; None                        ; None                      ; 1.203 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle         ; UART_TX:U2|shift_reg[9]       ; clk        ; clk      ; None                        ; None                      ; 1.209 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle         ; UART_TX:U2|state.ready        ; clk        ; clk      ; None                        ; None                      ; 1.209 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle         ; UART_TX:U2|state.transmit     ; clk        ; clk      ; None                        ; None                      ; 1.205 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit     ; UART_TX:U2|state.idle         ; clk        ; clk      ; None                        ; None                      ; 1.162 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle         ; UART_TX:U2|shift_reg[1]       ; clk        ; clk      ; None                        ; None                      ; 1.141 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle         ; UART_TX:U2|shift_reg[2]       ; clk        ; clk      ; None                        ; None                      ; 1.141 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle         ; UART_TX:U2|shift_reg[3]       ; clk        ; clk      ; None                        ; None                      ; 1.141 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle         ; UART_TX:U2|shift_reg[4]       ; clk        ; clk      ; None                        ; None                      ; 1.141 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle         ; UART_TX:U2|shift_reg[5]       ; clk        ; clk      ; None                        ; None                      ; 1.141 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle         ; UART_TX:U2|shift_reg[6]       ; clk        ; clk      ; None                        ; None                      ; 1.141 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle         ; UART_TX:U2|shift_reg[7]       ; clk        ; clk      ; None                        ; None                      ; 1.141 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle         ; UART_TX:U2|shift_reg[8]       ; clk        ; clk      ; None                        ; None                      ; 1.141 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle         ; UART_TX:U2|tdf                ; clk        ; clk      ; None                        ; None                      ; 1.103 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[4]    ; UART_TX:U2|divider:U1|Q[2]    ; clk        ; clk      ; None                        ; None                      ; 1.083 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[4]    ; UART_TX:U2|divider:U1|Q[0]    ; clk        ; clk      ; None                        ; None                      ; 1.083 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit     ; UART_TX:U2|t[2]               ; clk        ; clk      ; None                        ; None                      ; 1.082 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit     ; UART_TX:U2|shift_reg[1]       ; clk        ; clk      ; None                        ; None                      ; 1.069 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit     ; UART_TX:U2|shift_reg[2]       ; clk        ; clk      ; None                        ; None                      ; 1.069 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit     ; UART_TX:U2|shift_reg[3]       ; clk        ; clk      ; None                        ; None                      ; 1.069 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit     ; UART_TX:U2|shift_reg[4]       ; clk        ; clk      ; None                        ; None                      ; 1.069 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit     ; UART_TX:U2|shift_reg[5]       ; clk        ; clk      ; None                        ; None                      ; 1.069 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit     ; UART_TX:U2|shift_reg[6]       ; clk        ; clk      ; None                        ; None                      ; 1.069 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit     ; UART_TX:U2|shift_reg[7]       ; clk        ; clk      ; None                        ; None                      ; 1.069 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit     ; UART_TX:U2|shift_reg[8]       ; clk        ; clk      ; None                        ; None                      ; 1.069 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[1]               ; UART_TX:U2|state.transmit     ; clk        ; clk      ; None                        ; None                      ; 1.069 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle         ; UART_TX:U2|dbf                ; clk        ; clk      ; None                        ; None                      ; 1.061 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|shift_reg[1]       ; UART_TX:U2|shift_reg[0]       ; clk        ; clk      ; None                        ; None                      ; 1.007 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[1]               ; UART_TX:U2|t[2]               ; clk        ; clk      ; None                        ; None                      ; 0.928 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[4]    ; UART_TX:U2|divider:U1|Q[1]    ; clk        ; clk      ; None                        ; None                      ; 0.921 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|tdf                ; UART_TX:U2|dbf                ; clk        ; clk      ; None                        ; None                      ; 0.892 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[3]               ; UART_TX:U2|state.transmit     ; clk        ; clk      ; None                        ; None                      ; 0.884 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.idle         ; UART_TX:U2|shift_reg[0]       ; clk        ; clk      ; None                        ; None                      ; 0.851 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|data_buf[7]        ; UART_TX:U2|shift_reg[8]       ; clk        ; clk      ; None                        ; None                      ; 0.846 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit     ; UART_TX:U2|tdf                ; clk        ; clk      ; None                        ; None                      ; 0.828 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit     ; UART_TX:U2|shift_reg[0]       ; clk        ; clk      ; None                        ; None                      ; 0.815 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|data_buf[3]        ; UART_TX:U2|shift_reg[4]       ; clk        ; clk      ; None                        ; None                      ; 0.804 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[2]               ; UART_TX:U2|t[3]               ; clk        ; clk      ; None                        ; None                      ; 0.792 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[2]               ; UART_TX:U2|t[1]               ; clk        ; clk      ; None                        ; None                      ; 0.786 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[0]               ; UART_TX:U2|t[3]               ; clk        ; clk      ; None                        ; None                      ; 0.771 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[0]               ; UART_TX:U2|t[2]               ; clk        ; clk      ; None                        ; None                      ; 0.767 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|shift_reg[3]       ; UART_TX:U2|shift_reg[2]       ; clk        ; clk      ; None                        ; None                      ; 0.756 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Q[4]    ; UART_TX:U2|divider:U1|Q[3]    ; clk        ; clk      ; None                        ; None                      ; 0.713 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[1]               ; UART_TX:U2|t[3]               ; clk        ; clk      ; None                        ; None                      ; 0.639 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[0]               ; UART_TX:U2|t[1]               ; clk        ; clk      ; None                        ; None                      ; 0.635 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.ready        ; UART_TX:U2|shift_reg[9]       ; clk        ; clk      ; None                        ; None                      ; 0.628 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|shift_reg[4]       ; UART_TX:U2|shift_reg[3]       ; clk        ; clk      ; None                        ; None                      ; 0.563 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|shift_reg[8]       ; UART_TX:U2|shift_reg[7]       ; clk        ; clk      ; None                        ; None                      ; 0.562 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|data_buf[5]        ; UART_TX:U2|shift_reg[6]       ; clk        ; clk      ; None                        ; None                      ; 0.519 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|data_buf[1]        ; UART_TX:U2|shift_reg[2]       ; clk        ; clk      ; None                        ; None                      ; 0.517 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.transmit     ; UART_TX:U2|dbf                ; clk        ; clk      ; None                        ; None                      ; 0.516 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|data_buf[6]        ; UART_TX:U2|shift_reg[7]       ; clk        ; clk      ; None                        ; None                      ; 0.517 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|data_buf[0]        ; UART_TX:U2|shift_reg[1]       ; clk        ; clk      ; None                        ; None                      ; 0.515 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|data_buf[4]        ; UART_TX:U2|shift_reg[5]       ; clk        ; clk      ; None                        ; None                      ; 0.515 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|data_buf[2]        ; UART_TX:U2|shift_reg[3]       ; clk        ; clk      ; None                        ; None                      ; 0.514 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[2]               ; UART_TX:U2|t[2]               ; clk        ; clk      ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[0]               ; UART_TX:U2|t[0]               ; clk        ; clk      ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[1]               ; UART_TX:U2|t[1]               ; clk        ; clk      ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[3]               ; UART_TX:U2|t[3]               ; clk        ; clk      ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|dbf                ; UART_TX:U2|dbf                ; clk        ; clk      ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|shift_reg[9]       ; UART_TX:U2|shift_reg[9]       ; clk        ; clk      ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|state.ready        ; UART_TX:U2|state.ready        ; clk        ; clk      ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|shift_reg[0]       ; UART_TX:U2|shift_reg[0]       ; clk        ; clk      ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|t[3]               ; UART_TX:U2|t[1]               ; clk        ; clk      ; None                        ; None                      ; 0.425 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|shift_reg[7]       ; UART_TX:U2|shift_reg[6]       ; clk        ; clk      ; None                        ; None                      ; 0.419 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|tdf                ; UART_TX:U2|state.transmit     ; clk        ; clk      ; None                        ; None                      ; 0.418 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|shift_reg[5]       ; UART_TX:U2|shift_reg[4]       ; clk        ; clk      ; None                        ; None                      ; 0.418 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|shift_reg[2]       ; UART_TX:U2|shift_reg[1]       ; clk        ; clk      ; None                        ; None                      ; 0.415 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|shift_reg[6]       ; UART_TX:U2|shift_reg[5]       ; clk        ; clk      ; None                        ; None                      ; 0.414 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|divider:U1|Clk_out ; UART_TX:U2|divider:U1|Clk_out ; clk        ; clk      ; None                        ; None                      ; 0.396 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; UART_TX:U2|tdf                ; UART_TX:U2|tdf                ; clk        ; clk      ; None                        ; None                      ; 0.396 ns                ;
++-------+------------------------------------------------+-------------------------------+-------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
 
 
-+-----------------------------------------------------------------------------------------------+
-; tsu                                                                                           ;
-+-------+--------------+------------+---------+--------------------------------------+----------+
-; Slack ; Required tsu ; Actual tsu ; From    ; To                                   ; To Clock ;
-+-------+--------------+------------+---------+--------------------------------------+----------+
-; N/A   ; None         ; 3.341 ns   ; rst     ; UART_TX:U2|divider:U1|Clk_out        ; clk      ;
-; N/A   ; None         ; 3.283 ns   ; rst     ; UART_TX:U2|divider:U1|Q[2]~DUPLICATE ; clk      ;
-; N/A   ; None         ; 3.283 ns   ; rst     ; UART_TX:U2|divider:U1|Q[2]           ; clk      ;
-; N/A   ; None         ; 3.282 ns   ; rst     ; UART_TX:U2|divider:U1|Q[0]           ; clk      ;
-; N/A   ; None         ; 3.269 ns   ; rst     ; UART_TX:U2|divider:U1|Q[4]           ; clk      ;
-; N/A   ; None         ; 3.163 ns   ; rst     ; UART_TX:U2|data_buf[0]               ; clk      ;
-; N/A   ; None         ; 3.163 ns   ; rst     ; UART_TX:U2|data_buf[1]               ; clk      ;
-; N/A   ; None         ; 3.163 ns   ; rst     ; UART_TX:U2|data_buf[2]               ; clk      ;
-; N/A   ; None         ; 3.163 ns   ; rst     ; UART_TX:U2|data_buf[3]               ; clk      ;
-; N/A   ; None         ; 3.163 ns   ; rst     ; UART_TX:U2|data_buf[4]               ; clk      ;
-; N/A   ; None         ; 3.163 ns   ; rst     ; UART_TX:U2|data_buf[5]               ; clk      ;
-; N/A   ; None         ; 3.163 ns   ; rst     ; UART_TX:U2|data_buf[6]               ; clk      ;
-; N/A   ; None         ; 3.163 ns   ; rst     ; UART_TX:U2|data_buf[7]               ; clk      ;
-; N/A   ; None         ; 3.138 ns   ; rst     ; UART_TX:U2|divider:U1|Q[3]           ; clk      ;
-; N/A   ; None         ; 3.133 ns   ; rst     ; UART_TX:U2|divider:U1|Q[1]           ; clk      ;
-; N/A   ; None         ; 3.054 ns   ; rst     ; UART_TX:U2|t[0]                      ; clk      ;
-; N/A   ; None         ; 3.054 ns   ; rst     ; UART_TX:U2|t[3]                      ; clk      ;
-; N/A   ; None         ; 3.054 ns   ; rst     ; UART_TX:U2|t[1]                      ; clk      ;
-; N/A   ; None         ; 2.772 ns   ; rst     ; UART_TX:U2|state.transmit            ; clk      ;
-; N/A   ; None         ; 2.590 ns   ; rst     ; UART_TX:U2|t[2]                      ; clk      ;
-; N/A   ; None         ; 2.589 ns   ; ce      ; UART_TX:U2|data_buf[0]               ; clk      ;
-; N/A   ; None         ; 2.589 ns   ; ce      ; UART_TX:U2|data_buf[1]               ; clk      ;
-; N/A   ; None         ; 2.589 ns   ; ce      ; UART_TX:U2|data_buf[2]               ; clk      ;
-; N/A   ; None         ; 2.589 ns   ; ce      ; UART_TX:U2|data_buf[3]               ; clk      ;
-; N/A   ; None         ; 2.589 ns   ; ce      ; UART_TX:U2|data_buf[4]               ; clk      ;
-; N/A   ; None         ; 2.589 ns   ; ce      ; UART_TX:U2|data_buf[5]               ; clk      ;
-; N/A   ; None         ; 2.589 ns   ; ce      ; UART_TX:U2|data_buf[6]               ; clk      ;
-; N/A   ; None         ; 2.589 ns   ; ce      ; UART_TX:U2|data_buf[7]               ; clk      ;
-; N/A   ; None         ; 2.584 ns   ; rst     ; UART_TX:U2|state.idle                ; clk      ;
-; N/A   ; None         ; 2.584 ns   ; rst     ; UART_TX:U2|tdf                       ; clk      ;
-; N/A   ; None         ; 2.066 ns   ; rst     ; UART_TX:U2|state.ready               ; clk      ;
-; N/A   ; None         ; 1.897 ns   ; ce      ; UART_TX:U2|tdf                       ; clk      ;
-; N/A   ; None         ; 1.895 ns   ; ce      ; UART_TX:U2|state.transmit            ; clk      ;
-; N/A   ; None         ; 1.894 ns   ; ce      ; UART_TX:U2|state.idle                ; clk      ;
-; N/A   ; None         ; 1.712 ns   ; ce      ; UART_TX:U2|state.ready               ; clk      ;
-; N/A   ; None         ; 1.462 ns   ; wr      ; UART_TX:U2|data_buf[0]               ; clk      ;
-; N/A   ; None         ; 1.462 ns   ; wr      ; UART_TX:U2|data_buf[1]               ; clk      ;
-; N/A   ; None         ; 1.462 ns   ; wr      ; UART_TX:U2|data_buf[2]               ; clk      ;
-; N/A   ; None         ; 1.462 ns   ; wr      ; UART_TX:U2|data_buf[3]               ; clk      ;
-; N/A   ; None         ; 1.462 ns   ; wr      ; UART_TX:U2|data_buf[4]               ; clk      ;
-; N/A   ; None         ; 1.462 ns   ; wr      ; UART_TX:U2|data_buf[5]               ; clk      ;
-; N/A   ; None         ; 1.462 ns   ; wr      ; UART_TX:U2|data_buf[6]               ; clk      ;
-; N/A   ; None         ; 1.462 ns   ; wr      ; UART_TX:U2|data_buf[7]               ; clk      ;
-; N/A   ; None         ; 1.321 ns   ; data[0] ; UART_TX:U2|data_buf[0]               ; clk      ;
-; N/A   ; None         ; 1.294 ns   ; data[3] ; UART_TX:U2|data_buf[3]               ; clk      ;
-; N/A   ; None         ; 1.174 ns   ; data[1] ; UART_TX:U2|data_buf[1]               ; clk      ;
-; N/A   ; None         ; 0.951 ns   ; data[2] ; UART_TX:U2|data_buf[2]               ; clk      ;
-; N/A   ; None         ; 0.670 ns   ; wr      ; UART_TX:U2|state.idle                ; clk      ;
-; N/A   ; None         ; 0.630 ns   ; wr      ; UART_TX:U2|tdf                       ; clk      ;
-; N/A   ; None         ; 0.628 ns   ; wr      ; UART_TX:U2|state.transmit            ; clk      ;
-; N/A   ; None         ; 0.466 ns   ; data[6] ; UART_TX:U2|data_buf[6]               ; clk      ;
-; N/A   ; None         ; 0.403 ns   ; wr      ; UART_TX:U2|state.ready               ; clk      ;
-; N/A   ; None         ; 0.100 ns   ; data[5] ; UART_TX:U2|data_buf[5]               ; clk      ;
-; N/A   ; None         ; -0.027 ns  ; data[4] ; UART_TX:U2|data_buf[4]               ; clk      ;
-; N/A   ; None         ; -0.126 ns  ; data[7] ; UART_TX:U2|data_buf[7]               ; clk      ;
-+-------+--------------+------------+---------+--------------------------------------+----------+
++----------------------------------------------------------------------------------------+
+; tsu                                                                                    ;
++-------+--------------+------------+---------+-------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From    ; To                            ; To Clock ;
++-------+--------------+------------+---------+-------------------------------+----------+
+; N/A   ; None         ; 4.561 ns   ; wr      ; UART_TX:U2|divider:U1|Clk_out ; clk      ;
+; N/A   ; None         ; 3.959 ns   ; rst     ; UART_TX:U2|divider:U1|Q[3]    ; clk      ;
+; N/A   ; None         ; 3.959 ns   ; rst     ; UART_TX:U2|divider:U1|Q[2]    ; clk      ;
+; N/A   ; None         ; 3.959 ns   ; rst     ; UART_TX:U2|divider:U1|Q[0]    ; clk      ;
+; N/A   ; None         ; 3.861 ns   ; wr      ; UART_TX:U2|divider:U1|Q[3]    ; clk      ;
+; N/A   ; None         ; 3.861 ns   ; wr      ; UART_TX:U2|divider:U1|Q[2]    ; clk      ;
+; N/A   ; None         ; 3.861 ns   ; wr      ; UART_TX:U2|divider:U1|Q[1]    ; clk      ;
+; N/A   ; None         ; 3.861 ns   ; wr      ; UART_TX:U2|divider:U1|Q[0]    ; clk      ;
+; N/A   ; None         ; 3.861 ns   ; wr      ; UART_TX:U2|divider:U1|Q[4]    ; clk      ;
+; N/A   ; None         ; 3.846 ns   ; rst     ; UART_TX:U2|divider:U1|Clk_out ; clk      ;
+; N/A   ; None         ; 3.623 ns   ; rst     ; UART_TX:U2|divider:U1|Q[1]    ; clk      ;
+; N/A   ; None         ; 3.620 ns   ; rst     ; UART_TX:U2|divider:U1|Q[4]    ; clk      ;
+; N/A   ; None         ; 3.144 ns   ; rst     ; UART_TX:U2|data_buf[7]        ; clk      ;
+; N/A   ; None         ; 3.143 ns   ; rst     ; UART_TX:U2|data_buf[0]        ; clk      ;
+; N/A   ; None         ; 3.143 ns   ; rst     ; UART_TX:U2|data_buf[1]        ; clk      ;
+; N/A   ; None         ; 3.143 ns   ; rst     ; UART_TX:U2|data_buf[2]        ; clk      ;
+; N/A   ; None         ; 3.143 ns   ; rst     ; UART_TX:U2|data_buf[3]        ; clk      ;
+; N/A   ; None         ; 3.143 ns   ; rst     ; UART_TX:U2|data_buf[4]        ; clk      ;
+; N/A   ; None         ; 3.143 ns   ; rst     ; UART_TX:U2|data_buf[5]        ; clk      ;
+; N/A   ; None         ; 3.143 ns   ; rst     ; UART_TX:U2|data_buf[6]        ; clk      ;
+; N/A   ; None         ; 2.407 ns   ; ce      ; UART_TX:U2|data_buf[7]        ; clk      ;
+; N/A   ; None         ; 2.406 ns   ; ce      ; UART_TX:U2|data_buf[0]        ; clk      ;
+; N/A   ; None         ; 2.406 ns   ; ce      ; UART_TX:U2|data_buf[1]        ; clk      ;
+; N/A   ; None         ; 2.406 ns   ; ce      ; UART_TX:U2|data_buf[2]        ; clk      ;
+; N/A   ; None         ; 2.406 ns   ; ce      ; UART_TX:U2|data_buf[3]        ; clk      ;
+; N/A   ; None         ; 2.406 ns   ; ce      ; UART_TX:U2|data_buf[4]        ; clk      ;
+; N/A   ; None         ; 2.406 ns   ; ce      ; UART_TX:U2|data_buf[5]        ; clk      ;
+; N/A   ; None         ; 2.406 ns   ; ce      ; UART_TX:U2|data_buf[6]        ; clk      ;
+; N/A   ; None         ; 2.329 ns   ; rst     ; UART_TX:U2|state.idle         ; clk      ;
+; N/A   ; None         ; 2.290 ns   ; rst     ; UART_TX:U2|t[0]               ; clk      ;
+; N/A   ; None         ; 2.290 ns   ; rst     ; UART_TX:U2|t[1]               ; clk      ;
+; N/A   ; None         ; 2.290 ns   ; rst     ; UART_TX:U2|t[3]               ; clk      ;
+; N/A   ; None         ; 2.185 ns   ; wr      ; UART_TX:U2|data_buf[7]        ; clk      ;
+; N/A   ; None         ; 2.184 ns   ; wr      ; UART_TX:U2|data_buf[0]        ; clk      ;
+; N/A   ; None         ; 2.184 ns   ; wr      ; UART_TX:U2|data_buf[1]        ; clk      ;
+; N/A   ; None         ; 2.184 ns   ; wr      ; UART_TX:U2|data_buf[2]        ; clk      ;
+; N/A   ; None         ; 2.184 ns   ; wr      ; UART_TX:U2|data_buf[3]        ; clk      ;
+; N/A   ; None         ; 2.184 ns   ; wr      ; UART_TX:U2|data_buf[4]        ; clk      ;
+; N/A   ; None         ; 2.184 ns   ; wr      ; UART_TX:U2|data_buf[5]        ; clk      ;
+; N/A   ; None         ; 2.184 ns   ; wr      ; UART_TX:U2|data_buf[6]        ; clk      ;
+; N/A   ; None         ; 2.038 ns   ; rst     ; UART_TX:U2|state.transmit     ; clk      ;
+; N/A   ; None         ; 1.862 ns   ; wr      ; UART_TX:U2|state.transmit     ; clk      ;
+; N/A   ; None         ; 1.825 ns   ; ce      ; UART_TX:U2|state.idle         ; clk      ;
+; N/A   ; None         ; 1.734 ns   ; rst     ; UART_TX:U2|t[2]               ; clk      ;
+; N/A   ; None         ; 1.700 ns   ; rst     ; UART_TX:U2|tdf                ; clk      ;
+; N/A   ; None         ; 1.660 ns   ; wr      ; UART_TX:U2|state.idle         ; clk      ;
+; N/A   ; None         ; 1.534 ns   ; data[0] ; UART_TX:U2|data_buf[0]        ; clk      ;
+; N/A   ; None         ; 1.524 ns   ; wr      ; UART_TX:U2|tdf                ; clk      ;
+; N/A   ; None         ; 1.471 ns   ; rst     ; UART_TX:U2|state.ready        ; clk      ;
+; N/A   ; None         ; 1.394 ns   ; wr      ; UART_TX:U2|state.ready        ; clk      ;
+; N/A   ; None         ; 1.304 ns   ; data[2] ; UART_TX:U2|data_buf[2]        ; clk      ;
+; N/A   ; None         ; 1.262 ns   ; ce      ; UART_TX:U2|state.transmit     ; clk      ;
+; N/A   ; None         ; 1.185 ns   ; data[6] ; UART_TX:U2|data_buf[6]        ; clk      ;
+; N/A   ; None         ; 0.924 ns   ; ce      ; UART_TX:U2|tdf                ; clk      ;
+; N/A   ; None         ; 0.852 ns   ; data[4] ; UART_TX:U2|data_buf[4]        ; clk      ;
+; N/A   ; None         ; 0.840 ns   ; data[1] ; UART_TX:U2|data_buf[1]        ; clk      ;
+; N/A   ; None         ; 0.794 ns   ; data[3] ; UART_TX:U2|data_buf[3]        ; clk      ;
+; N/A   ; None         ; 0.700 ns   ; data[5] ; UART_TX:U2|data_buf[5]        ; clk      ;
+; N/A   ; None         ; 0.660 ns   ; ce      ; UART_TX:U2|state.ready        ; clk      ;
+; N/A   ; None         ; 0.558 ns   ; data[7] ; UART_TX:U2|data_buf[7]        ; clk      ;
++-------+--------------+------------+---------+-------------------------------+----------+
 
 
-+------------------------------------------------------------------------------------------+
-; tco                                                                                      ;
-+-------+--------------+------------+-------------------------------+---------+------------+
-; Slack ; Required tco ; Actual tco ; From                          ; To      ; From Clock ;
-+-------+--------------+------------+-------------------------------+---------+------------+
-; N/A   ; None         ; 7.554 ns   ; UART_TX:U2|tdf                ; tdf     ; clk        ;
-; N/A   ; None         ; 6.931 ns   ; UART_TX:U2|divider:U1|Clk_out ; clk_div ; clk        ;
-; N/A   ; None         ; 6.609 ns   ; UART_TX:U2|dbf                ; dbf     ; clk        ;
-; N/A   ; None         ; 6.068 ns   ; UART_TX:U2|Txd                ; Txd     ; clk        ;
-+-------+--------------+------------+-------------------------------+---------+------------+
++-----------------------------------------------------------------------------------------+
+; tco                                                                                     ;
++-------+--------------+------------+-------------------------------+--------+------------+
+; Slack ; Required tco ; Actual tco ; From                          ; To     ; From Clock ;
++-------+--------------+------------+-------------------------------+--------+------------+
+; N/A   ; None         ; 9.116 ns   ; UART_TX:U2|state.transmit     ; Txd    ; clk        ;
+; N/A   ; None         ; 8.935 ns   ; UART_TX:U2|shift_reg[0]       ; Txd    ; clk        ;
+; N/A   ; None         ; 8.311 ns   ; UART_TX:U2|dbf                ; dbf    ; clk        ;
+; N/A   ; None         ; 8.207 ns   ; UART_TX:U2|tdf                ; tdf    ; clk        ;
+; N/A   ; None         ; 5.147 ns   ; UART_TX:U2|divider:U1|Clk_out ; clk_tx ; clk        ;
++-------+--------------+------------+-------------------------------+--------+------------+
 
 
-+-----------------------------------------------------------------------------------------------------+
-; th                                                                                                  ;
-+---------------+-------------+-----------+---------+--------------------------------------+----------+
-; Minimum Slack ; Required th ; Actual th ; From    ; To                                   ; To Clock ;
-+---------------+-------------+-----------+---------+--------------------------------------+----------+
-; N/A           ; None        ; 0.365 ns  ; data[7] ; UART_TX:U2|data_buf[7]               ; clk      ;
-; N/A           ; None        ; 0.266 ns  ; data[4] ; UART_TX:U2|data_buf[4]               ; clk      ;
-; N/A           ; None        ; 0.139 ns  ; data[5] ; UART_TX:U2|data_buf[5]               ; clk      ;
-; N/A           ; None        ; -0.164 ns ; wr      ; UART_TX:U2|state.ready               ; clk      ;
-; N/A           ; None        ; -0.227 ns ; data[6] ; UART_TX:U2|data_buf[6]               ; clk      ;
-; N/A           ; None        ; -0.389 ns ; wr      ; UART_TX:U2|state.transmit            ; clk      ;
-; N/A           ; None        ; -0.391 ns ; wr      ; UART_TX:U2|tdf                       ; clk      ;
-; N/A           ; None        ; -0.431 ns ; wr      ; UART_TX:U2|state.idle                ; clk      ;
-; N/A           ; None        ; -0.712 ns ; data[2] ; UART_TX:U2|data_buf[2]               ; clk      ;
-; N/A           ; None        ; -0.935 ns ; data[1] ; UART_TX:U2|data_buf[1]               ; clk      ;
-; N/A           ; None        ; -1.055 ns ; data[3] ; UART_TX:U2|data_buf[3]               ; clk      ;
-; N/A           ; None        ; -1.082 ns ; data[0] ; UART_TX:U2|data_buf[0]               ; clk      ;
-; N/A           ; None        ; -1.223 ns ; wr      ; UART_TX:U2|data_buf[0]               ; clk      ;
-; N/A           ; None        ; -1.223 ns ; wr      ; UART_TX:U2|data_buf[1]               ; clk      ;
-; N/A           ; None        ; -1.223 ns ; wr      ; UART_TX:U2|data_buf[2]               ; clk      ;
-; N/A           ; None        ; -1.223 ns ; wr      ; UART_TX:U2|data_buf[3]               ; clk      ;
-; N/A           ; None        ; -1.223 ns ; wr      ; UART_TX:U2|data_buf[4]               ; clk      ;
-; N/A           ; None        ; -1.223 ns ; wr      ; UART_TX:U2|data_buf[5]               ; clk      ;
-; N/A           ; None        ; -1.223 ns ; wr      ; UART_TX:U2|data_buf[6]               ; clk      ;
-; N/A           ; None        ; -1.223 ns ; wr      ; UART_TX:U2|data_buf[7]               ; clk      ;
-; N/A           ; None        ; -1.473 ns ; ce      ; UART_TX:U2|state.ready               ; clk      ;
-; N/A           ; None        ; -1.655 ns ; ce      ; UART_TX:U2|state.idle                ; clk      ;
-; N/A           ; None        ; -1.656 ns ; ce      ; UART_TX:U2|state.transmit            ; clk      ;
-; N/A           ; None        ; -1.658 ns ; ce      ; UART_TX:U2|tdf                       ; clk      ;
-; N/A           ; None        ; -1.827 ns ; rst     ; UART_TX:U2|state.ready               ; clk      ;
-; N/A           ; None        ; -1.970 ns ; rst     ; UART_TX:U2|tdf                       ; clk      ;
-; N/A           ; None        ; -2.343 ns ; rst     ; UART_TX:U2|state.transmit            ; clk      ;
-; N/A           ; None        ; -2.345 ns ; rst     ; UART_TX:U2|state.idle                ; clk      ;
-; N/A           ; None        ; -2.350 ns ; ce      ; UART_TX:U2|data_buf[0]               ; clk      ;
-; N/A           ; None        ; -2.350 ns ; ce      ; UART_TX:U2|data_buf[1]               ; clk      ;
-; N/A           ; None        ; -2.350 ns ; ce      ; UART_TX:U2|data_buf[2]               ; clk      ;
-; N/A           ; None        ; -2.350 ns ; ce      ; UART_TX:U2|data_buf[3]               ; clk      ;
-; N/A           ; None        ; -2.350 ns ; ce      ; UART_TX:U2|data_buf[4]               ; clk      ;
-; N/A           ; None        ; -2.350 ns ; ce      ; UART_TX:U2|data_buf[5]               ; clk      ;
-; N/A           ; None        ; -2.350 ns ; ce      ; UART_TX:U2|data_buf[6]               ; clk      ;
-; N/A           ; None        ; -2.350 ns ; ce      ; UART_TX:U2|data_buf[7]               ; clk      ;
-; N/A           ; None        ; -2.351 ns ; rst     ; UART_TX:U2|t[2]                      ; clk      ;
-; N/A           ; None        ; -2.815 ns ; rst     ; UART_TX:U2|t[0]                      ; clk      ;
-; N/A           ; None        ; -2.815 ns ; rst     ; UART_TX:U2|t[3]                      ; clk      ;
-; N/A           ; None        ; -2.815 ns ; rst     ; UART_TX:U2|t[1]                      ; clk      ;
-; N/A           ; None        ; -2.894 ns ; rst     ; UART_TX:U2|divider:U1|Q[1]           ; clk      ;
-; N/A           ; None        ; -2.899 ns ; rst     ; UART_TX:U2|divider:U1|Q[3]           ; clk      ;
-; N/A           ; None        ; -2.924 ns ; rst     ; UART_TX:U2|data_buf[0]               ; clk      ;
-; N/A           ; None        ; -2.924 ns ; rst     ; UART_TX:U2|data_buf[1]               ; clk      ;
-; N/A           ; None        ; -2.924 ns ; rst     ; UART_TX:U2|data_buf[2]               ; clk      ;
-; N/A           ; None        ; -2.924 ns ; rst     ; UART_TX:U2|data_buf[3]               ; clk      ;
-; N/A           ; None        ; -2.924 ns ; rst     ; UART_TX:U2|data_buf[4]               ; clk      ;
-; N/A           ; None        ; -2.924 ns ; rst     ; UART_TX:U2|data_buf[5]               ; clk      ;
-; N/A           ; None        ; -2.924 ns ; rst     ; UART_TX:U2|data_buf[6]               ; clk      ;
-; N/A           ; None        ; -2.924 ns ; rst     ; UART_TX:U2|data_buf[7]               ; clk      ;
-; N/A           ; None        ; -3.030 ns ; rst     ; UART_TX:U2|divider:U1|Q[4]           ; clk      ;
-; N/A           ; None        ; -3.043 ns ; rst     ; UART_TX:U2|divider:U1|Q[0]           ; clk      ;
-; N/A           ; None        ; -3.044 ns ; rst     ; UART_TX:U2|divider:U1|Q[2]~DUPLICATE ; clk      ;
-; N/A           ; None        ; -3.044 ns ; rst     ; UART_TX:U2|divider:U1|Q[2]           ; clk      ;
-; N/A           ; None        ; -3.102 ns ; rst     ; UART_TX:U2|divider:U1|Clk_out        ; clk      ;
-+---------------+-------------+-----------+---------+--------------------------------------+----------+
++----------------------------------------------------------------------------------------------+
+; th                                                                                           ;
++---------------+-------------+-----------+---------+-------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From    ; To                            ; To Clock ;
++---------------+-------------+-----------+---------+-------------------------------+----------+
+; N/A           ; None        ; -0.319 ns ; data[7] ; UART_TX:U2|data_buf[7]        ; clk      ;
+; N/A           ; None        ; -0.421 ns ; ce      ; UART_TX:U2|state.ready        ; clk      ;
+; N/A           ; None        ; -0.461 ns ; data[5] ; UART_TX:U2|data_buf[5]        ; clk      ;
+; N/A           ; None        ; -0.555 ns ; data[3] ; UART_TX:U2|data_buf[3]        ; clk      ;
+; N/A           ; None        ; -0.601 ns ; data[1] ; UART_TX:U2|data_buf[1]        ; clk      ;
+; N/A           ; None        ; -0.613 ns ; data[4] ; UART_TX:U2|data_buf[4]        ; clk      ;
+; N/A           ; None        ; -0.685 ns ; ce      ; UART_TX:U2|tdf                ; clk      ;
+; N/A           ; None        ; -0.946 ns ; data[6] ; UART_TX:U2|data_buf[6]        ; clk      ;
+; N/A           ; None        ; -1.023 ns ; ce      ; UART_TX:U2|state.transmit     ; clk      ;
+; N/A           ; None        ; -1.065 ns ; data[2] ; UART_TX:U2|data_buf[2]        ; clk      ;
+; N/A           ; None        ; -1.155 ns ; wr      ; UART_TX:U2|state.ready        ; clk      ;
+; N/A           ; None        ; -1.232 ns ; rst     ; UART_TX:U2|state.ready        ; clk      ;
+; N/A           ; None        ; -1.276 ns ; rst     ; UART_TX:U2|tdf                ; clk      ;
+; N/A           ; None        ; -1.285 ns ; wr      ; UART_TX:U2|tdf                ; clk      ;
+; N/A           ; None        ; -1.295 ns ; data[0] ; UART_TX:U2|data_buf[0]        ; clk      ;
+; N/A           ; None        ; -1.421 ns ; wr      ; UART_TX:U2|state.idle         ; clk      ;
+; N/A           ; None        ; -1.495 ns ; rst     ; UART_TX:U2|t[2]               ; clk      ;
+; N/A           ; None        ; -1.586 ns ; ce      ; UART_TX:U2|state.idle         ; clk      ;
+; N/A           ; None        ; -1.623 ns ; wr      ; UART_TX:U2|state.transmit     ; clk      ;
+; N/A           ; None        ; -1.712 ns ; rst     ; UART_TX:U2|state.transmit     ; clk      ;
+; N/A           ; None        ; -1.945 ns ; wr      ; UART_TX:U2|data_buf[0]        ; clk      ;
+; N/A           ; None        ; -1.945 ns ; wr      ; UART_TX:U2|data_buf[1]        ; clk      ;
+; N/A           ; None        ; -1.945 ns ; wr      ; UART_TX:U2|data_buf[2]        ; clk      ;
+; N/A           ; None        ; -1.945 ns ; wr      ; UART_TX:U2|data_buf[3]        ; clk      ;
+; N/A           ; None        ; -1.945 ns ; wr      ; UART_TX:U2|data_buf[4]        ; clk      ;
+; N/A           ; None        ; -1.945 ns ; wr      ; UART_TX:U2|data_buf[5]        ; clk      ;
+; N/A           ; None        ; -1.945 ns ; wr      ; UART_TX:U2|data_buf[6]        ; clk      ;
+; N/A           ; None        ; -1.946 ns ; wr      ; UART_TX:U2|data_buf[7]        ; clk      ;
+; N/A           ; None        ; -2.051 ns ; rst     ; UART_TX:U2|t[0]               ; clk      ;
+; N/A           ; None        ; -2.051 ns ; rst     ; UART_TX:U2|t[1]               ; clk      ;
+; N/A           ; None        ; -2.051 ns ; rst     ; UART_TX:U2|t[3]               ; clk      ;
+; N/A           ; None        ; -2.090 ns ; rst     ; UART_TX:U2|state.idle         ; clk      ;
+; N/A           ; None        ; -2.167 ns ; ce      ; UART_TX:U2|data_buf[0]        ; clk      ;
+; N/A           ; None        ; -2.167 ns ; ce      ; UART_TX:U2|data_buf[1]        ; clk      ;
+; N/A           ; None        ; -2.167 ns ; ce      ; UART_TX:U2|data_buf[2]        ; clk      ;
+; N/A           ; None        ; -2.167 ns ; ce      ; UART_TX:U2|data_buf[3]        ; clk      ;
+; N/A           ; None        ; -2.167 ns ; ce      ; UART_TX:U2|data_buf[4]        ; clk      ;
+; N/A           ; None        ; -2.167 ns ; ce      ; UART_TX:U2|data_buf[5]        ; clk      ;
+; N/A           ; None        ; -2.167 ns ; ce      ; UART_TX:U2|data_buf[6]        ; clk      ;
+; N/A           ; None        ; -2.168 ns ; ce      ; UART_TX:U2|data_buf[7]        ; clk      ;
+; N/A           ; None        ; -2.904 ns ; rst     ; UART_TX:U2|data_buf[0]        ; clk      ;
+; N/A           ; None        ; -2.904 ns ; rst     ; UART_TX:U2|data_buf[1]        ; clk      ;
+; N/A           ; None        ; -2.904 ns ; rst     ; UART_TX:U2|data_buf[2]        ; clk      ;
+; N/A           ; None        ; -2.904 ns ; rst     ; UART_TX:U2|data_buf[3]        ; clk      ;
+; N/A           ; None        ; -2.904 ns ; rst     ; UART_TX:U2|data_buf[4]        ; clk      ;
+; N/A           ; None        ; -2.904 ns ; rst     ; UART_TX:U2|data_buf[5]        ; clk      ;
+; N/A           ; None        ; -2.904 ns ; rst     ; UART_TX:U2|data_buf[6]        ; clk      ;
+; N/A           ; None        ; -2.905 ns ; rst     ; UART_TX:U2|data_buf[7]        ; clk      ;
+; N/A           ; None        ; -3.381 ns ; rst     ; UART_TX:U2|divider:U1|Q[4]    ; clk      ;
+; N/A           ; None        ; -3.384 ns ; rst     ; UART_TX:U2|divider:U1|Q[1]    ; clk      ;
+; N/A           ; None        ; -3.607 ns ; rst     ; UART_TX:U2|divider:U1|Clk_out ; clk      ;
+; N/A           ; None        ; -3.622 ns ; wr      ; UART_TX:U2|divider:U1|Q[3]    ; clk      ;
+; N/A           ; None        ; -3.622 ns ; wr      ; UART_TX:U2|divider:U1|Q[2]    ; clk      ;
+; N/A           ; None        ; -3.622 ns ; wr      ; UART_TX:U2|divider:U1|Q[1]    ; clk      ;
+; N/A           ; None        ; -3.622 ns ; wr      ; UART_TX:U2|divider:U1|Q[0]    ; clk      ;
+; N/A           ; None        ; -3.622 ns ; wr      ; UART_TX:U2|divider:U1|Q[4]    ; clk      ;
+; N/A           ; None        ; -3.720 ns ; rst     ; UART_TX:U2|divider:U1|Q[3]    ; clk      ;
+; N/A           ; None        ; -3.720 ns ; rst     ; UART_TX:U2|divider:U1|Q[2]    ; clk      ;
+; N/A           ; None        ; -3.720 ns ; rst     ; UART_TX:U2|divider:U1|Q[0]    ; clk      ;
+; N/A           ; None        ; -4.322 ns ; wr      ; UART_TX:U2|divider:U1|Clk_out ; clk      ;
++---------------+-------------+-----------+---------+-------------------------------+----------+
 
 
 +--------------------------+
@@ -394,82 +399,84 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Mon Oct 26 10:18:56 2015
+    Info: Processing started: Mon Oct 26 14:06:48 2015
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off UART -c UART --timing_analysis_only
 Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
 Warning: Found pins functioning as undefined clocks and/or memory enables
     Info: Assuming node "clk" is an undefined clock
 Warning: Found 1 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
     Info: Detected ripple clock "UART_TX:U2|divider:U1|Clk_out" as buffer
-Info: Clock "clk" has Internal fmax of 296.56 MHz between source register "UART_TX:U2|state.idle" and destination register "UART_TX:U2|shift_reg[1]" (period= 3.372 ns)
-    Info: + Longest register to register delay is 0.993 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X38_Y5_N23; Fanout = 16; REG Node = 'UART_TX:U2|state.idle'
-        Info: 2: + IC(0.247 ns) + CELL(0.746 ns) = 0.993 ns; Loc. = LCFF_X38_Y5_N1; Fanout = 1; REG Node = 'UART_TX:U2|shift_reg[1]'
-        Info: Total cell delay = 0.746 ns ( 75.13 % )
-        Info: Total interconnect delay = 0.247 ns ( 24.87 % )
-    Info: - Smallest clock skew is -2.195 ns
-        Info: + Shortest clock path from clock "clk" to destination register is 2.490 ns
+Info: Clock "clk" has Internal fmax of 230.47 MHz between source register "UART_TX:U2|dbf" and destination register "UART_TX:U2|divider:U1|Clk_out" (period= 4.339 ns)
+    Info: + Longest register to register delay is 1.775 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X26_Y12_N5; Fanout = 3; REG Node = 'UART_TX:U2|dbf'
+        Info: 2: + IC(0.226 ns) + CELL(0.053 ns) = 0.279 ns; Loc. = LCCOMB_X26_Y12_N8; Fanout = 6; COMB Node = 'UART_TX:U2|comb~0'
+        Info: 3: + IC(1.288 ns) + CELL(0.053 ns) = 1.620 ns; Loc. = LCCOMB_X1_Y11_N16; Fanout = 1; COMB Node = 'UART_TX:U2|divider:U1|Clk_out~0'
+        Info: 4: + IC(0.000 ns) + CELL(0.155 ns) = 1.775 ns; Loc. = LCFF_X1_Y11_N17; Fanout = 3; REG Node = 'UART_TX:U2|divider:U1|Clk_out'
+        Info: Total cell delay = 0.261 ns ( 14.70 % )
+        Info: Total interconnect delay = 1.514 ns ( 85.30 % )
+    Info: - Smallest clock skew is -2.380 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 2.302 ns
             Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 2; CLK Node = 'clk'
-            Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 18; COMB Node = 'clk~clkctrl'
-            Info: 3: + IC(0.675 ns) + CELL(0.618 ns) = 2.490 ns; Loc. = LCFF_X38_Y5_N1; Fanout = 1; REG Node = 'UART_TX:U2|shift_reg[1]'
-            Info: Total cell delay = 1.472 ns ( 59.12 % )
-            Info: Total interconnect delay = 1.018 ns ( 40.88 % )
-        Info: - Longest clock path from clock "clk" to source register is 4.685 ns
+            Info: 2: + IC(0.830 ns) + CELL(0.618 ns) = 2.302 ns; Loc. = LCFF_X1_Y11_N17; Fanout = 3; REG Node = 'UART_TX:U2|divider:U1|Clk_out'
+            Info: Total cell delay = 1.472 ns ( 63.94 % )
+            Info: Total interconnect delay = 0.830 ns ( 36.06 % )
+        Info: - Longest clock path from clock "clk" to source register is 4.682 ns
             Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 2; CLK Node = 'clk'
-            Info: 2: + IC(0.845 ns) + CELL(0.712 ns) = 2.411 ns; Loc. = LCFF_X1_Y14_N19; Fanout = 3; REG Node = 'UART_TX:U2|divider:U1|Clk_out'
-            Info: 3: + IC(0.992 ns) + CELL(0.000 ns) = 3.403 ns; Loc. = CLKCTRL_G0; Fanout = 16; COMB Node = 'UART_TX:U2|divider:U1|Clk_out~clkctrl'
-            Info: 4: + IC(0.664 ns) + CELL(0.618 ns) = 4.685 ns; Loc. = LCFF_X38_Y5_N23; Fanout = 16; REG Node = 'UART_TX:U2|state.idle'
-            Info: Total cell delay = 2.184 ns ( 46.62 % )
-            Info: Total interconnect delay = 2.501 ns ( 53.38 % )
+            Info: 2: + IC(0.830 ns) + CELL(0.712 ns) = 2.396 ns; Loc. = LCFF_X1_Y11_N17; Fanout = 3; REG Node = 'UART_TX:U2|divider:U1|Clk_out'
+            Info: 3: + IC(0.996 ns) + CELL(0.000 ns) = 3.392 ns; Loc. = CLKCTRL_G0; Fanout = 27; COMB Node = 'UART_TX:U2|divider:U1|Clk_out~clkctrl'
+            Info: 4: + IC(0.672 ns) + CELL(0.618 ns) = 4.682 ns; Loc. = LCFF_X26_Y12_N5; Fanout = 3; REG Node = 'UART_TX:U2|dbf'
+            Info: Total cell delay = 2.184 ns ( 46.65 % )
+            Info: Total interconnect delay = 2.498 ns ( 53.35 % )
     Info: + Micro clock to output delay of source is 0.094 ns
     Info: + Micro setup delay of destination is 0.090 ns
-Info: tsu for register "UART_TX:U2|divider:U1|Clk_out" (data pin = "rst", clock pin = "clk") is 3.341 ns
-    Info: + Longest pin to register delay is 5.568 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.827 ns) = 0.827 ns; Loc. = PIN_E14; Fanout = 13; PIN Node = 'rst'
-        Info: 2: + IC(4.314 ns) + CELL(0.272 ns) = 5.413 ns; Loc. = LCCOMB_X1_Y14_N18; Fanout = 1; COMB Node = 'UART_TX:U2|divider:U1|Clk_out~0'
-        Info: 3: + IC(0.000 ns) + CELL(0.155 ns) = 5.568 ns; Loc. = LCFF_X1_Y14_N19; Fanout = 3; REG Node = 'UART_TX:U2|divider:U1|Clk_out'
-        Info: Total cell delay = 1.254 ns ( 22.52 % )
-        Info: Total interconnect delay = 4.314 ns ( 77.48 % )
+Info: tsu for register "UART_TX:U2|divider:U1|Clk_out" (data pin = "wr", clock pin = "clk") is 4.561 ns
+    Info: + Longest pin to register delay is 6.773 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.809 ns) = 0.809 ns; Loc. = PIN_C9; Fanout = 5; PIN Node = 'wr'
+        Info: 2: + IC(4.240 ns) + CELL(0.228 ns) = 5.277 ns; Loc. = LCCOMB_X26_Y12_N8; Fanout = 6; COMB Node = 'UART_TX:U2|comb~0'
+        Info: 3: + IC(1.288 ns) + CELL(0.053 ns) = 6.618 ns; Loc. = LCCOMB_X1_Y11_N16; Fanout = 1; COMB Node = 'UART_TX:U2|divider:U1|Clk_out~0'
+        Info: 4: + IC(0.000 ns) + CELL(0.155 ns) = 6.773 ns; Loc. = LCFF_X1_Y11_N17; Fanout = 3; REG Node = 'UART_TX:U2|divider:U1|Clk_out'
+        Info: Total cell delay = 1.245 ns ( 18.38 % )
+        Info: Total interconnect delay = 5.528 ns ( 81.62 % )
     Info: + Micro setup delay of destination is 0.090 ns
-    Info: - Shortest clock path from clock "clk" to destination register is 2.317 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 2.302 ns
         Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 2; CLK Node = 'clk'
-        Info: 2: + IC(0.845 ns) + CELL(0.618 ns) = 2.317 ns; Loc. = LCFF_X1_Y14_N19; Fanout = 3; REG Node = 'UART_TX:U2|divider:U1|Clk_out'
-        Info: Total cell delay = 1.472 ns ( 63.53 % )
-        Info: Total interconnect delay = 0.845 ns ( 36.47 % )
-Info: tco from clock "clk" to destination pin "tdf" through register "UART_TX:U2|tdf" is 7.554 ns
-    Info: + Longest clock path from clock "clk" to source register is 4.685 ns
+        Info: 2: + IC(0.830 ns) + CELL(0.618 ns) = 2.302 ns; Loc. = LCFF_X1_Y11_N17; Fanout = 3; REG Node = 'UART_TX:U2|divider:U1|Clk_out'
+        Info: Total cell delay = 1.472 ns ( 63.94 % )
+        Info: Total interconnect delay = 0.830 ns ( 36.06 % )
+Info: tco from clock "clk" to destination pin "Txd" through register "UART_TX:U2|state.transmit" is 9.116 ns
+    Info: + Longest clock path from clock "clk" to source register is 4.683 ns
         Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 2; CLK Node = 'clk'
-        Info: 2: + IC(0.845 ns) + CELL(0.712 ns) = 2.411 ns; Loc. = LCFF_X1_Y14_N19; Fanout = 3; REG Node = 'UART_TX:U2|divider:U1|Clk_out'
-        Info: 3: + IC(0.992 ns) + CELL(0.000 ns) = 3.403 ns; Loc. = CLKCTRL_G0; Fanout = 16; COMB Node = 'UART_TX:U2|divider:U1|Clk_out~clkctrl'
-        Info: 4: + IC(0.664 ns) + CELL(0.618 ns) = 4.685 ns; Loc. = LCFF_X38_Y5_N11; Fanout = 5; REG Node = 'UART_TX:U2|tdf'
-        Info: Total cell delay = 2.184 ns ( 46.62 % )
-        Info: Total interconnect delay = 2.501 ns ( 53.38 % )
+        Info: 2: + IC(0.830 ns) + CELL(0.712 ns) = 2.396 ns; Loc. = LCFF_X1_Y11_N17; Fanout = 3; REG Node = 'UART_TX:U2|divider:U1|Clk_out'
+        Info: 3: + IC(0.996 ns) + CELL(0.000 ns) = 3.392 ns; Loc. = CLKCTRL_G0; Fanout = 27; COMB Node = 'UART_TX:U2|divider:U1|Clk_out~clkctrl'
+        Info: 4: + IC(0.673 ns) + CELL(0.618 ns) = 4.683 ns; Loc. = LCFF_X27_Y12_N9; Fanout = 14; REG Node = 'UART_TX:U2|state.transmit'
+        Info: Total cell delay = 2.184 ns ( 46.64 % )
+        Info: Total interconnect delay = 2.499 ns ( 53.36 % )
     Info: + Micro clock to output delay of source is 0.094 ns
-    Info: + Longest register to pin delay is 2.775 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X38_Y5_N11; Fanout = 5; REG Node = 'UART_TX:U2|tdf'
-        Info: 2: + IC(0.793 ns) + CELL(1.982 ns) = 2.775 ns; Loc. = PIN_AA4; Fanout = 0; PIN Node = 'tdf'
-        Info: Total cell delay = 1.982 ns ( 71.42 % )
-        Info: Total interconnect delay = 0.793 ns ( 28.58 % )
-Info: th for register "UART_TX:U2|data_buf[7]" (data pin = "data[7]", clock pin = "clk") is 0.365 ns
-    Info: + Longest clock path from clock "clk" to destination register is 4.685 ns
+    Info: + Longest register to pin delay is 4.339 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X27_Y12_N9; Fanout = 14; REG Node = 'UART_TX:U2|state.transmit'
+        Info: 2: + IC(0.294 ns) + CELL(0.366 ns) = 0.660 ns; Loc. = LCCOMB_X27_Y12_N4; Fanout = 1; COMB Node = 'UART_TX:U2|Txd~1'
+        Info: 3: + IC(1.697 ns) + CELL(1.982 ns) = 4.339 ns; Loc. = PIN_A6; Fanout = 0; PIN Node = 'Txd'
+        Info: Total cell delay = 2.348 ns ( 54.11 % )
+        Info: Total interconnect delay = 1.991 ns ( 45.89 % )
+Info: th for register "UART_TX:U2|data_buf[7]" (data pin = "data[7]", clock pin = "clk") is -0.319 ns
+    Info: + Longest clock path from clock "clk" to destination register is 4.672 ns
         Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 2; CLK Node = 'clk'
-        Info: 2: + IC(0.845 ns) + CELL(0.712 ns) = 2.411 ns; Loc. = LCFF_X1_Y14_N19; Fanout = 3; REG Node = 'UART_TX:U2|divider:U1|Clk_out'
-        Info: 3: + IC(0.992 ns) + CELL(0.000 ns) = 3.403 ns; Loc. = CLKCTRL_G0; Fanout = 16; COMB Node = 'UART_TX:U2|divider:U1|Clk_out~clkctrl'
-        Info: 4: + IC(0.664 ns) + CELL(0.618 ns) = 4.685 ns; Loc. = LCFF_X39_Y5_N13; Fanout = 1; REG Node = 'UART_TX:U2|data_buf[7]'
-        Info: Total cell delay = 2.184 ns ( 46.62 % )
-        Info: Total interconnect delay = 2.501 ns ( 53.38 % )
+        Info: 2: + IC(0.830 ns) + CELL(0.712 ns) = 2.396 ns; Loc. = LCFF_X1_Y11_N17; Fanout = 3; REG Node = 'UART_TX:U2|divider:U1|Clk_out'
+        Info: 3: + IC(0.996 ns) + CELL(0.000 ns) = 3.392 ns; Loc. = CLKCTRL_G0; Fanout = 27; COMB Node = 'UART_TX:U2|divider:U1|Clk_out~clkctrl'
+        Info: 4: + IC(0.662 ns) + CELL(0.618 ns) = 4.672 ns; Loc. = LCFF_X26_Y8_N19; Fanout = 1; REG Node = 'UART_TX:U2|data_buf[7]'
+        Info: Total cell delay = 2.184 ns ( 46.75 % )
+        Info: Total interconnect delay = 2.488 ns ( 53.25 % )
     Info: + Micro hold delay of destination is 0.149 ns
-    Info: - Shortest pin to register delay is 4.469 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = PIN_T6; Fanout = 1; PIN Node = 'data[7]'
-        Info: 2: + IC(0.000 ns) + CELL(0.810 ns) = 0.810 ns; Loc. = IOC_X40_Y5_N2; Fanout = 1; COMB Node = 'data[7]~7'
-        Info: 3: + IC(3.451 ns) + CELL(0.053 ns) = 4.314 ns; Loc. = LCCOMB_X39_Y5_N12; Fanout = 1; COMB Node = 'UART_TX:U2|data_buf[7]~feeder'
-        Info: 4: + IC(0.000 ns) + CELL(0.155 ns) = 4.469 ns; Loc. = LCFF_X39_Y5_N13; Fanout = 1; REG Node = 'UART_TX:U2|data_buf[7]'
-        Info: Total cell delay = 1.018 ns ( 22.78 % )
-        Info: Total interconnect delay = 3.451 ns ( 77.22 % )
+    Info: - Shortest pin to register delay is 5.140 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = PIN_T4; Fanout = 1; PIN Node = 'data[7]'
+        Info: 2: + IC(0.000 ns) + CELL(0.810 ns) = 0.810 ns; Loc. = IOC_X40_Y4_N3; Fanout = 1; COMB Node = 'data[7]~7'
+        Info: 3: + IC(4.021 ns) + CELL(0.309 ns) = 5.140 ns; Loc. = LCFF_X26_Y8_N19; Fanout = 1; REG Node = 'UART_TX:U2|data_buf[7]'
+        Info: Total cell delay = 1.119 ns ( 21.77 % )
+        Info: Total interconnect delay = 4.021 ns ( 78.23 % )
 Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 2 warnings
     Info: Peak virtual memory: 181 megabytes
-    Info: Processing ended: Mon Oct 26 10:18:56 2015
-    Info: Elapsed time: 00:00:00
+    Info: Processing ended: Mon Oct 26 14:06:49 2015
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 
