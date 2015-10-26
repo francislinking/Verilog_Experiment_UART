@@ -1,5 +1,5 @@
 Assembler report for UART
-Sun Oct 25 21:00:55 2015
+Mon Oct 26 10:18:55 2015
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -10,8 +10,8 @@ Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: E:/Discipline/Verilog/Experiment/Experiment_2/UART.sof
-  6. Assembler Device Options: E:/Discipline/Verilog/Experiment/Experiment_2/UART.pof
+  5. Assembler Device Options: E:/Discipline/Verilog/Experiment/Verilog_Experiment_UART/UART.sof
+  6. Assembler Device Options: E:/Discipline/Verilog/Experiment/Verilog_Experiment_UART/UART.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Oct 25 21:00:55 2015 ;
+; Assembler Status      ; Successful - Mon Oct 26 10:18:55 2015 ;
 ; Revision Name         ; UART                                  ;
 ; Top-level Entity Name ; UART                                  ;
 ; Family                ; Stratix II                            ;
@@ -79,37 +79,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+--------------------------------------------------------+
-; Assembler Generated Files                              ;
-+--------------------------------------------------------+
-; File Name                                              ;
-+--------------------------------------------------------+
-; E:/Discipline/Verilog/Experiment/Experiment_2/UART.sof ;
-; E:/Discipline/Verilog/Experiment/Experiment_2/UART.pof ;
-+--------------------------------------------------------+
++-------------------------------------------------------------------+
+; Assembler Generated Files                                         ;
++-------------------------------------------------------------------+
+; File Name                                                         ;
++-------------------------------------------------------------------+
+; E:/Discipline/Verilog/Experiment/Verilog_Experiment_UART/UART.sof ;
+; E:/Discipline/Verilog/Experiment/Verilog_Experiment_UART/UART.pof ;
++-------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------+
-; Assembler Device Options: E:/Discipline/Verilog/Experiment/Experiment_2/UART.sof ;
-+----------------+-----------------------------------------------------------------+
-; Option         ; Setting                                                         ;
-+----------------+-----------------------------------------------------------------+
-; Device         ; EP2S15F484C3                                                    ;
-; JTAG usercode  ; 0xFFFFFFFF                                                      ;
-; Checksum       ; 0x0028729E                                                      ;
-+----------------+-----------------------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+; Assembler Device Options: E:/Discipline/Verilog/Experiment/Verilog_Experiment_UART/UART.sof ;
++----------------+----------------------------------------------------------------------------+
+; Option         ; Setting                                                                    ;
++----------------+----------------------------------------------------------------------------+
+; Device         ; EP2S15F484C3                                                               ;
+; JTAG usercode  ; 0xFFFFFFFF                                                                 ;
+; Checksum       ; 0x002808AB                                                                 ;
++----------------+----------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------+
-; Assembler Device Options: E:/Discipline/Verilog/Experiment/Experiment_2/UART.pof ;
-+--------------------+-------------------------------------------------------------+
-; Option             ; Setting                                                     ;
-+--------------------+-------------------------------------------------------------+
-; Device             ; EPC16                                                       ;
-; JTAG usercode      ; 0xFFFFFFFF                                                  ;
-; Checksum           ; 0x1EF23B6A                                                  ;
-; Compression Ratio  ; 3                                                           ;
-+--------------------+-------------------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+; Assembler Device Options: E:/Discipline/Verilog/Experiment/Verilog_Experiment_UART/UART.pof ;
++--------------------+------------------------------------------------------------------------+
+; Option             ; Setting                                                                ;
++--------------------+------------------------------------------------------------------------+
+; Device             ; EPC16                                                                  ;
+; JTAG usercode      ; 0xFFFFFFFF                                                             ;
+; Checksum           ; 0x1EF4708C                                                             ;
+; Compression Ratio  ; 3                                                                      ;
++--------------------+------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -118,14 +118,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Sun Oct 25 21:00:52 2015
+    Info: Processing started: Mon Oct 26 10:18:53 2015
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off UART -c UART
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 236 megabytes
-    Info: Processing ended: Sun Oct 25 21:00:55 2015
-    Info: Elapsed time: 00:00:03
+    Info: Processing ended: Mon Oct 26 10:18:55 2015
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

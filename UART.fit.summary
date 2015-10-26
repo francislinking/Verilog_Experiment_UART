@@ -1,4 +1,4 @@
-Fitter Status : Successful - Sun Oct 25 21:00:51 2015
+Fitter Status : Successful - Mon Oct 26 10:18:52 2015
 Quartus II Version : 9.1 Build 222 10/21/2009 SJ Full Version
 Revision Name : UART
 Top-level Entity Name : UART
@@ -6,9 +6,9 @@ Family : Stratix II
 Device : EP2S15F484C3
 Timing Models : Final
 Logic utilization : < 1 %
-    Combinational ALUTs : 41 / 12,480 ( < 1 % )
-    Dedicated logic registers : 53 / 12,480 ( < 1 % )
-Total registers : 53
+    Combinational ALUTs : 30 / 12,480 ( < 1 % )
+    Dedicated logic registers : 35 / 12,480 ( < 1 % )
+Total registers : 35
 Total pins : 21 / 343 ( 6 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 419,328 ( 0 % )

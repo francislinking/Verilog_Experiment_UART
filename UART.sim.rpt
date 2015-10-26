@@ -1,5 +1,5 @@
 Simulator report for UART
-Sun Oct 25 21:04:24 2015
+Mon Oct 26 10:19:33 2015
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -45,9 +45,9 @@ applicable agreement for further details.
 +-----------------------------+--------------+
 ; Simulation Start Time       ; 0 ps         ;
 ; Simulation End Time         ; 10.0 us      ;
-; Simulation Netlist Size     ; 272 nodes    ;
-; Simulation Coverage         ;      77.50 % ;
-; Total Number of Transitions ; 13999        ;
+; Simulation Netlist Size     ; 175 nodes    ;
+; Simulation Coverage         ;      60.22 % ;
+; Total Number of Transitions ; 12956        ;
 ; Simulation Breakpoints      ; 0            ;
 ; Family                      ; Stratix II   ;
 +-----------------------------+--------------+
@@ -93,347 +93,242 @@ Please use Quartus II to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      77.50 % ;
-; Total nodes checked                                 ; 272          ;
-; Total output ports checked                          ; 280          ;
-; Total output ports with complete 1/0-value coverage ; 217          ;
-; Total output ports with no 1/0-value coverage       ; 26           ;
-; Total output ports with no 1-value coverage         ; 42           ;
-; Total output ports with no 0-value coverage         ; 47           ;
+; Total coverage as a percentage                      ;      60.22 % ;
+; Total nodes checked                                 ; 175          ;
+; Total output ports checked                          ; 181          ;
+; Total output ports with complete 1/0-value coverage ; 109          ;
+; Total output ports with no 1/0-value coverage       ; 20           ;
+; Total output ports with no 1-value coverage         ; 44           ;
+; Total output ports with no 0-value coverage         ; 48           ;
 +-----------------------------------------------------+--------------+
 
 
 The following table displays output ports that toggle between 1 and 0 during simulation.
-+------------------------------------------------------------------------------------------+
-; Complete 1/0-Value Coverage                                                              ;
-+-----------------------------------+-----------------------------------+------------------+
-; Node Name                         ; Output Port Name                  ; Output Port Type ;
-+-----------------------------------+-----------------------------------+------------------+
-; |UART|clk                         ; |UART|clk                         ; out              ;
-; |UART|clk_div                     ; |UART|clk_div                     ; pin_out          ;
-; |UART|data[0]                     ; |UART|data[0]~result              ; pin_out          ;
-; |UART|data[1]                     ; |UART|data[1]~result              ; pin_out          ;
-; |UART|data[2]                     ; |UART|data[2]~result              ; pin_out          ;
-; |UART|data[3]                     ; |UART|data[3]~result              ; pin_out          ;
-; |UART|data[4]                     ; |UART|data[4]~result              ; pin_out          ;
-; |UART|data[5]                     ; |UART|data[5]~result              ; pin_out          ;
-; |UART|data[6]                     ; |UART|data[6]~result              ; pin_out          ;
-; |UART|data[7]                     ; |UART|data[7]~result              ; pin_out          ;
-; |UART|wr                          ; |UART|wr                          ; out              ;
-; |UART|rd                          ; |UART|rd                          ; out              ;
-; |UART|ce                          ; |UART|ce                          ; out              ;
-; |UART|dbf                         ; |UART|dbf                         ; pin_out          ;
-; |UART|rdc                         ; |UART|rdc                         ; pin_out          ;
-; |UART|tdf                         ; |UART|tdf                         ; pin_out          ;
-; |UART|rdf                         ; |UART|rdf                         ; pin_out          ;
-; |UART|Txd                         ; |UART|Txd                         ; pin_out          ;
-; |UART|Rxd                         ; |UART|Rxd                         ; out              ;
-; |UART|data[7]~0                   ; |UART|data[7]~0                   ; out0             ;
-; |UART|data[6]~1                   ; |UART|data[6]~1                   ; out0             ;
-; |UART|data[5]~2                   ; |UART|data[5]~2                   ; out0             ;
-; |UART|data[4]~3                   ; |UART|data[4]~3                   ; out0             ;
-; |UART|data[3]~4                   ; |UART|data[3]~4                   ; out0             ;
-; |UART|data[2]~5                   ; |UART|data[2]~5                   ; out0             ;
-; |UART|data[1]~6                   ; |UART|data[1]~6                   ; out0             ;
-; |UART|data[0]~7                   ; |UART|data[0]~7                   ; out0             ;
-; |UART|UART_RX:U3|always0~0        ; |UART|UART_RX:U3|always0~0        ; out0             ;
-; |UART|UART_RX:U3|data_buf[2]      ; |UART|UART_RX:U3|data_buf[2]      ; regout           ;
-; |UART|UART_RX:U3|always0~1        ; |UART|UART_RX:U3|always0~1        ; out0             ;
-; |UART|UART_RX:U3|always0~2        ; |UART|UART_RX:U3|always0~2        ; out0             ;
-; |UART|UART_RX:U3|c~0              ; |UART|UART_RX:U3|c~0              ; out              ;
-; |UART|UART_RX:U3|c~1              ; |UART|UART_RX:U3|c~1              ; out              ;
-; |UART|UART_RX:U3|c~2              ; |UART|UART_RX:U3|c~2              ; out              ;
-; |UART|UART_RX:U3|c~3              ; |UART|UART_RX:U3|c~3              ; out              ;
-; |UART|UART_RX:U3|c~4              ; |UART|UART_RX:U3|c~4              ; out              ;
-; |UART|UART_RX:U3|c~5              ; |UART|UART_RX:U3|c~5              ; out              ;
-; |UART|UART_RX:U3|rdf~0            ; |UART|UART_RX:U3|rdf~0            ; out              ;
-; |UART|UART_RX:U3|data_buf[1]      ; |UART|UART_RX:U3|data_buf[1]      ; regout           ;
-; |UART|UART_RX:U3|always0~3        ; |UART|UART_RX:U3|always0~3        ; out0             ;
-; |UART|UART_RX:U3|rdf~1            ; |UART|UART_RX:U3|rdf~1            ; out              ;
-; |UART|UART_RX:U3|always1~0        ; |UART|UART_RX:U3|always1~0        ; out0             ;
-; |UART|UART_RX:U3|state~0          ; |UART|UART_RX:U3|state~0          ; out              ;
-; |UART|UART_RX:U3|state~1          ; |UART|UART_RX:U3|state~1          ; out              ;
-; |UART|UART_RX:U3|state~3          ; |UART|UART_RX:U3|state~3          ; out              ;
-; |UART|UART_RX:U3|state~4          ; |UART|UART_RX:U3|state~4          ; out              ;
-; |UART|UART_RX:U3|state~6          ; |UART|UART_RX:U3|state~6          ; out              ;
-; |UART|UART_RX:U3|state~7          ; |UART|UART_RX:U3|state~7          ; out              ;
-; |UART|UART_RX:U3|state~8          ; |UART|UART_RX:U3|state~8          ; out              ;
-; |UART|UART_RX:U3|t~0              ; |UART|UART_RX:U3|t~0              ; out              ;
-; |UART|UART_RX:U3|t~1              ; |UART|UART_RX:U3|t~1              ; out              ;
-; |UART|UART_RX:U3|t~2              ; |UART|UART_RX:U3|t~2              ; out              ;
-; |UART|UART_RX:U3|t~3              ; |UART|UART_RX:U3|t~3              ; out              ;
-; |UART|UART_RX:U3|rdc~0            ; |UART|UART_RX:U3|rdc~0            ; out              ;
-; |UART|UART_RX:U3|error~0          ; |UART|UART_RX:U3|error~0          ; out              ;
-; |UART|UART_RX:U3|t~5              ; |UART|UART_RX:U3|t~5              ; out              ;
-; |UART|UART_RX:U3|t~6              ; |UART|UART_RX:U3|t~6              ; out              ;
-; |UART|UART_RX:U3|t~7              ; |UART|UART_RX:U3|t~7              ; out              ;
-; |UART|UART_RX:U3|state~9          ; |UART|UART_RX:U3|state~9          ; out              ;
-; |UART|UART_RX:U3|state~10         ; |UART|UART_RX:U3|state~10         ; out              ;
-; |UART|UART_RX:U3|state~11         ; |UART|UART_RX:U3|state~11         ; out              ;
-; |UART|UART_RX:U3|rdf              ; |UART|UART_RX:U3|rdf              ; regout           ;
-; |UART|UART_RX:U3|t[0]             ; |UART|UART_RX:U3|t[0]             ; regout           ;
-; |UART|UART_RX:U3|data_buf[3]      ; |UART|UART_RX:U3|data_buf[3]      ; regout           ;
-; |UART|UART_RX:U3|data_buf[4]      ; |UART|UART_RX:U3|data_buf[4]      ; regout           ;
-; |UART|UART_RX:U3|data_buf[5]      ; |UART|UART_RX:U3|data_buf[5]      ; regout           ;
-; |UART|UART_RX:U3|data_buf[6]      ; |UART|UART_RX:U3|data_buf[6]      ; regout           ;
-; |UART|UART_RX:U3|data_buf[7]      ; |UART|UART_RX:U3|data_buf[7]      ; regout           ;
-; |UART|UART_RX:U3|t[1]             ; |UART|UART_RX:U3|t[1]             ; regout           ;
-; |UART|UART_RX:U3|t[2]             ; |UART|UART_RX:U3|t[2]             ; regout           ;
-; |UART|UART_RX:U3|rdc              ; |UART|UART_RX:U3|rdc              ; regout           ;
-; |UART|UART_RX:U3|state.finish     ; |UART|UART_RX:U3|state.finish     ; regout           ;
-; |UART|UART_RX:U3|state.read       ; |UART|UART_RX:U3|state.read       ; regout           ;
-; |UART|UART_RX:U3|state.idle       ; |UART|UART_RX:U3|state.idle       ; regout           ;
-; |UART|UART_RX:U3|c[0]             ; |UART|UART_RX:U3|c[0]             ; regout           ;
-; |UART|UART_RX:U3|c[1]             ; |UART|UART_RX:U3|c[1]             ; regout           ;
-; |UART|UART_RX:U3|c[2]             ; |UART|UART_RX:U3|c[2]             ; regout           ;
-; |UART|UART_RX:U3|state~12         ; |UART|UART_RX:U3|state~12         ; out0             ;
-; |UART|UART_RX:U3|state.idle~0     ; |UART|UART_RX:U3|state.idle~0     ; out0             ;
-; |UART|UART_RX:U3|state~14         ; |UART|UART_RX:U3|state~14         ; out0             ;
-; |UART|UART_RX:U3|state.read~0     ; |UART|UART_RX:U3|state.read~0     ; out0             ;
-; |UART|UART_RX:U3|state~16         ; |UART|UART_RX:U3|state~16         ; out0             ;
-; |UART|UART_RX:U3|state.finish~0   ; |UART|UART_RX:U3|state.finish~0   ; out0             ;
-; |UART|UART_RX:U3|state~18         ; |UART|UART_RX:U3|state~18         ; out0             ;
-; |UART|UART_RX:U3|state~22         ; |UART|UART_RX:U3|state~22         ; out0             ;
-; |UART|UART_TX:U2|Txd              ; |UART|UART_TX:U2|Txd              ; out              ;
-; |UART|UART_TX:U2|always0~0        ; |UART|UART_TX:U2|always0~0        ; out0             ;
-; |UART|UART_TX:U2|shift_reg[2]     ; |UART|UART_TX:U2|shift_reg[2]     ; regout           ;
-; |UART|UART_TX:U2|state~0          ; |UART|UART_TX:U2|state~0          ; out              ;
-; |UART|UART_TX:U2|state~1          ; |UART|UART_TX:U2|state~1          ; out              ;
-; |UART|UART_TX:U2|always0~1        ; |UART|UART_TX:U2|always0~1        ; out0             ;
-; |UART|UART_TX:U2|tdf~0            ; |UART|UART_TX:U2|tdf~0            ; out              ;
-; |UART|UART_TX:U2|state~2          ; |UART|UART_TX:U2|state~2          ; out              ;
-; |UART|UART_TX:U2|state~3          ; |UART|UART_TX:U2|state~3          ; out              ;
-; |UART|UART_TX:U2|state~4          ; |UART|UART_TX:U2|state~4          ; out              ;
-; |UART|UART_TX:U2|tdf~1            ; |UART|UART_TX:U2|tdf~1            ; out              ;
-; |UART|UART_TX:U2|t~0              ; |UART|UART_TX:U2|t~0              ; out              ;
-; |UART|UART_TX:U2|t~1              ; |UART|UART_TX:U2|t~1              ; out              ;
-; |UART|UART_TX:U2|t~2              ; |UART|UART_TX:U2|t~2              ; out              ;
-; |UART|UART_TX:U2|t~3              ; |UART|UART_TX:U2|t~3              ; out              ;
-; |UART|UART_TX:U2|shift_reg[1]     ; |UART|UART_TX:U2|shift_reg[1]     ; regout           ;
-; |UART|UART_TX:U2|t~4              ; |UART|UART_TX:U2|t~4              ; out              ;
-; |UART|UART_TX:U2|shift_reg[0]     ; |UART|UART_TX:U2|shift_reg[0]     ; regout           ;
-; |UART|UART_TX:U2|t~5              ; |UART|UART_TX:U2|t~5              ; out              ;
-; |UART|UART_TX:U2|t~6              ; |UART|UART_TX:U2|t~6              ; out              ;
-; |UART|UART_TX:U2|t~7              ; |UART|UART_TX:U2|t~7              ; out              ;
-; |UART|UART_TX:U2|state~5          ; |UART|UART_TX:U2|state~5          ; out              ;
-; |UART|UART_TX:U2|state~6          ; |UART|UART_TX:U2|state~6          ; out              ;
-; |UART|UART_TX:U2|state~7          ; |UART|UART_TX:U2|state~7          ; out              ;
-; |UART|UART_TX:U2|data[5]~direct   ; |UART|UART_TX:U2|data[5]~direct   ; out0             ;
-; |UART|UART_TX:U2|data[6]~direct   ; |UART|UART_TX:U2|data[6]~direct   ; out0             ;
-; |UART|UART_TX:U2|data[7]~direct   ; |UART|UART_TX:U2|data[7]~direct   ; out0             ;
-; |UART|UART_TX:U2|dbf~0            ; |UART|UART_TX:U2|dbf~0            ; out              ;
-; |UART|UART_TX:U2|t[0]             ; |UART|UART_TX:U2|t[0]             ; regout           ;
-; |UART|UART_TX:U2|shift_reg[3]     ; |UART|UART_TX:U2|shift_reg[3]     ; regout           ;
-; |UART|UART_TX:U2|shift_reg[4]     ; |UART|UART_TX:U2|shift_reg[4]     ; regout           ;
-; |UART|UART_TX:U2|shift_reg[5]     ; |UART|UART_TX:U2|shift_reg[5]     ; regout           ;
-; |UART|UART_TX:U2|shift_reg[6]     ; |UART|UART_TX:U2|shift_reg[6]     ; regout           ;
-; |UART|UART_TX:U2|shift_reg[7]     ; |UART|UART_TX:U2|shift_reg[7]     ; regout           ;
-; |UART|UART_TX:U2|shift_reg[8]     ; |UART|UART_TX:U2|shift_reg[8]     ; regout           ;
-; |UART|UART_TX:U2|shift_reg[9]     ; |UART|UART_TX:U2|shift_reg[9]     ; regout           ;
-; |UART|UART_TX:U2|dbf              ; |UART|UART_TX:U2|dbf              ; regout           ;
-; |UART|UART_TX:U2|t[1]             ; |UART|UART_TX:U2|t[1]             ; regout           ;
-; |UART|UART_TX:U2|t[2]             ; |UART|UART_TX:U2|t[2]             ; regout           ;
-; |UART|UART_TX:U2|t[3]             ; |UART|UART_TX:U2|t[3]             ; regout           ;
-; |UART|UART_TX:U2|tdf              ; |UART|UART_TX:U2|tdf              ; regout           ;
-; |UART|UART_TX:U2|state.transmit   ; |UART|UART_TX:U2|state.transmit   ; regout           ;
-; |UART|UART_TX:U2|state.ready      ; |UART|UART_TX:U2|state.ready      ; regout           ;
-; |UART|UART_TX:U2|state.idle       ; |UART|UART_TX:U2|state.idle       ; regout           ;
-; |UART|UART_TX:U2|data[0]~direct   ; |UART|UART_TX:U2|data[0]~direct   ; out0             ;
-; |UART|UART_TX:U2|data[1]~direct   ; |UART|UART_TX:U2|data[1]~direct   ; out0             ;
-; |UART|UART_TX:U2|data[2]~direct   ; |UART|UART_TX:U2|data[2]~direct   ; out0             ;
-; |UART|UART_TX:U2|data[3]~direct   ; |UART|UART_TX:U2|data[3]~direct   ; out0             ;
-; |UART|UART_TX:U2|data[4]~direct   ; |UART|UART_TX:U2|data[4]~direct   ; out0             ;
-; |UART|UART_TX:U2|state~8          ; |UART|UART_TX:U2|state~8          ; out0             ;
-; |UART|UART_TX:U2|state.idle~0     ; |UART|UART_TX:U2|state.idle~0     ; out0             ;
-; |UART|UART_TX:U2|state~10         ; |UART|UART_TX:U2|state~10         ; out0             ;
-; |UART|UART_TX:U2|state.ready~0    ; |UART|UART_TX:U2|state.ready~0    ; out0             ;
-; |UART|UART_TX:U2|state~12         ; |UART|UART_TX:U2|state~12         ; out0             ;
-; |UART|UART_TX:U2|state.transmit~0 ; |UART|UART_TX:U2|state.transmit~0 ; out0             ;
-; |UART|UART_TX:U2|Txd~2            ; |UART|UART_TX:U2|Txd~2            ; out0             ;
-; |UART|UART_TX:U2|state~16         ; |UART|UART_TX:U2|state~16         ; out0             ;
-; |UART|divider:U1|Clk_out          ; |UART|divider:U1|Clk_out          ; regout           ;
-; |UART|divider:U1|Clk_out~0        ; |UART|divider:U1|Clk_out~0        ; out              ;
-; |UART|divider:U1|Q~2              ; |UART|divider:U1|Q~2              ; out              ;
-; |UART|divider:U1|Q~3              ; |UART|divider:U1|Q~3              ; out              ;
-; |UART|divider:U1|Q~4              ; |UART|divider:U1|Q~4              ; out              ;
-; |UART|divider:U1|Q~7              ; |UART|divider:U1|Q~7              ; out              ;
-; |UART|divider:U1|Q~8              ; |UART|divider:U1|Q~8              ; out              ;
-; |UART|divider:U1|Q~9              ; |UART|divider:U1|Q~9              ; out              ;
-; |UART|divider:U1|Clk_out~1        ; |UART|divider:U1|Clk_out~1        ; out              ;
-; |UART|divider:U1|Q[0]             ; |UART|divider:U1|Q[0]             ; regout           ;
-; |UART|divider:U1|Q[1]             ; |UART|divider:U1|Q[1]             ; regout           ;
-; |UART|divider:U1|Q[2]             ; |UART|divider:U1|Q[2]             ; regout           ;
-; |UART|UART_RX:U3|Selector0~0      ; |UART|UART_RX:U3|Selector0~0      ; out0             ;
-; |UART|UART_RX:U3|Selector0~1      ; |UART|UART_RX:U3|Selector0~1      ; out0             ;
-; |UART|UART_RX:U3|Selector1~0      ; |UART|UART_RX:U3|Selector1~0      ; out0             ;
-; |UART|UART_RX:U3|Selector1~1      ; |UART|UART_RX:U3|Selector1~1      ; out0             ;
-; |UART|UART_RX:U3|Selector2~0      ; |UART|UART_RX:U3|Selector2~0      ; out0             ;
-; |UART|UART_RX:U3|Selector2~1      ; |UART|UART_RX:U3|Selector2~1      ; out0             ;
-; |UART|UART_RX:U3|Selector2~2      ; |UART|UART_RX:U3|Selector2~2      ; out0             ;
-; |UART|UART_RX:U3|Selector3~0      ; |UART|UART_RX:U3|Selector3~0      ; out0             ;
-; |UART|UART_RX:U3|Selector3~1      ; |UART|UART_RX:U3|Selector3~1      ; out0             ;
-; |UART|UART_RX:U3|Selector3~2      ; |UART|UART_RX:U3|Selector3~2      ; out0             ;
-; |UART|UART_RX:U3|Selector4~0      ; |UART|UART_RX:U3|Selector4~0      ; out0             ;
-; |UART|UART_RX:U3|Selector4~1      ; |UART|UART_RX:U3|Selector4~1      ; out0             ;
-; |UART|UART_TX:U2|Selector0~0      ; |UART|UART_TX:U2|Selector0~0      ; out              ;
-; |UART|UART_TX:U2|Selector0~1      ; |UART|UART_TX:U2|Selector0~1      ; out              ;
-; |UART|UART_TX:U2|Selector1~0      ; |UART|UART_TX:U2|Selector1~0      ; out              ;
-; |UART|UART_TX:U2|Selector1~1      ; |UART|UART_TX:U2|Selector1~1      ; out              ;
-; |UART|UART_TX:U2|Selector2~0      ; |UART|UART_TX:U2|Selector2~0      ; out0             ;
-; |UART|UART_TX:U2|Selector2~1      ; |UART|UART_TX:U2|Selector2~1      ; out0             ;
-; |UART|UART_TX:U2|Selector2~2      ; |UART|UART_TX:U2|Selector2~2      ; out0             ;
-; |UART|UART_TX:U2|Selector3~0      ; |UART|UART_TX:U2|Selector3~0      ; out              ;
-; |UART|UART_TX:U2|Selector3~1      ; |UART|UART_TX:U2|Selector3~1      ; out              ;
-; |UART|UART_TX:U2|Selector4~0      ; |UART|UART_TX:U2|Selector4~0      ; out0             ;
-; |UART|UART_TX:U2|Selector4~2      ; |UART|UART_TX:U2|Selector4~2      ; out0             ;
-; |UART|UART_TX:U2|Selector5~0      ; |UART|UART_TX:U2|Selector5~0      ; out0             ;
-; |UART|UART_TX:U2|Selector5~1      ; |UART|UART_TX:U2|Selector5~1      ; out0             ;
-; |UART|UART_TX:U2|Selector6~0      ; |UART|UART_TX:U2|Selector6~0      ; out              ;
-; |UART|UART_TX:U2|Selector6~1      ; |UART|UART_TX:U2|Selector6~1      ; out              ;
-; |UART|UART_TX:U2|Selector7~0      ; |UART|UART_TX:U2|Selector7~0      ; out              ;
-; |UART|UART_TX:U2|Selector7~1      ; |UART|UART_TX:U2|Selector7~1      ; out              ;
-; |UART|UART_TX:U2|Selector8~0      ; |UART|UART_TX:U2|Selector8~0      ; out              ;
-; |UART|UART_TX:U2|Selector8~1      ; |UART|UART_TX:U2|Selector8~1      ; out              ;
-; |UART|UART_TX:U2|Selector9~0      ; |UART|UART_TX:U2|Selector9~0      ; out              ;
-; |UART|UART_TX:U2|Selector9~1      ; |UART|UART_TX:U2|Selector9~1      ; out              ;
-; |UART|UART_TX:U2|Selector10~0     ; |UART|UART_TX:U2|Selector10~0     ; out              ;
-; |UART|UART_TX:U2|Selector10~1     ; |UART|UART_TX:U2|Selector10~1     ; out              ;
-; |UART|UART_TX:U2|Selector11~0     ; |UART|UART_TX:U2|Selector11~0     ; out              ;
-; |UART|UART_TX:U2|Selector11~1     ; |UART|UART_TX:U2|Selector11~1     ; out              ;
-; |UART|UART_TX:U2|Selector12~0     ; |UART|UART_TX:U2|Selector12~0     ; out              ;
-; |UART|UART_TX:U2|Selector12~1     ; |UART|UART_TX:U2|Selector12~1     ; out              ;
-; |UART|UART_TX:U2|Selector13~0     ; |UART|UART_TX:U2|Selector13~0     ; out              ;
-; |UART|UART_TX:U2|Selector13~1     ; |UART|UART_TX:U2|Selector13~1     ; out              ;
-; |UART|UART_TX:U2|Selector14~0     ; |UART|UART_TX:U2|Selector14~0     ; out0             ;
-; |UART|UART_TX:U2|Selector14~1     ; |UART|UART_TX:U2|Selector14~1     ; out0             ;
-; |UART|UART_RX:U3|Add0~0           ; |UART|UART_RX:U3|Add0~0           ; out0             ;
-; |UART|UART_RX:U3|Add0~1           ; |UART|UART_RX:U3|Add0~1           ; out0             ;
-; |UART|UART_RX:U3|Add0~2           ; |UART|UART_RX:U3|Add0~2           ; out0             ;
-; |UART|UART_RX:U3|Add1~0           ; |UART|UART_RX:U3|Add1~0           ; out0             ;
-; |UART|UART_RX:U3|Add1~1           ; |UART|UART_RX:U3|Add1~1           ; out0             ;
-; |UART|UART_RX:U3|Add1~2           ; |UART|UART_RX:U3|Add1~2           ; out0             ;
-; |UART|UART_RX:U3|Add1~3           ; |UART|UART_RX:U3|Add1~3           ; out0             ;
-; |UART|UART_RX:U3|Add1~4           ; |UART|UART_RX:U3|Add1~4           ; out0             ;
-; |UART|UART_TX:U2|Add0~0           ; |UART|UART_TX:U2|Add0~0           ; out0             ;
-; |UART|UART_TX:U2|Add0~1           ; |UART|UART_TX:U2|Add0~1           ; out0             ;
-; |UART|UART_TX:U2|Add0~2           ; |UART|UART_TX:U2|Add0~2           ; out0             ;
-; |UART|UART_TX:U2|Add0~3           ; |UART|UART_TX:U2|Add0~3           ; out0             ;
-; |UART|UART_TX:U2|Add0~4           ; |UART|UART_TX:U2|Add0~4           ; out0             ;
-; |UART|divider:U1|Add0~0           ; |UART|divider:U1|Add0~0           ; out0             ;
-; |UART|divider:U1|Add0~1           ; |UART|divider:U1|Add0~1           ; out0             ;
-; |UART|divider:U1|Add0~2           ; |UART|divider:U1|Add0~2           ; out0             ;
-; |UART|UART_RX:U3|Equal0~0         ; |UART|UART_RX:U3|Equal0~0         ; out0             ;
-; |UART|UART_RX:U3|Equal1~0         ; |UART|UART_RX:U3|Equal1~0         ; out0             ;
-; |UART|UART_TX:U2|Equal0~0         ; |UART|UART_TX:U2|Equal0~0         ; out0             ;
-; |UART|divider:U1|Equal0~0         ; |UART|divider:U1|Equal0~0         ; out0             ;
-+-----------------------------------+-----------------------------------+------------------+
++--------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                      ;
++---------------------------------------+---------------------------------------+------------------+
+; Node Name                             ; Output Port Name                      ; Output Port Type ;
++---------------------------------------+---------------------------------------+------------------+
+; |UART|clk                             ; |UART|clk                             ; out              ;
+; |UART|clk_div                         ; |UART|clk_div                         ; pin_out          ;
+; |UART|wr                              ; |UART|wr                              ; out              ;
+; |UART|ce                              ; |UART|ce                              ; out              ;
+; |UART|dbf                             ; |UART|dbf                             ; pin_out          ;
+; |UART|tdf                             ; |UART|tdf                             ; pin_out          ;
+; |UART|Txd                             ; |UART|Txd                             ; pin_out          ;
+; |UART|UART_TX:U2|shift_reg[2]         ; |UART|UART_TX:U2|shift_reg[2]         ; regout           ;
+; |UART|UART_TX:U2|always0~0            ; |UART|UART_TX:U2|always0~0            ; out0             ;
+; |UART|UART_TX:U2|state~0              ; |UART|UART_TX:U2|state~0              ; out              ;
+; |UART|UART_TX:U2|state~1              ; |UART|UART_TX:U2|state~1              ; out              ;
+; |UART|UART_TX:U2|always0~1            ; |UART|UART_TX:U2|always0~1            ; out0             ;
+; |UART|UART_TX:U2|tdf~0                ; |UART|UART_TX:U2|tdf~0                ; out              ;
+; |UART|UART_TX:U2|state~2              ; |UART|UART_TX:U2|state~2              ; out              ;
+; |UART|UART_TX:U2|state~3              ; |UART|UART_TX:U2|state~3              ; out              ;
+; |UART|UART_TX:U2|state~4              ; |UART|UART_TX:U2|state~4              ; out              ;
+; |UART|UART_TX:U2|tdf~1                ; |UART|UART_TX:U2|tdf~1                ; out              ;
+; |UART|UART_TX:U2|t~0                  ; |UART|UART_TX:U2|t~0                  ; out              ;
+; |UART|UART_TX:U2|t~1                  ; |UART|UART_TX:U2|t~1                  ; out              ;
+; |UART|UART_TX:U2|t~2                  ; |UART|UART_TX:U2|t~2                  ; out              ;
+; |UART|UART_TX:U2|t~3                  ; |UART|UART_TX:U2|t~3                  ; out              ;
+; |UART|UART_TX:U2|shift_reg[1]         ; |UART|UART_TX:U2|shift_reg[1]         ; regout           ;
+; |UART|UART_TX:U2|shift_reg[0]         ; |UART|UART_TX:U2|shift_reg[0]         ; regout           ;
+; |UART|UART_TX:U2|t~4                  ; |UART|UART_TX:U2|t~4                  ; out              ;
+; |UART|UART_TX:U2|t~5                  ; |UART|UART_TX:U2|t~5                  ; out              ;
+; |UART|UART_TX:U2|Txd                  ; |UART|UART_TX:U2|Txd                  ; regout           ;
+; |UART|UART_TX:U2|t~6                  ; |UART|UART_TX:U2|t~6                  ; out              ;
+; |UART|UART_TX:U2|t~7                  ; |UART|UART_TX:U2|t~7                  ; out              ;
+; |UART|UART_TX:U2|state~5              ; |UART|UART_TX:U2|state~5              ; out              ;
+; |UART|UART_TX:U2|state~6              ; |UART|UART_TX:U2|state~6              ; out              ;
+; |UART|UART_TX:U2|state~7              ; |UART|UART_TX:U2|state~7              ; out              ;
+; |UART|UART_TX:U2|dbf~0                ; |UART|UART_TX:U2|dbf~0                ; out              ;
+; |UART|UART_TX:U2|t[0]                 ; |UART|UART_TX:U2|t[0]                 ; regout           ;
+; |UART|UART_TX:U2|shift_reg[3]         ; |UART|UART_TX:U2|shift_reg[3]         ; regout           ;
+; |UART|UART_TX:U2|shift_reg[4]         ; |UART|UART_TX:U2|shift_reg[4]         ; regout           ;
+; |UART|UART_TX:U2|shift_reg[5]         ; |UART|UART_TX:U2|shift_reg[5]         ; regout           ;
+; |UART|UART_TX:U2|shift_reg[6]         ; |UART|UART_TX:U2|shift_reg[6]         ; regout           ;
+; |UART|UART_TX:U2|shift_reg[7]         ; |UART|UART_TX:U2|shift_reg[7]         ; regout           ;
+; |UART|UART_TX:U2|shift_reg[8]         ; |UART|UART_TX:U2|shift_reg[8]         ; regout           ;
+; |UART|UART_TX:U2|shift_reg[9]         ; |UART|UART_TX:U2|shift_reg[9]         ; regout           ;
+; |UART|UART_TX:U2|dbf                  ; |UART|UART_TX:U2|dbf                  ; regout           ;
+; |UART|UART_TX:U2|t[1]                 ; |UART|UART_TX:U2|t[1]                 ; regout           ;
+; |UART|UART_TX:U2|t[2]                 ; |UART|UART_TX:U2|t[2]                 ; regout           ;
+; |UART|UART_TX:U2|t[3]                 ; |UART|UART_TX:U2|t[3]                 ; regout           ;
+; |UART|UART_TX:U2|tdf                  ; |UART|UART_TX:U2|tdf                  ; regout           ;
+; |UART|UART_TX:U2|state.transmit       ; |UART|UART_TX:U2|state.transmit       ; regout           ;
+; |UART|UART_TX:U2|state.ready          ; |UART|UART_TX:U2|state.ready          ; regout           ;
+; |UART|UART_TX:U2|state.idle           ; |UART|UART_TX:U2|state.idle           ; regout           ;
+; |UART|UART_TX:U2|state~8              ; |UART|UART_TX:U2|state~8              ; out0             ;
+; |UART|UART_TX:U2|state.idle~0         ; |UART|UART_TX:U2|state.idle~0         ; out0             ;
+; |UART|UART_TX:U2|state~10             ; |UART|UART_TX:U2|state~10             ; out0             ;
+; |UART|UART_TX:U2|state.ready~0        ; |UART|UART_TX:U2|state.ready~0        ; out0             ;
+; |UART|UART_TX:U2|state~12             ; |UART|UART_TX:U2|state~12             ; out0             ;
+; |UART|UART_TX:U2|state.transmit~0     ; |UART|UART_TX:U2|state.transmit~0     ; out0             ;
+; |UART|UART_TX:U2|state~14             ; |UART|UART_TX:U2|state~14             ; out0             ;
+; |UART|UART_TX:U2|state~18             ; |UART|UART_TX:U2|state~18             ; out0             ;
+; |UART|UART_TX:U2|divider:U1|Q[0]      ; |UART|UART_TX:U2|divider:U1|Q[0]      ; regout           ;
+; |UART|UART_TX:U2|divider:U1|Clk_out~0 ; |UART|UART_TX:U2|divider:U1|Clk_out~0 ; out              ;
+; |UART|UART_TX:U2|divider:U1|Q~2       ; |UART|UART_TX:U2|divider:U1|Q~2       ; out              ;
+; |UART|UART_TX:U2|divider:U1|Q~3       ; |UART|UART_TX:U2|divider:U1|Q~3       ; out              ;
+; |UART|UART_TX:U2|divider:U1|Q~4       ; |UART|UART_TX:U2|divider:U1|Q~4       ; out              ;
+; |UART|UART_TX:U2|divider:U1|Q~7       ; |UART|UART_TX:U2|divider:U1|Q~7       ; out              ;
+; |UART|UART_TX:U2|divider:U1|Q~8       ; |UART|UART_TX:U2|divider:U1|Q~8       ; out              ;
+; |UART|UART_TX:U2|divider:U1|Q~9       ; |UART|UART_TX:U2|divider:U1|Q~9       ; out              ;
+; |UART|UART_TX:U2|divider:U1|Clk_out~1 ; |UART|UART_TX:U2|divider:U1|Clk_out~1 ; out              ;
+; |UART|UART_TX:U2|divider:U1|Q[1]      ; |UART|UART_TX:U2|divider:U1|Q[1]      ; regout           ;
+; |UART|UART_TX:U2|divider:U1|Q[2]      ; |UART|UART_TX:U2|divider:U1|Q[2]      ; regout           ;
+; |UART|UART_TX:U2|divider:U1|Clk_out   ; |UART|UART_TX:U2|divider:U1|Clk_out   ; regout           ;
+; |UART|UART_TX:U2|Selector0~0          ; |UART|UART_TX:U2|Selector0~0          ; out              ;
+; |UART|UART_TX:U2|Selector0~1          ; |UART|UART_TX:U2|Selector0~1          ; out              ;
+; |UART|UART_TX:U2|Selector1~0          ; |UART|UART_TX:U2|Selector1~0          ; out              ;
+; |UART|UART_TX:U2|Selector1~1          ; |UART|UART_TX:U2|Selector1~1          ; out              ;
+; |UART|UART_TX:U2|Selector2~0          ; |UART|UART_TX:U2|Selector2~0          ; out0             ;
+; |UART|UART_TX:U2|Selector2~1          ; |UART|UART_TX:U2|Selector2~1          ; out0             ;
+; |UART|UART_TX:U2|Selector2~2          ; |UART|UART_TX:U2|Selector2~2          ; out0             ;
+; |UART|UART_TX:U2|Selector3~0          ; |UART|UART_TX:U2|Selector3~0          ; out              ;
+; |UART|UART_TX:U2|Selector3~1          ; |UART|UART_TX:U2|Selector3~1          ; out              ;
+; |UART|UART_TX:U2|Selector4~0          ; |UART|UART_TX:U2|Selector4~0          ; out0             ;
+; |UART|UART_TX:U2|Selector4~2          ; |UART|UART_TX:U2|Selector4~2          ; out0             ;
+; |UART|UART_TX:U2|Selector5~0          ; |UART|UART_TX:U2|Selector5~0          ; out0             ;
+; |UART|UART_TX:U2|Selector5~1          ; |UART|UART_TX:U2|Selector5~1          ; out0             ;
+; |UART|UART_TX:U2|Selector6~0          ; |UART|UART_TX:U2|Selector6~0          ; out              ;
+; |UART|UART_TX:U2|Selector6~1          ; |UART|UART_TX:U2|Selector6~1          ; out              ;
+; |UART|UART_TX:U2|Selector7~0          ; |UART|UART_TX:U2|Selector7~0          ; out              ;
+; |UART|UART_TX:U2|Selector7~1          ; |UART|UART_TX:U2|Selector7~1          ; out              ;
+; |UART|UART_TX:U2|Selector8~0          ; |UART|UART_TX:U2|Selector8~0          ; out              ;
+; |UART|UART_TX:U2|Selector8~1          ; |UART|UART_TX:U2|Selector8~1          ; out              ;
+; |UART|UART_TX:U2|Selector9~0          ; |UART|UART_TX:U2|Selector9~0          ; out              ;
+; |UART|UART_TX:U2|Selector9~1          ; |UART|UART_TX:U2|Selector9~1          ; out              ;
+; |UART|UART_TX:U2|Selector10~0         ; |UART|UART_TX:U2|Selector10~0         ; out              ;
+; |UART|UART_TX:U2|Selector10~1         ; |UART|UART_TX:U2|Selector10~1         ; out              ;
+; |UART|UART_TX:U2|Selector11~0         ; |UART|UART_TX:U2|Selector11~0         ; out              ;
+; |UART|UART_TX:U2|Selector11~1         ; |UART|UART_TX:U2|Selector11~1         ; out              ;
+; |UART|UART_TX:U2|Selector12~0         ; |UART|UART_TX:U2|Selector12~0         ; out              ;
+; |UART|UART_TX:U2|Selector12~1         ; |UART|UART_TX:U2|Selector12~1         ; out              ;
+; |UART|UART_TX:U2|Selector13~0         ; |UART|UART_TX:U2|Selector13~0         ; out              ;
+; |UART|UART_TX:U2|Selector13~1         ; |UART|UART_TX:U2|Selector13~1         ; out              ;
+; |UART|UART_TX:U2|Selector14~0         ; |UART|UART_TX:U2|Selector14~0         ; out0             ;
+; |UART|UART_TX:U2|Selector14~1         ; |UART|UART_TX:U2|Selector14~1         ; out0             ;
+; |UART|UART_TX:U2|Add0~0               ; |UART|UART_TX:U2|Add0~0               ; out0             ;
+; |UART|UART_TX:U2|Add0~1               ; |UART|UART_TX:U2|Add0~1               ; out0             ;
+; |UART|UART_TX:U2|Add0~2               ; |UART|UART_TX:U2|Add0~2               ; out0             ;
+; |UART|UART_TX:U2|Add0~3               ; |UART|UART_TX:U2|Add0~3               ; out0             ;
+; |UART|UART_TX:U2|Add0~4               ; |UART|UART_TX:U2|Add0~4               ; out0             ;
+; |UART|UART_TX:U2|divider:U1|Add0~0    ; |UART|UART_TX:U2|divider:U1|Add0~0    ; out0             ;
+; |UART|UART_TX:U2|divider:U1|Add0~1    ; |UART|UART_TX:U2|divider:U1|Add0~1    ; out0             ;
+; |UART|UART_TX:U2|divider:U1|Add0~2    ; |UART|UART_TX:U2|divider:U1|Add0~2    ; out0             ;
+; |UART|UART_TX:U2|Equal0~0             ; |UART|UART_TX:U2|Equal0~0             ; out0             ;
+; |UART|UART_TX:U2|divider:U1|Equal0~0  ; |UART|UART_TX:U2|divider:U1|Equal0~0  ; out0             ;
++---------------------------------------+---------------------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 1 during simulation.
-+----------------------------------------------------------------------------------+
-; Missing 1-Value Coverage                                                         ;
-+-------------------------------+-------------------------------+------------------+
-; Node Name                     ; Output Port Name              ; Output Port Type ;
-+-------------------------------+-------------------------------+------------------+
-; |UART|rst                     ; |UART|rst                     ; out              ;
-; |UART|data[0]                 ; |UART|data[0]                 ; out              ;
-; |UART|data[2]                 ; |UART|data[2]                 ; out              ;
-; |UART|data[4]                 ; |UART|data[4]                 ; out              ;
-; |UART|data[6]                 ; |UART|data[6]                 ; out              ;
-; |UART|error                   ; |UART|error                   ; pin_out          ;
-; |UART|UART_RX:U3|data[7]~0    ; |UART|UART_RX:U3|data[7]~0    ; out              ;
-; |UART|UART_RX:U3|state~2      ; |UART|UART_RX:U3|state~2      ; out              ;
-; |UART|UART_RX:U3|state~5      ; |UART|UART_RX:U3|state~5      ; out              ;
-; |UART|UART_RX:U3|data[5]~2    ; |UART|UART_RX:U3|data[5]~2    ; out              ;
-; |UART|UART_RX:U3|data[3]~4    ; |UART|UART_RX:U3|data[3]~4    ; out              ;
-; |UART|UART_RX:U3|t~4          ; |UART|UART_RX:U3|t~4          ; out              ;
-; |UART|UART_RX:U3|data[1]~6    ; |UART|UART_RX:U3|data[1]~6    ; out              ;
-; |UART|UART_RX:U3|t[3]         ; |UART|UART_RX:U3|t[3]         ; regout           ;
-; |UART|UART_RX:U3|error        ; |UART|UART_RX:U3|error        ; regout           ;
-; |UART|UART_TX:U2|data_buf~1   ; |UART|UART_TX:U2|data_buf~1   ; out              ;
-; |UART|UART_TX:U2|data_buf~3   ; |UART|UART_TX:U2|data_buf~3   ; out              ;
-; |UART|UART_TX:U2|data_buf~5   ; |UART|UART_TX:U2|data_buf~5   ; out              ;
-; |UART|UART_TX:U2|data_buf~7   ; |UART|UART_TX:U2|data_buf~7   ; out              ;
-; |UART|UART_TX:U2|data_buf~9   ; |UART|UART_TX:U2|data_buf~9   ; out              ;
-; |UART|UART_TX:U2|data_buf~11  ; |UART|UART_TX:U2|data_buf~11  ; out              ;
-; |UART|UART_TX:U2|data_buf~13  ; |UART|UART_TX:U2|data_buf~13  ; out              ;
-; |UART|UART_TX:U2|data_buf~15  ; |UART|UART_TX:U2|data_buf~15  ; out              ;
-; |UART|UART_TX:U2|data_buf[0]  ; |UART|UART_TX:U2|data_buf[0]  ; regout           ;
-; |UART|UART_TX:U2|data_buf[2]  ; |UART|UART_TX:U2|data_buf[2]  ; regout           ;
-; |UART|UART_TX:U2|data_buf[4]  ; |UART|UART_TX:U2|data_buf[4]  ; regout           ;
-; |UART|UART_TX:U2|data_buf[6]  ; |UART|UART_TX:U2|data_buf[6]  ; regout           ;
-; |UART|divider:U1|Q~0          ; |UART|divider:U1|Q~0          ; out              ;
-; |UART|divider:U1|Q~1          ; |UART|divider:U1|Q~1          ; out              ;
-; |UART|divider:U1|Q~5          ; |UART|divider:U1|Q~5          ; out              ;
-; |UART|divider:U1|Q~6          ; |UART|divider:U1|Q~6          ; out              ;
-; |UART|divider:U1|Q[3]         ; |UART|divider:U1|Q[3]         ; regout           ;
-; |UART|divider:U1|Q[4]         ; |UART|divider:U1|Q[4]         ; regout           ;
-; |UART|UART_RX:U3|Selector0~2  ; |UART|UART_RX:U3|Selector0~2  ; out0             ;
-; |UART|UART_RX:U3|Selector1~2  ; |UART|UART_RX:U3|Selector1~2  ; out0             ;
-; |UART|UART_RX:U3|Selector4~2  ; |UART|UART_RX:U3|Selector4~2  ; out0             ;
-; |UART|UART_TX:U2|Selector4~1  ; |UART|UART_TX:U2|Selector4~1  ; out0             ;
-; |UART|UART_TX:U2|Selector14~2 ; |UART|UART_TX:U2|Selector14~2 ; out0             ;
-; |UART|divider:U1|Add0~3       ; |UART|divider:U1|Add0~3       ; out0             ;
-; |UART|divider:U1|Add0~4       ; |UART|divider:U1|Add0~4       ; out0             ;
-; |UART|divider:U1|Add0~5       ; |UART|divider:U1|Add0~5       ; out0             ;
-; |UART|divider:U1|Add0~6       ; |UART|divider:U1|Add0~6       ; out0             ;
-+-------------------------------+-------------------------------+------------------+
++--------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                   ;
++------------------------------------+------------------------------------+------------------+
+; Node Name                          ; Output Port Name                   ; Output Port Type ;
++------------------------------------+------------------------------------+------------------+
+; |UART|rst                          ; |UART|rst                          ; out              ;
+; |UART|data[0]                      ; |UART|data[0]                      ; out              ;
+; |UART|data[0]                      ; |UART|data[0]~result               ; pin_out          ;
+; |UART|data[2]                      ; |UART|data[2]                      ; out              ;
+; |UART|data[2]                      ; |UART|data[2]~result               ; pin_out          ;
+; |UART|data[4]                      ; |UART|data[4]                      ; out              ;
+; |UART|data[4]                      ; |UART|data[4]~result               ; pin_out          ;
+; |UART|data[6]                      ; |UART|data[6]                      ; out              ;
+; |UART|data[6]                      ; |UART|data[6]~result               ; pin_out          ;
+; |UART|error                        ; |UART|error                        ; pin_out          ;
+; |UART|rdc                          ; |UART|rdc                          ; pin_out          ;
+; |UART|rdf                          ; |UART|rdf                          ; pin_out          ;
+; |UART|data[6]~1                    ; |UART|data[6]~1                    ; out0             ;
+; |UART|data[4]~3                    ; |UART|data[4]~3                    ; out0             ;
+; |UART|data[2]~5                    ; |UART|data[2]~5                    ; out0             ;
+; |UART|data[0]~7                    ; |UART|data[0]~7                    ; out0             ;
+; |UART|UART_TX:U2|data_buf~1        ; |UART|UART_TX:U2|data_buf~1        ; out              ;
+; |UART|UART_TX:U2|data_buf~3        ; |UART|UART_TX:U2|data_buf~3        ; out              ;
+; |UART|UART_TX:U2|data_buf~5        ; |UART|UART_TX:U2|data_buf~5        ; out              ;
+; |UART|UART_TX:U2|data_buf~7        ; |UART|UART_TX:U2|data_buf~7        ; out              ;
+; |UART|UART_TX:U2|data_buf~9        ; |UART|UART_TX:U2|data_buf~9        ; out              ;
+; |UART|UART_TX:U2|data_buf~11       ; |UART|UART_TX:U2|data_buf~11       ; out              ;
+; |UART|UART_TX:U2|data_buf~13       ; |UART|UART_TX:U2|data_buf~13       ; out              ;
+; |UART|UART_TX:U2|data_buf~15       ; |UART|UART_TX:U2|data_buf~15       ; out              ;
+; |UART|UART_TX:U2|data[6]~direct    ; |UART|UART_TX:U2|data[6]~direct    ; out0             ;
+; |UART|UART_TX:U2|data_buf[0]       ; |UART|UART_TX:U2|data_buf[0]       ; regout           ;
+; |UART|UART_TX:U2|data_buf[2]       ; |UART|UART_TX:U2|data_buf[2]       ; regout           ;
+; |UART|UART_TX:U2|data_buf[4]       ; |UART|UART_TX:U2|data_buf[4]       ; regout           ;
+; |UART|UART_TX:U2|data_buf[6]       ; |UART|UART_TX:U2|data_buf[6]       ; regout           ;
+; |UART|UART_TX:U2|data[0]~direct    ; |UART|UART_TX:U2|data[0]~direct    ; out0             ;
+; |UART|UART_TX:U2|data[2]~direct    ; |UART|UART_TX:U2|data[2]~direct    ; out0             ;
+; |UART|UART_TX:U2|data[4]~direct    ; |UART|UART_TX:U2|data[4]~direct    ; out0             ;
+; |UART|UART_TX:U2|divider:U1|Q~0    ; |UART|UART_TX:U2|divider:U1|Q~0    ; out              ;
+; |UART|UART_TX:U2|divider:U1|Q~1    ; |UART|UART_TX:U2|divider:U1|Q~1    ; out              ;
+; |UART|UART_TX:U2|divider:U1|Q~5    ; |UART|UART_TX:U2|divider:U1|Q~5    ; out              ;
+; |UART|UART_TX:U2|divider:U1|Q~6    ; |UART|UART_TX:U2|divider:U1|Q~6    ; out              ;
+; |UART|UART_TX:U2|divider:U1|Q[3]   ; |UART|UART_TX:U2|divider:U1|Q[3]   ; regout           ;
+; |UART|UART_TX:U2|divider:U1|Q[4]   ; |UART|UART_TX:U2|divider:U1|Q[4]   ; regout           ;
+; |UART|UART_TX:U2|Selector4~1       ; |UART|UART_TX:U2|Selector4~1       ; out0             ;
+; |UART|UART_TX:U2|Selector14~2      ; |UART|UART_TX:U2|Selector14~2      ; out0             ;
+; |UART|UART_TX:U2|divider:U1|Add0~3 ; |UART|UART_TX:U2|divider:U1|Add0~3 ; out0             ;
+; |UART|UART_TX:U2|divider:U1|Add0~4 ; |UART|UART_TX:U2|divider:U1|Add0~4 ; out0             ;
+; |UART|UART_TX:U2|divider:U1|Add0~5 ; |UART|UART_TX:U2|divider:U1|Add0~5 ; out0             ;
+; |UART|UART_TX:U2|divider:U1|Add0~6 ; |UART|UART_TX:U2|divider:U1|Add0~6 ; out0             ;
++------------------------------------+------------------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 0 during simulation.
-+----------------------------------------------------------------------------------+
-; Missing 0-Value Coverage                                                         ;
-+-------------------------------+-------------------------------+------------------+
-; Node Name                     ; Output Port Name              ; Output Port Type ;
-+-------------------------------+-------------------------------+------------------+
-; |UART|rst                     ; |UART|rst                     ; out              ;
-; |UART|data[1]                 ; |UART|data[1]                 ; out              ;
-; |UART|data[3]                 ; |UART|data[3]                 ; out              ;
-; |UART|data[5]                 ; |UART|data[5]                 ; out              ;
-; |UART|data[7]                 ; |UART|data[7]                 ; out              ;
-; |UART|error                   ; |UART|error                   ; pin_out          ;
-; |UART|UART_RX:U3|state~2      ; |UART|UART_RX:U3|state~2      ; out              ;
-; |UART|UART_RX:U3|data[6]~1    ; |UART|UART_RX:U3|data[6]~1    ; out              ;
-; |UART|UART_RX:U3|state~5      ; |UART|UART_RX:U3|state~5      ; out              ;
-; |UART|UART_RX:U3|data[4]~3    ; |UART|UART_RX:U3|data[4]~3    ; out              ;
-; |UART|UART_RX:U3|t~4          ; |UART|UART_RX:U3|t~4          ; out              ;
-; |UART|UART_RX:U3|data[2]~5    ; |UART|UART_RX:U3|data[2]~5    ; out              ;
-; |UART|UART_RX:U3|data[0]~7    ; |UART|UART_RX:U3|data[0]~7    ; out              ;
-; |UART|UART_RX:U3|data_buf[0]  ; |UART|UART_RX:U3|data_buf[0]  ; regout           ;
-; |UART|UART_RX:U3|t[3]         ; |UART|UART_RX:U3|t[3]         ; regout           ;
-; |UART|UART_RX:U3|error        ; |UART|UART_RX:U3|error        ; regout           ;
-; |UART|UART_TX:U2|data_buf~0   ; |UART|UART_TX:U2|data_buf~0   ; out              ;
-; |UART|UART_TX:U2|data_buf~2   ; |UART|UART_TX:U2|data_buf~2   ; out              ;
-; |UART|UART_TX:U2|data_buf~4   ; |UART|UART_TX:U2|data_buf~4   ; out              ;
-; |UART|UART_TX:U2|data_buf~6   ; |UART|UART_TX:U2|data_buf~6   ; out              ;
-; |UART|UART_TX:U2|data_buf~8   ; |UART|UART_TX:U2|data_buf~8   ; out              ;
-; |UART|UART_TX:U2|data_buf~10  ; |UART|UART_TX:U2|data_buf~10  ; out              ;
-; |UART|UART_TX:U2|data_buf~12  ; |UART|UART_TX:U2|data_buf~12  ; out              ;
-; |UART|UART_TX:U2|data_buf~14  ; |UART|UART_TX:U2|data_buf~14  ; out              ;
-; |UART|UART_TX:U2|data_buf[0]  ; |UART|UART_TX:U2|data_buf[0]  ; regout           ;
-; |UART|UART_TX:U2|data_buf[1]  ; |UART|UART_TX:U2|data_buf[1]  ; regout           ;
-; |UART|UART_TX:U2|data_buf[2]  ; |UART|UART_TX:U2|data_buf[2]  ; regout           ;
-; |UART|UART_TX:U2|data_buf[3]  ; |UART|UART_TX:U2|data_buf[3]  ; regout           ;
-; |UART|UART_TX:U2|data_buf[4]  ; |UART|UART_TX:U2|data_buf[4]  ; regout           ;
-; |UART|UART_TX:U2|data_buf[5]  ; |UART|UART_TX:U2|data_buf[5]  ; regout           ;
-; |UART|UART_TX:U2|data_buf[6]  ; |UART|UART_TX:U2|data_buf[6]  ; regout           ;
-; |UART|UART_TX:U2|data_buf[7]  ; |UART|UART_TX:U2|data_buf[7]  ; regout           ;
-; |UART|divider:U1|Q~0          ; |UART|divider:U1|Q~0          ; out              ;
-; |UART|divider:U1|Q~1          ; |UART|divider:U1|Q~1          ; out              ;
-; |UART|divider:U1|Q~5          ; |UART|divider:U1|Q~5          ; out              ;
-; |UART|divider:U1|Q~6          ; |UART|divider:U1|Q~6          ; out              ;
-; |UART|divider:U1|Q[3]         ; |UART|divider:U1|Q[3]         ; regout           ;
-; |UART|divider:U1|Q[4]         ; |UART|divider:U1|Q[4]         ; regout           ;
-; |UART|UART_RX:U3|Selector0~2  ; |UART|UART_RX:U3|Selector0~2  ; out0             ;
-; |UART|UART_RX:U3|Selector1~2  ; |UART|UART_RX:U3|Selector1~2  ; out0             ;
-; |UART|UART_RX:U3|Selector4~2  ; |UART|UART_RX:U3|Selector4~2  ; out0             ;
-; |UART|UART_TX:U2|Selector4~1  ; |UART|UART_TX:U2|Selector4~1  ; out0             ;
-; |UART|UART_TX:U2|Selector14~2 ; |UART|UART_TX:U2|Selector14~2 ; out0             ;
-; |UART|divider:U1|Add0~3       ; |UART|divider:U1|Add0~3       ; out0             ;
-; |UART|divider:U1|Add0~4       ; |UART|divider:U1|Add0~4       ; out0             ;
-; |UART|divider:U1|Add0~5       ; |UART|divider:U1|Add0~5       ; out0             ;
-; |UART|divider:U1|Add0~6       ; |UART|divider:U1|Add0~6       ; out0             ;
-+-------------------------------+-------------------------------+------------------+
++--------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                   ;
++------------------------------------+------------------------------------+------------------+
+; Node Name                          ; Output Port Name                   ; Output Port Type ;
++------------------------------------+------------------------------------+------------------+
+; |UART|rst                          ; |UART|rst                          ; out              ;
+; |UART|data[1]                      ; |UART|data[1]                      ; out              ;
+; |UART|data[1]                      ; |UART|data[1]~result               ; pin_out          ;
+; |UART|data[3]                      ; |UART|data[3]                      ; out              ;
+; |UART|data[3]                      ; |UART|data[3]~result               ; pin_out          ;
+; |UART|data[5]                      ; |UART|data[5]                      ; out              ;
+; |UART|data[5]                      ; |UART|data[5]~result               ; pin_out          ;
+; |UART|data[7]                      ; |UART|data[7]                      ; out              ;
+; |UART|data[7]                      ; |UART|data[7]~result               ; pin_out          ;
+; |UART|error                        ; |UART|error                        ; pin_out          ;
+; |UART|rdc                          ; |UART|rdc                          ; pin_out          ;
+; |UART|rdf                          ; |UART|rdf                          ; pin_out          ;
+; |UART|data[7]~0                    ; |UART|data[7]~0                    ; out0             ;
+; |UART|data[5]~2                    ; |UART|data[5]~2                    ; out0             ;
+; |UART|data[3]~4                    ; |UART|data[3]~4                    ; out0             ;
+; |UART|data[1]~6                    ; |UART|data[1]~6                    ; out0             ;
+; |UART|UART_TX:U2|data_buf~0        ; |UART|UART_TX:U2|data_buf~0        ; out              ;
+; |UART|UART_TX:U2|data_buf~2        ; |UART|UART_TX:U2|data_buf~2        ; out              ;
+; |UART|UART_TX:U2|data_buf~4        ; |UART|UART_TX:U2|data_buf~4        ; out              ;
+; |UART|UART_TX:U2|data_buf~6        ; |UART|UART_TX:U2|data_buf~6        ; out              ;
+; |UART|UART_TX:U2|data_buf~8        ; |UART|UART_TX:U2|data_buf~8        ; out              ;
+; |UART|UART_TX:U2|data_buf~10       ; |UART|UART_TX:U2|data_buf~10       ; out              ;
+; |UART|UART_TX:U2|data_buf~12       ; |UART|UART_TX:U2|data_buf~12       ; out              ;
+; |UART|UART_TX:U2|data_buf~14       ; |UART|UART_TX:U2|data_buf~14       ; out              ;
+; |UART|UART_TX:U2|data[5]~direct    ; |UART|UART_TX:U2|data[5]~direct    ; out0             ;
+; |UART|UART_TX:U2|data[7]~direct    ; |UART|UART_TX:U2|data[7]~direct    ; out0             ;
+; |UART|UART_TX:U2|data_buf[0]       ; |UART|UART_TX:U2|data_buf[0]       ; regout           ;
+; |UART|UART_TX:U2|data_buf[1]       ; |UART|UART_TX:U2|data_buf[1]       ; regout           ;
+; |UART|UART_TX:U2|data_buf[2]       ; |UART|UART_TX:U2|data_buf[2]       ; regout           ;
+; |UART|UART_TX:U2|data_buf[3]       ; |UART|UART_TX:U2|data_buf[3]       ; regout           ;
+; |UART|UART_TX:U2|data_buf[4]       ; |UART|UART_TX:U2|data_buf[4]       ; regout           ;
+; |UART|UART_TX:U2|data_buf[5]       ; |UART|UART_TX:U2|data_buf[5]       ; regout           ;
+; |UART|UART_TX:U2|data_buf[6]       ; |UART|UART_TX:U2|data_buf[6]       ; regout           ;
+; |UART|UART_TX:U2|data_buf[7]       ; |UART|UART_TX:U2|data_buf[7]       ; regout           ;
+; |UART|UART_TX:U2|data[1]~direct    ; |UART|UART_TX:U2|data[1]~direct    ; out0             ;
+; |UART|UART_TX:U2|data[3]~direct    ; |UART|UART_TX:U2|data[3]~direct    ; out0             ;
+; |UART|UART_TX:U2|divider:U1|Q~0    ; |UART|UART_TX:U2|divider:U1|Q~0    ; out              ;
+; |UART|UART_TX:U2|divider:U1|Q~1    ; |UART|UART_TX:U2|divider:U1|Q~1    ; out              ;
+; |UART|UART_TX:U2|divider:U1|Q~5    ; |UART|UART_TX:U2|divider:U1|Q~5    ; out              ;
+; |UART|UART_TX:U2|divider:U1|Q~6    ; |UART|UART_TX:U2|divider:U1|Q~6    ; out              ;
+; |UART|UART_TX:U2|divider:U1|Q[3]   ; |UART|UART_TX:U2|divider:U1|Q[3]   ; regout           ;
+; |UART|UART_TX:U2|divider:U1|Q[4]   ; |UART|UART_TX:U2|divider:U1|Q[4]   ; regout           ;
+; |UART|UART_TX:U2|Selector4~1       ; |UART|UART_TX:U2|Selector4~1       ; out0             ;
+; |UART|UART_TX:U2|Selector14~2      ; |UART|UART_TX:U2|Selector14~2      ; out0             ;
+; |UART|UART_TX:U2|divider:U1|Add0~3 ; |UART|UART_TX:U2|divider:U1|Add0~3 ; out0             ;
+; |UART|UART_TX:U2|divider:U1|Add0~4 ; |UART|UART_TX:U2|divider:U1|Add0~4 ; out0             ;
+; |UART|UART_TX:U2|divider:U1|Add0~5 ; |UART|UART_TX:U2|divider:U1|Add0~5 ; out0             ;
+; |UART|UART_TX:U2|divider:U1|Add0~6 ; |UART|UART_TX:U2|divider:U1|Add0~6 ; out0             ;
++------------------------------------+------------------------------------+------------------+
 
 
 +---------------------+
@@ -449,18 +344,18 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II Simulator
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Sun Oct 25 21:04:23 2015
+    Info: Processing started: Mon Oct 26 10:19:33 2015
 Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off UART -c UART
-Info: Using vector source file "E:/Discipline/Verilog/Experiment/Experiment_2/UART.vwf"
+Info: Using vector source file "E:/Discipline/Verilog/Experiment/Verilog_Experiment_UART/UART.vwf"
 Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
 Info: Simulation partitioned into 1 sub-simulations
-Info: Simulation coverage is      77.50 %
-Info: Number of transitions in simulation is 13999
+Info: Simulation coverage is      60.22 %
+Info: Number of transitions in simulation is 12956
 Info: Quartus II Simulator was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 159 megabytes
-    Info: Processing ended: Sun Oct 25 21:04:25 2015
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Processing ended: Mon Oct 26 10:19:33 2015
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
 
 

@@ -18,10 +18,8 @@ wire [7:0] data;
 wire error,rdf,rdc,dbf,tdf;
 
 
-divider U1(.Rst(rst),.Clk_in(clk),.Clk_out(clk_div));//12 frequency division
+UART_TX U2(clk,clk_div,rst,data,wr,ce,dbf,tdf,Txd);
 
-UART_TX U2(clk_div,rst,data,wr,ce,dbf,tdf,Txd);
-
-UART_RX U3(clk,clk_div,rst,data,rd,ce,error,rdc,rdf,Rxd);
+//UART_RX U3(clk,clk_div,rst,data,rd,ce,error,rdc,rdf,Rxd);
 
 endmodule

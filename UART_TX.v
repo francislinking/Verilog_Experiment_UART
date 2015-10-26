@@ -1,13 +1,15 @@
-module UART_TX(clk,rst,data,wr,ce,dbf,tdf,Txd);
+module UART_TX(clk,clk_div,rst,data,wr,ce,dbf,tdf,Txd);
 input clk,rst,wr,ce;
 inout data;
 output 	dbf,//data buffer full
 		tdf;//transmit data flag
 
+output clk_div;
 output Txd;
 
-wire Txd;
 
+wire clk_div;
+reg Txd;
 reg [7:0] data;
 reg [7:0] data_buf;
 reg [9:0] shift_reg;
@@ -15,13 +17,14 @@ reg error,dbf,tdf;
 reg [3:0] t;
 reg [1:0] state;
 
-
 parameter idle=2'b00,ready=2'b01,transmit=2'b11;
 
-assign Txd=(state == transmit)?shift_reg[0]:1'b1;
+divider U1(.En(1),.Rst(rst),.Clk_in(clk),.Clk_out(clk_div));//12 frequency division
+
+//assign Txd=(state == transmit)?shift_reg[0]:1'b1;
 
 //state control
-always@(posedge clk)
+always@(posedge clk_div)
 begin
 if(!rst)
 	state <= idle;
@@ -82,6 +85,7 @@ end
 transmit:
 begin
 	shift_reg <= shift_reg>>1;
+	Txd<=shift_reg[0];
 end
 default:;
 endcase

@@ -1,14 +1,16 @@
 module UART_RX(clk,clk_div,rst,data,rd,ce,error,rdc,rdf,Rxd);
-input clk,clk_div,rst,rd,ce;
+input clk,rst,rd,ce;
 inout data;
 output 	error,
 		rdc,//receive data complete
 		rdf;//read data flag	
+output clk_div;
 
 input Rxd;
 
 wire [7:0] data;
 wire clk_div;
+wire clk_en;
 
 reg [7:0] data_buf;
 reg error,rdc,rss,rdf;
@@ -19,6 +21,8 @@ reg [1:0] state ;
 
 
 parameter idle=2'b00,read=2'b01,finish=2'b11;
+
+divider U1(.En(rdf),.Rst(rst),.Clk_in(clk),.Clk_out(clk_div));//12 frequency division
 
 //start dectection
 always@(posedge clk)
@@ -36,7 +40,7 @@ begin
 	end
 	
 	if(rdc == 1 || error ==1)
-		rdf<=0;	
+		rdf<=0;
 end
 
 //state control
@@ -59,7 +63,11 @@ begin
 				end
 			end
 			else
+			begin
 				state <= idle;
+				rdc<=0;
+				error<=0;
+			end
 		end
 		
 		read:

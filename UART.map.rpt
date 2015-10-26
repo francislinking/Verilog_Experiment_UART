@@ -1,5 +1,5 @@
 Analysis & Synthesis report for UART
-Sun Oct 25 21:00:46 2015
+Mon Oct 26 10:18:47 2015
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -13,15 +13,14 @@ Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |UART|UART_RX:U3|state
-  9. State Machine - |UART|UART_TX:U2|state
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: divider:U1
- 14. Parameter Settings for User Entity Instance: UART_TX:U2
- 15. Parameter Settings for User Entity Instance: UART_RX:U3
- 16. Analysis & Synthesis Messages
+  8. State Machine - |UART|UART_TX:U2|state
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: UART_TX:U2
+ 13. Parameter Settings for User Entity Instance: UART_TX:U2|divider:U1
+ 14. Port Connectivity Checks: "UART_TX:U2|divider:U1"
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -47,15 +46,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                             ;
 +-------------------------------+------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Sun Oct 25 21:00:46 2015    ;
+; Analysis & Synthesis Status   ; Successful - Mon Oct 26 10:18:47 2015    ;
 ; Quartus II Version            ; 9.1 Build 222 10/21/2009 SJ Full Version ;
 ; Revision Name                 ; UART                                     ;
 ; Top-level Entity Name         ; UART                                     ;
 ; Family                        ; Stratix II                               ;
 ; Logic utilization             ; N/A                                      ;
-;     Combinational ALUTs       ; 41                                       ;
-;     Dedicated logic registers ; 53                                       ;
-; Total registers               ; 53                                       ;
+;     Combinational ALUTs       ; 29                                       ;
+;     Dedicated logic registers ; 34                                       ;
+; Total registers               ; 34                                       ;
 ; Total pins                    ; 21                                       ;
 ; Total virtual pins            ; 0                                        ;
 ; Total block memory bits       ; 0                                        ;
@@ -162,81 +161,67 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                            ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------+
-; UART.v                           ; yes             ; User Verilog HDL File  ; E:/Discipline/Verilog/Experiment/Experiment_2/UART.v    ;
-; UART_TX.v                        ; yes             ; User Verilog HDL File  ; E:/Discipline/Verilog/Experiment/Experiment_2/UART_TX.v ;
-; divider.v                        ; yes             ; User Verilog HDL File  ; E:/Discipline/Verilog/Experiment/Experiment_2/divider.v ;
-; UART_RX.v                        ; yes             ; User Verilog HDL File  ; E:/Discipline/Verilog/Experiment/Experiment_2/UART_RX.v ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                           ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                       ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------+
+; UART.v                           ; yes             ; User Verilog HDL File  ; E:/Discipline/Verilog/Experiment/Verilog_Experiment_UART/UART.v    ;
+; UART_TX.v                        ; yes             ; User Verilog HDL File  ; E:/Discipline/Verilog/Experiment/Verilog_Experiment_UART/UART_TX.v ;
+; divider.v                        ; yes             ; User Verilog HDL File  ; E:/Discipline/Verilog/Experiment/Verilog_Experiment_UART/divider.v ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                        ;
-+-----------------------------------------------+--------------------+
-; Resource                                      ; Usage              ;
-+-----------------------------------------------+--------------------+
-; Estimated ALUTs Used                          ; 41                 ;
-; Dedicated logic registers                     ; 53                 ;
-;                                               ;                    ;
-; Estimated ALUTs Unavailable                   ; 1                  ;
-;                                               ;                    ;
-; Total combinational functions                 ; 41                 ;
-; Combinational ALUT usage by number of inputs  ;                    ;
-;     -- 7 input functions                      ; 1                  ;
-;     -- 6 input functions                      ; 8                  ;
-;     -- 5 input functions                      ; 2                  ;
-;     -- 4 input functions                      ; 18                 ;
-;     -- <=3 input functions                    ; 12                 ;
-;                                               ;                    ;
-; Combinational ALUTs by mode                   ;                    ;
-;     -- normal mode                            ; 35                 ;
-;     -- extended LUT mode                      ; 1                  ;
-;     -- arithmetic mode                        ; 5                  ;
-;     -- shared arithmetic mode                 ; 0                  ;
-;                                               ;                    ;
-; Estimated ALUT/register pairs used            ; 61                 ;
-;                                               ;                    ;
-; Total registers                               ; 53                 ;
-;     -- Dedicated logic registers              ; 53                 ;
-;     -- I/O registers                          ; 0                  ;
-;                                               ;                    ;
-; Estimated ALMs:  partially or completely used ; 31                 ;
-;                                               ;                    ;
-; I/O pins                                      ; 21                 ;
-; Maximum fan-out node                          ; divider:U1|Clk_out ;
-; Maximum fan-out                               ; 45                 ;
-; Total fan-out                                 ; 338                ;
-; Average fan-out                               ; 2.94               ;
-+-----------------------------------------------+--------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                   ;
++-----------------------------------------------+-------------------------------+
+; Resource                                      ; Usage                         ;
++-----------------------------------------------+-------------------------------+
+; Estimated ALUTs Used                          ; 29                            ;
+; Dedicated logic registers                     ; 34                            ;
+;                                               ;                               ;
+; Estimated ALUTs Unavailable                   ; 1                             ;
+;                                               ;                               ;
+; Total combinational functions                 ; 29                            ;
+; Combinational ALUT usage by number of inputs  ;                               ;
+;     -- 7 input functions                      ; 1                             ;
+;     -- 6 input functions                      ; 1                             ;
+;     -- 5 input functions                      ; 3                             ;
+;     -- 4 input functions                      ; 7                             ;
+;     -- <=3 input functions                    ; 17                            ;
+;                                               ;                               ;
+; Combinational ALUTs by mode                   ;                               ;
+;     -- normal mode                            ; 23                            ;
+;     -- extended LUT mode                      ; 1                             ;
+;     -- arithmetic mode                        ; 5                             ;
+;     -- shared arithmetic mode                 ; 0                             ;
+;                                               ;                               ;
+; Estimated ALUT/register pairs used            ; 42                            ;
+;                                               ;                               ;
+; Total registers                               ; 34                            ;
+;     -- Dedicated logic registers              ; 34                            ;
+;     -- I/O registers                          ; 0                             ;
+;                                               ;                               ;
+; Estimated ALMs:  partially or completely used ; 21                            ;
+;                                               ;                               ;
+; I/O pins                                      ; 21                            ;
+; Maximum fan-out node                          ; UART_TX:U2|divider:U1|Clk_out ;
+; Maximum fan-out                               ; 18                            ;
+; Total fan-out                                 ; 203                           ;
+; Average fan-out                               ; 2.42                          ;
++-----------------------------------------------+-------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                           ;
-+----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
-; |UART                      ; 41 (0)            ; 53 (0)       ; 0                 ; 0            ; 0       ; 0         ; 0         ; 21   ; 0            ; |UART               ; work         ;
-;    |UART_RX:U3|            ; 15 (15)           ; 20 (20)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |UART|UART_RX:U3    ; work         ;
-;    |UART_TX:U2|            ; 18 (18)           ; 27 (27)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |UART|UART_TX:U2    ; work         ;
-;    |divider:U1|            ; 8 (8)             ; 6 (6)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |UART|divider:U1    ;              ;
-+----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                   ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name         ; Library Name ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------+--------------+
+; |UART                      ; 29 (0)            ; 34 (0)       ; 0                 ; 0            ; 0       ; 0         ; 0         ; 21   ; 0            ; |UART                       ; work         ;
+;    |UART_TX:U2|            ; 29 (17)           ; 34 (28)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |UART|UART_TX:U2            ;              ;
+;       |divider:U1|         ; 12 (12)           ; 6 (6)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |UART|UART_TX:U2|divider:U1 ; work         ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+-------------------------------------------------------+
-; State Machine - |UART|UART_RX:U3|state                ;
-+--------------+------------+--------------+------------+
-; Name         ; state.read ; state.finish ; state.idle ;
-+--------------+------------+--------------+------------+
-; state.idle   ; 0          ; 0            ; 0          ;
-; state.read   ; 1          ; 0            ; 1          ;
-; state.finish ; 0          ; 1            ; 1          ;
-+--------------+------------+--------------+------------+
 
 
 Encoding Type:  One-Hot
@@ -251,51 +236,41 @@ Encoding Type:  One-Hot
 +----------------+-------------+----------------+------------+
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; UART_RX:U3|t[3]                       ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 1 ;                                        ;
-+---------------------------------------+----------------------------------------+
-
-
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 53    ;
-; Number of registers using Synchronous Clear  ; 5     ;
+; Total registers                              ; 34    ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 8     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 30    ;
+; Number of registers using Clock Enable       ; 19    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
-; 3:1                ; 5 bits    ; 10 ALUTs      ; 10 ALUTs             ; 0 ALUTs                ; Yes        ; |UART|divider:U1|Q[4]         ;
-; 3:1                ; 3 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; Yes        ; |UART|UART_RX:U3|c[2]         ;
-; 3:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |UART|UART_TX:U2|shift_reg[6] ;
-; 3:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |UART|UART_RX:U3|state        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; UART_TX:U2|divider:U1|Q[2]             ; 2       ;
+; UART_TX:U2|divider:U1|Q[0]             ; 2       ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Parameter Settings for User Entity Instance: divider:U1 ;
-+----------------+-------+--------------------------------+
-; Parameter Name ; Value ; Type                           ;
-+----------------+-------+--------------------------------+
-; N              ; 6     ; Signed Integer                 ;
-+----------------+-------+--------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; 3:1                ; 3 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; Yes        ; |UART|UART_TX:U2|divider:U1|Q[1] ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |UART|UART_TX:U2|shift_reg[1]    ;
+; 3:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; Yes        ; |UART|UART_TX:U2|divider:U1|Q[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
 
 
 +---------------------------------------------------------+
@@ -310,16 +285,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------+
-; Parameter Settings for User Entity Instance: UART_RX:U3 ;
-+----------------+-------+--------------------------------+
-; Parameter Name ; Value ; Type                           ;
-+----------------+-------+--------------------------------+
-; idle           ; 00    ; Unsigned Binary                ;
-; read           ; 01    ; Unsigned Binary                ;
-; finish         ; 11    ; Unsigned Binary                ;
-+----------------+-------+--------------------------------+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART_TX:U2|divider:U1 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; N              ; 6     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "UART_TX:U2|divider:U1"                                                                                                                                                              ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; En     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; En[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -328,7 +311,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Sun Oct 25 21:00:44 2015
+    Info: Processing started: Mon Oct 26 10:18:46 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off UART -c UART
 Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info: Found 1 design units, including 1 entities, in source file uart.v
@@ -341,28 +324,45 @@ Info: Found 1 design units, including 1 entities, in source file uart_rx.v
     Info: Found entity 1: UART_RX
 Warning (10227): Verilog HDL Port Declaration warning at UART.v(17): data type declaration for "data" declares packed dimensions but the port declaration declaration does not
 Info (10499): HDL info at UART.v(5): see declaration for object "data"
-Warning (10227): Verilog HDL Port Declaration warning at UART_TX.v(11): data type declaration for "data" declares packed dimensions but the port declaration declaration does not
+Warning (10227): Verilog HDL Port Declaration warning at UART_TX.v(13): data type declaration for "data" declares packed dimensions but the port declaration declaration does not
 Info (10499): HDL info at UART_TX.v(3): see declaration for object "data"
-Warning (10227): Verilog HDL Port Declaration warning at UART_RX.v(10): data type declaration for "data" declares packed dimensions but the port declaration declaration does not
+Warning (10227): Verilog HDL Port Declaration warning at UART_RX.v(11): data type declaration for "data" declares packed dimensions but the port declaration declaration does not
 Info (10499): HDL info at UART_RX.v(3): see declaration for object "data"
 Info: Elaborating entity "UART" for the top level hierarchy
-Info: Elaborating entity "divider" for hierarchy "divider:U1"
-Warning (10230): Verilog HDL assignment warning at divider.v(21): truncated value with size 32 to match size of target (5)
+Warning (10034): Output port "error" at UART.v(9) has no driver
+Warning (10034): Output port "rdc" at UART.v(11) has no driver
+Warning (10034): Output port "rdf" at UART.v(13) has no driver
 Info: Elaborating entity "UART_TX" for hierarchy "UART_TX:U2"
-Warning (10230): Verilog HDL assignment warning at UART_TX.v(61): truncated value with size 32 to match size of target (4)
-Info: Elaborating entity "UART_RX" for hierarchy "UART_RX:U3"
-Warning (10036): Verilog HDL or VHDL warning at UART_RX.v(14): object "rss" assigned a value but never read
-Warning (10230): Verilog HDL assignment warning at UART_RX.v(28): truncated value with size 32 to match size of target (3)
-Warning (10230): Verilog HDL assignment warning at UART_RX.v(78): truncated value with size 32 to match size of target (4)
-Info: Implemented 86 device resources after synthesis - the final resource count might be different
+Warning (10230): Verilog HDL assignment warning at UART_TX.v(64): truncated value with size 32 to match size of target (4)
+Info: Elaborating entity "divider" for hierarchy "UART_TX:U2|divider:U1"
+Warning (10230): Verilog HDL assignment warning at divider.v(8): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at divider.v(26): truncated value with size 32 to match size of target (5)
+Warning: 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning: The following bidir pins have no drivers
+    Warning: Bidir "data[0]" has no driver
+    Warning: Bidir "data[1]" has no driver
+    Warning: Bidir "data[2]" has no driver
+    Warning: Bidir "data[3]" has no driver
+    Warning: Bidir "data[4]" has no driver
+    Warning: Bidir "data[5]" has no driver
+    Warning: Bidir "data[6]" has no driver
+    Warning: Bidir "data[7]" has no driver
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "error" is stuck at GND
+    Warning (13410): Pin "rdc" is stuck at GND
+    Warning (13410): Pin "rdf" is stuck at GND
+Warning: Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "rd"
+    Warning (15610): No output dependent on input pin "Rxd"
+Info: Implemented 66 device resources after synthesis - the final resource count might be different
     Info: Implemented 6 input pins
     Info: Implemented 7 output pins
     Info: Implemented 8 bidirectional pins
-    Info: Implemented 65 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Implemented 45 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 26 warnings
     Info: Peak virtual memory: 218 megabytes
-    Info: Processing ended: Sun Oct 25 21:00:46 2015
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Processing ended: Mon Oct 26 10:18:47 2015
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 
